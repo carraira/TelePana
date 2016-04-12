@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+          
+      xmlns:p="http://primefaces.org/ui">
+     <style type="text/css">
+            
+      
+            #panel{
+    
+                background:   silver;
+                 height:   500px;
+                 width: 350px;
+                 float:  left;
+                 text-align: justify;
+                 
+                 
+            }
+            
+            #conten{
+                margin: 30px;
+            }
+            
+            #tops {
+                float:  inside;
+                background:  #999999;
+                border-color: aliceblue;
+                border: activecaption;
+                 margin: 0px;
+                 border-radius: 17px;
+                     height: 20px;
+    width: 1200px;
+    border: 0;
+    overflow-style: auto;
+            }
+            
+            #imag{
+                 width: 200px;
+                 height: 100px;
+            }
+            #body{
+                background:   lavender;
+            }
+          
+            
+        </style>
+    <h:head>
+         <title>TelePana Consulta Medica</title>
+         <h:panelGrid id="tops" >
+             <img src="images/logo2.png" id="imag" ></img>
+         </h:panelGrid>
+         
+         
+   </h:head>
+     
+     <h:panelGrid   id="panel">
+         <h:body id="body">
+             <h:form class="formulario">
+                <div id ="conten" >  
+                   <h:outputLabel value="Log Usuario: "/>
+                   <p:inputText pt:placeholder="Usuario" value="#{mbLogin.usuario}" 
+                   style=" text-align:  justify;   background-position: 0 -30px !important; padding-bottom: 11px; 
+                   padding-left: 50px; padding-top: 11px;
+                   background-repeat:  no-repeat; display:  block; background-image: url('images/icons.png')"  
+                    />
+                    <p><p:password  pt:placeholder="Contraseña" value="#{mbLogin.contrasenia}"  style=" text-align: justify;   background-position: 0 -70px !important; padding-bottom: 11px; 
+                    padding-left: 50px; padding-top: 11px;
+                    background-repeat:  no-repeat; display:  block; background-image: url('images/icons.png')" /></p>
+                    <h:messages infoStyle="color: blue;list-style:none;" errorStyle="color:red;list-style:none;"/> 
+                    <h:commandLink id="link" value="Olvide la Contraseña" style=" text-decoration: none; text-shadow:  initial; "></h:commandLink>
+                    <section class="seccionBotones">
+                    <h:panelGrid columns="2" cellpadding="10" >
+                    <p:commandButton  update="growl" ajax="false" style=" border-width: 3px; border-color:  cadetblue;
+                    font-size: small;  background-color: aliceblue; height: 30px;width: 100px;" value="INGRESO" action="#{mbLogin.login()}" />
+                    <p:commandButton ajax="false" style=" border-width: 3px; border-color:  cadetblue;
+                                     border-width: 3px; border-color:  cadetblue; font-size: small; background-color: aliceblue;  ; height: 30px;width: 100px;" value="REGISTRAR" action="#{mbLogin.login()}"/>
+                     </h:panelGrid>
+                   </section>
+                 </div> 
+            </h:form>
+        </h:body>
+      </h:panelGrid>
+    <div style="  vertical-align: middle;  width: 500px; height: 500px; float: left; " >
+           <img src="images/sabias.png" style=" text-align: center; float: right; width: 300px; height: 300px; margin-top: 70px;"></img>
+       </div>
+    <div style="  float: left; width: 1000px; alignment-adjust:  central; margin-left: 100px; ">
+        <h:outputLabel   value="Copyright 2014-2016 TelePana Consulta Medica,Inc Todos los Derechos Reservados." />
+    </div>
+     
+</html>
+
