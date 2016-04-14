@@ -1,4 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -11,7 +12,7 @@
             #panel{
     
                 background:   silver;
-                 height:   500px;
+                 height:   530px;
                  width: 350px;
                  float:  left;
                  text-align: justify;
@@ -60,19 +61,22 @@
              <h:form class="formulario">
                 <div id ="conten" >  
                    <h:outputLabel value="Log Usuario: "/>
-                   <p:inputText pt:placeholder="Usuario" value="#{mbLogin.usuario}" 
+                   <p:inputText  id="idu" required="true" pt:placeholder="Usuario" value="#{mbLogin.usuario}" 
                    style=" text-align:  justify;   background-position: 0 -30px !important; padding-bottom: 11px; 
                    padding-left: 50px; padding-top: 11px;
                    background-repeat:  no-repeat; display:  block; background-image: url('images/icons.png')"  
-                    />
-                    <p><p:password  pt:placeholder="Contraseña" value="#{mbLogin.contrasenia}"  style=" text-align: justify;   background-position: 0 -70px !important; padding-bottom: 11px; 
+                   requiredMessage="Usuario requerido o vacio"/>
+                   
+                   <p:message  for="idu"  style=" color: aqua"/>
+                   <p><p:password  id="contraseña" required="true"  requiredMessage="Contraseña Requerida o Vacia" pt:placeholder="Contraseña" value="#{mbLogin.contrasenia}"  style=" text-align: justify;   background-position: 0 -70px !important; padding-bottom: 11px; 
                     padding-left: 50px; padding-top: 11px;
                     background-repeat:  no-repeat; display:  block; background-image: url('images/icons.png')" /></p>
-                    <h:messages infoStyle="color: blue;list-style:none;" errorStyle="color:red;list-style:none;"/> 
+                    
+                   <p:message  for="contraseña" /> 
                     <h:commandLink id="link" value="Olvide la Contraseña" style=" text-decoration: none; text-shadow:  initial; "></h:commandLink>
                     <section class="seccionBotones">
                     <h:panelGrid columns="2" cellpadding="10" >
-                    <p:commandButton  update="growl" ajax="false" style=" border-width: 3px; border-color:  cadetblue;
+                    <p:commandButton  update="body" ajax="false" style=" border-width: 3px; border-color:  cadetblue;
                     font-size: small;  background-color: aliceblue; height: 30px;width: 100px;" value="INGRESO" action="#{mbLogin.login()}" />
                     <p:commandButton ajax="false" style=" border-width: 3px; border-color:  cadetblue;
                                      border-width: 3px; border-color:  cadetblue; font-size: small; background-color: aliceblue;  ; height: 30px;width: 100px;" value="REGISTRAR" action="#{mbLogin.login()}"/>
