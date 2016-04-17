@@ -75,4 +75,9 @@ public class MbLogin implements Serializable{
         
         
     }
+    
+    public String Recuperar(){
+        return "Recuperar";
+        
+    }
 }
