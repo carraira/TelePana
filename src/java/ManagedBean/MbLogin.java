@@ -69,4 +69,10 @@ public class MbLogin implements Serializable{
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }    
+    
+    public String registrar(){
+        return "Registro";
+        
+        
+    }
 }

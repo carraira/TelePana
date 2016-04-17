@@ -11,12 +11,11 @@
             #panel{
     
                 background:   silver;
-                 height:   530px;
-                 width: 350px;
+                 height:   500px;
+                 width: 650px;
                  float:  left;
-                 text-align: justify;
-                 
-                 
+                 text-align: center;
+                 margin-right: 20px;  
             }
             
             #conten{
@@ -30,20 +29,21 @@
                 border: activecaption;
                  margin: 0px;
                  border-radius: 17px;
-                     height: 20px;
+                     height: 5px;
     width: 1200px;
     border: 0;
     overflow-style: auto;
             }
             
             #imag{
-                 width: 200px;
-                 height: 100px;
+                 width: 175px;
+                 height: 75px;
             }
             #body{
                 background:   lavender;
             }
           
+            
             
         </style>
     <h:head>
@@ -52,40 +52,97 @@
              <img src="images/logo2.png" id="imag" ></img>
          </h:panelGrid>
      </h:head>
-     
-     <h:panelGrid   id="panel">
+    
+    <h:panelGrid   columns="2" id="panel">
          <h:body id="body">
-             <h:form class="formulario">
-                <div id ="conten" >  
-                   <h:outputLabel value="Registrarse "/>
-                   <p:inputText  id="idu" required="true" pt:placeholder="Usuario" value="#{mbLogin.usuario}" 
-                   style=" text-align:  justify;   background-position: 0 -30px !important; padding-bottom: 11px; 
-                   padding-left: 50px; padding-top: 11px;
-                   background-repeat:  no-repeat; display:  block; background-image: url('images/icons.png')"  
+             <h:form >
+                 <h:panelGrid columns="1">       
+                    <h2><h:outputLabel style=" font-size: 25px; float: left;" value="Registrarse "></h:outputLabel></h2>
+                    <h:panelGrid columns="2">
+                    <h:outputLabel style=" font:  menu; text-align: left; font-size: 10px; float: left;" value=" Ingrese un Usuario de TelePana, una combinacion
+                     de usuario y nombre, correo electronico y contraseña
+                     para adquirir los servicios de TelePana tu consulta Medica."></h:outputLabel>
+                        <h:outputLabel style=" color: silver; text-align: left; font-size: 10px; float: left;" value=" Ingrese un Usuario de TelePana, una combinacion
+                     de usuario y nombre, correo electronico y contraseña
+                     para adquirir los servicios de TelePana tu consulta Medica."></h:outputLabel>
+                   </h:panelGrid> 
+                 </h:panelGrid>
+                    <h:panelGrid columns="3" cellpadding="8" style="float: right;" >
+                        <p:outputLabel    value="Usuario: "  style=" float: right;" ></p:outputLabel>     
+                   <p:inputText required="true" pt:placeholder="Usuario" value="#{mbLogin.usuario}" 
+                   style=" border-width: 2px; border-color: cornflowerblue; text-align:  justify;   background-position: 0 -30px !important; padding-bottom: 11px; 
+                   padding-left: 50px; padding-top: 5px; 
+                   background-repeat:  no-repeat; display:  block; background-image: url('images/icons3.png')"  
                    requiredMessage="Usuario requerido o vacio"/>
-                   
-                   
-                   <p><p:password  id="contraseña" required="true"  requiredMessage="Contraseña Requerida o Vacia" pt:placeholder="Contraseña" value="#{mbLogin.contrasenia}"  style=" text-align: justify;   background-position: 0 -70px !important; padding-bottom: 11px; 
-                    padding-left: 50px; padding-top: 11px;
-                    background-repeat:  no-repeat; display:  block; background-image: url('images/icons.png')" /></p>
+                   <h:outputLabel value="          "></h:outputLabel>
+                   </h:panelGrid> 
                     
+                    <h:panelGrid columns="3" cellpadding="8" style="float: right;" >
+                        <p:outputLabel   style=" float: right;" value="Correo: " ></p:outputLabel>     
+                   <p:inputText  id="idu2" required="true" pt:placeholder="Correo" value="#{mbLogin.usuario}" 
+                   style=" border-width: 2px; border-color: cornflowerblue; text-align:  justify;   background-position: 0 -30px !important; padding-bottom: 11px; 
+                   padding-left: 50px; padding-top: 5px; 
+                   background-repeat:  no-repeat; display:  block; background-image: url('images/icons.png')"  
+                   requiredMessage=" Correo Necesario "/>
+                   <h:outputLabel value="          "></h:outputLabel>
+                   </h:panelGrid>
+                    
+                   <h:panelGrid columns="3" cellpadding="8" style="float: right;" >
+                   <p:outputLabel   style=" float: right;" value="Contraseña: " ></p:outputLabel>
+                   <p:password  required="true"  requiredMessage="Contraseña Requerida o Vacia" pt:placeholder="Contraseña" value="#{mbLogin.contrasenia}"  
+                                   style="  border-width: 3px; border-color: cornflowerblue; text-align: justify;   background-position: 0 -70px !important; padding-bottom: 11px; 
+                                     padding-left: 50px; padding-top: 5px;
+                    background-repeat:  no-repeat; display:  block; background-image: url('images/icons.png')" />
+                   <h:outputLabel value="          "></h:outputLabel>
+                   </h:panelGrid>
+                
+                  <h:panelGrid columns="3" cellpadding="8" style="float: right;" >
+                   <p:outputLabel   style=" float: right;" value="Confirme Contraseña: " ></p:outputLabel>
+                   <p:password  required="true"  requiredMessage="Contraseña Requerida o Vacia" pt:placeholder="Contraseña" value="#{mbLogin.contrasenia}"  
+                                   style=" border-width: 2px; border-color: cornflowerblue; text-align: justify;   background-position: 0 -70px !important; padding-bottom: 11px; 
+                                     padding-left: 50px; padding-top: 5px;
+                    background-repeat:  no-repeat; display:  block; background-image: url('images/icons.png')" />
+                   <h:outputLabel value="          "></h:outputLabel>
+                </h:panelGrid>   
                    
-                    <h:commandLink id="link" value="Olvide la Contraseña" style=" text-decoration: none; text-shadow:  initial; "></h:commandLink>
-                    <section class="seccionBotones">
-                    <h:panelGrid columns="2" cellpadding="10" >
+                    <h:panelGrid columns="3" cellpadding="8" style="float: right;" >
+                        <p:outputLabel   style=" font-size: small; float: right;" 
+                                    value=" Numero Registro Tarjeta Afiliado: " ></p:outputLabel>
+                   <p:password  required="true"  requiredMessage="Contraseña Requerida o Vacia" pt:placeholder="Contraseña" value="#{mbLogin.contrasenia}"  
+                                   style="   border-width: 2px; border-color: darkorange; text-align: justify;   background-position: 0 -70px !important; padding-bottom: 11px; 
+                                     padding-left: 50px; padding-top: 5px;
+                    background-repeat:  no-repeat; display:  block; background-image: url('images/icons2.png')" />
+                   <h:outputLabel value="          "></h:outputLabel>
+                     </h:panelGrid>
+                    
+                    <h:panelGrid columns="1" cellpadding="10" style="float: left ; " >
+                        <h:panelGrid  columns="2">
+                            <h:outputLabel   style=" color: silver; text-align: left; font-size: small ; float: right;" 
+                                    value=" Al crear una cuenta, acepta los terminos de servicio
+                            y recibir información sobre condiciones y politicas. " >
+                                        
+                        </h:outputLabel>
+                            <h:outputLabel   style=" text-align: left; font-size: smaller; float: right;" 
+                                    value=" Al crear una cuenta, acepta los terminos de servicio
+                            y recibir información sobre condiciones y politicas." >
+                                        
+                        </h:outputLabel>
+                            </h:panelGrid>
+                        <h:panelGrid columns="2" cellspacing="10" style="float: left;">
                     <p:commandButton  update="body" ajax="false" style=" border-width: 3px; border-color:  cadetblue;
                     font-size: small;  background-color: aliceblue; height: 30px;width: 100px;" value="Registrar" action="#{mbLogin.login()}" />
                     <p:commandButton  ajax="false"  immediate="true" style=" border-width: 3px; border-color:  cadetblue;
-                                     border-width: 3px; border-color:  cadetblue; font-size: small; background-color: aliceblue; 
+                                     border-width: 2px; border-color:  cadetblue; font-size: small; background-color: aliceblue; 
                                      height: 30px;width: 100px;" value="Volver" action="#{mbSession.cerrarSession()}"/>
-                     </h:panelGrid>
-                   </section>
-                 </div> 
+             </h:panelGrid>
+                    
+                    </h:panelGrid>         
             </h:form>
         </h:body>
       </h:panelGrid>
-    <div style="  vertical-align: middle;  width: 500px; height: 500px; float: left; " >
-           <img src="images/sabias.png" style=" text-align: center; float: right; width: 300px; height: 300px; margin-top: 70px;"></img>
+    
+<div style="  vertical-align: middle;  width: 400px; height: 400px; float: left; " >
+           <img src="images/Medico.png" style=" text-align: center; float: right; width: 200px; height: 200px; margin-top: 70px;"></img>
        </div>
     <div style="  float: left; width: 1000px; alignment-adjust:  central; margin-left: 100px; ">
         <h:outputLabel   value="Copyright 2014-2016 TelePana Consulta Medica,Inc Todos los Derechos Reservados." />

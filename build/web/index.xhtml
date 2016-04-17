@@ -5,9 +5,9 @@
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
           
       xmlns:p="http://primefaces.org/ui">
-     <style type="text/css">
+    <style type="text/css">
             
-      
+     
             #panel{
     
                 background:   silver;
@@ -75,8 +75,9 @@
                     <h:panelGrid columns="2" cellpadding="10" >
                     <p:commandButton  update="body" ajax="false" style=" border-width: 3px; border-color:  cadetblue;
                     font-size: small;  background-color: aliceblue; height: 30px;width: 100px;" value="INGRESO" action="#{mbLogin.login()}" />
-                    <p:commandButton ajax="false" style=" border-width: 3px; border-color:  cadetblue;
-                                     border-width: 3px; border-color:  cadetblue; font-size: small; background-color: aliceblue;  ; height: 30px;width: 100px;" value="REGISTRAR" action="#{mbLogin.login()}"/>
+                    <p:commandButton  immediate="true" ajax="false" style=" border-width: 3px; border-color:  cadetblue;
+                                     border-width: 3px; border-color:  cadetblue; font-size: small; background-color: aliceblue;  ; height: 30px;width: 100px;" 
+                                     value="REGISTRAR" action="#{mbLogin.registrar()}"/>
                      </h:panelGrid>
                    </section>
                  </div> 
