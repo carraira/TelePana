@@ -7,3 +7,4 @@ v1.0 Se ha subido el proyecto y sus avances con el diseño y maquetacion de una 
 Aplicacion de JSF, objetos Primefaces.
 
 v.1.1 Se sube el proyecto nuevamente con ajustes de librerias, y fallas de requerid.
+v.1.2 Se agregan pagina iniciportal que es el menu principal de la aplicacion web, la pagina Recuperar, se agregan componentes media, se agrega direccionamiento
