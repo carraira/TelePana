@@ -2,40 +2,68 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:p="http://primefaces.org/ui">
     <style type="text/css">
+        #body{
+            background-color: lavender;
+        }
         #imag{
             width: 20%; height: 50%;                
+        }
+        #barra{
+            border-radius: 17px; border: 0; overflow-style: auto;
         }
     </style>
     <h:head>
         <title>Recuperar Contraseña</title>
-         <h:panelGrid  columns="3" style=" width: 100%; height:40%; background-color: #D84530; background-color: #7C96B7; " >
-             <h:panelGrid columns="3" style="  width: 95%; background-color: #999999; ">
+         <h:panelGrid   columns="3" style=" width: 100%; height:40%;  background-color: silver;" >
+             <h:panelGrid id="barra" columns="3" style="  width: 95%; background-color: #999999; ">
              <img src="images/logo2.png" id="imag" ></img>
              </h:panelGrid>
     </h:panelGrid>
+        
     </h:head>
-    <h:panelGrid  columns="3" style=" width: 100%; height: 80%; background-color: #D84530; " >
+    
+    <h:body id="body">
+        <h:panelGrid  columns="3" style=" font-size: medium; width: 100%; height: 100%; background-color: lavender; " >
         
-        
-        
-    </h:panelGrid>
-    <h:body>
-        <h:panelGrid  columns="3" style=" width: 100%; height: 100%; background-color: #D84530; " >
-        
-            <h:panelGrid columns="1" style=" width: 35%; height: 90%; background-color: #409FBA; ">
-                      
-                <p:outputLabel              
-        <p:commandButton></p:commandButton>                     
-        <p:commandButton></p:commandButton>
-        <p:commandButton></p:commandButton>
-        <p:commandButton></p:commandButton>
-        <p:commandButton></p:commandButton>
-        
+            <h:panelGrid columns="1" cellpadding="10" style=" width: 35%; height: 90%; background-color:  silver; ">
+              
+                <h2><h:outputLabel style=" font-size: 25px; " value="¿ Olvido la Contraseña ?"></h:outputLabel></h2>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                
+        <h:outputLabel value="Ingrese Datos: "></h:outputLabel>
+         <p:inputText  id="idu2" required="true" pt:placeholder="Correo" value="#{mbLogin.usuario}" 
+                   style=" border-width: 2px; border-color: cornflowerblue; text-align:  justify;   background-position: 0 -30px !important; padding-bottom: 11px; 
+                   padding-left: 50px; padding-top: 5px; 
+                   background-repeat:  no-repeat; display:  block; background-image: url('images/icons.png')"  
+                   requiredMessage=" Correo Necesario "/>
+                   <h:outputLabel value="          "></h:outputLabel>
+                   <h:panelGrid columns="2"  cellpadding="9" >
+                   
+                    <p:commandButton style=" border-width: 3px; border-color:  cadetblue;
+                    font-size: small;  background-color: aliceblue; height: 30px;width: 100px;" value="Enviar" action="#{mbLogin.login()}"></p:commandButton>
+                   <p:commandButton  immediate="true" ajax="true" style=" border-width: 3px; border-color:  cadetblue;
+                                     border-color:  cadetblue; font-size: small; background-color: aliceblue; 
+                                     height: 30px;width: 100px;" value="Volver" action="#{mbSession.cerrarSession()}"/>    
+                   </h:panelGrid>         
+                   <br></br>
+                   <br></br>
+                   <br></br>
+                   <br></br>
+                   <br></br>
         </h:panelGrid>       
                       
        </h:panelGrid>
+        <h:panelGrid  columns="2" style=" width: 100%; height: 10%;">
+        <h:outputLabel style=" color: lavender; " value="___________" ></h:outputLabel>   
+        <h:outputLabel value="Copyright 2014-2016 TelePana Consulta Medica,Inc Todos los Derechos Reservados." />
+    </h:panelGrid>
     </h:body>
+    
 </html>
 
