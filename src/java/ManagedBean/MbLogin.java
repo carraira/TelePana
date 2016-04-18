@@ -22,8 +22,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @ManagedBean
 @RequestScoped
-@SessionScoped
-public class MbLogin implements Serializable{
+public class MbLogin {
  
     private String usuario;// get y set
     private String contrasenia;
@@ -38,7 +37,10 @@ public class MbLogin implements Serializable{
     }
      
     public String login()//logica para validar logueo sin necesidad de base de datos
+    
     {
+     
+     
         if(usuario.equals("CORE") && contrasenia.equals("1234"))
         {
             httpServletRequest.getSession().setAttribute("sessionUsuario", usuario);//almacenar sesion
@@ -52,8 +54,10 @@ public class MbLogin implements Serializable{
             faceContext.addMessage(null, facesMessage);
             return "index";// regresar al index
         }
+     
     }
  
+    
     public String getUsuario() {
         return usuario;
     }
