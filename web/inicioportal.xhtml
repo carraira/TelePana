@@ -49,11 +49,13 @@
          
     </h:head>
     <h:body id="body">
-       
+       <h:commandButton value="cerrar session" action="#{mbSession.cerrarSession()}"/>
        <div id="cabecera">
            <h:panelGrid columns="3" cellpadding="5" style="background-color: silver; width: 20.1%;">
                <img src="images/logo2.png" id="logo"></img>
+                
            </h:panelGrid>
+           
        </div>
                 
        <div id="menu">
@@ -81,9 +83,8 @@
            <br></br>
            <br></br>
            <h:panelGrid columns="1" cellpadding="1">
-               <img src="" align="center" width="400" height="400" id="imagen"></img>
+               <img src="" align="center" width="300" height="300" id="imagen"></img>
            </h:panelGrid>
-           <br></br>
            <br></br>
            <a >Horarios de Atención</a>
            <br></br>
@@ -95,7 +96,7 @@
            <a>@ Todos los derechos reservados 2016 Telepana Inc - Terminos de Uso</a>
        </div>
       <h:form>
-    <h:commandButton value="cerrar session" action="#{mbSession.cerrarSession()}"/>
+   
     </h:form>
     </h:body>
 </html>
