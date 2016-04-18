@@ -44,7 +44,7 @@ public class MbLogin implements Serializable{
             httpServletRequest.getSession().setAttribute("sessionUsuario", usuario);//almacenar sesion
             facesMessage=new FacesMessage(FacesMessage.SEVERITY_INFO, "Acceso Exitoso", null);// envio mensaje informacion de logeo
             faceContext.addMessage(null, facesMessage);//
-            return "acceso";// retorna el string
+            return "inicioportal";// retorna el string
         }
         else//caso contrario en que no se pueda logear
         {

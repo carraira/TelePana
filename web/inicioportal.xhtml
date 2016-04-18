@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+         <title>Menu Principal</title>
+         <link rel="stylesheet" href="public/css/styleframe.css" type="text/css"></link>
+    </h:head>
+    <h:body>
+       
+       <div id="cabecera">
+           <img src="images/logo2.png" ></img>
+       </div>
+                
+       <div id="menu">
+          <input type="ckeckbox" id="menuToggle"></input>
+          <label for="menuToggle" class="menu-icon">&#9776;</label>
+           <ul id="navigation">
+              <li class="home"><a href="" title="Home"></a></li>
+              <li><a href="" title="About"></a></li>
+              <li><a href="" title="Search"></a></li>
+              <li><a href="" title="Photos"></a></li>
+           </ul>
+       </div>
+ 
+       <div id="contenido">
+           <a>Contenido</a>
+       <div id="principal">
+           <a>Princiapl</a>
+       </div>
+ 
+       <div id="secundario">
+           <a>Panel secundatio</a>
+       </div>
+       </div>
+ 
+       <div id="pie">
+           <a>Pie de Pagina</a>
+       </div>
+      <h:form>
+    <h:commandButton value="cerrar session" action="#{mbSession.cerrarSession()}"/>
+    </h:form>
+    </h:body>
+</html>
+
