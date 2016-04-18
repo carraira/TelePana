@@ -19,6 +19,12 @@ and open the template in the editor.
   width: 15%;
 }
 
+#menu .menu-icon{
+    padding: 18px 28px;
+    background: dimgray;
+    color: darkgray;
+}
+
 ul#navigation{
     margin: 0px;
     padding: 0px;
@@ -26,7 +32,7 @@ ul#navigation{
     left: 0px;
     list-style: none;
     z-index:9999;
-    background-color: silver;
+    background-color: #AFAFAF;
     width: 250px;
 }
 
@@ -60,6 +66,8 @@ ul#navigation li a:hover {
     border-radius: 5px;
     
 }
+
+
 
 ul#navigation .home a{
     background-image: url(../../images/medico.png);
