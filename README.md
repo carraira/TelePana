@@ -1,5 +1,4 @@
-# TelePana-v1.1
-# TelePana-v1.0
+# TelePana-v1.2
 Proyecto Final TelePana En avances v1.0
 Fecha de actualizacion 12 de abril del 2016
 
