@@ -8,37 +8,91 @@
     <h:head>
          <title>Menu Principal</title>
          <link rel="stylesheet" href="public/css/styleframe.css" type="text/css"></link>
+        <script>
+    /**
+    * Array con las imagenes que se iran mostrando en la web
+    */
+    var imagenes=new Array(
+        'images/Estilos.png',
+        'images/Glucosamina.png',
+        'images/masajes.jpg',
+        'images/corazon.jpg',
+        'images/vaso.jpg'
+    );
+ 
+    /**
+    * Funcion para cambiar la imagen
+    */
+    function rotarImagenes()
+    {
+        // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
+        var index=Math.floor((Math.random()*imagenes.length));
+ 
+        // cambiamos la imagen
+        document.getElementById("imagen").src=imagenes[index];
+    }
+    
+  
+    /**
+    * Función que se ejecuta una vez cargada la página
+    */
+    onload=function()
+    {
+        // Cargamos una imagen aleatoria
+        rotarImagenes();
+ 
+        // Indicamos que cada 5 segundos cambie la imagen
+        setInterval(rotarImagenes,10000);
+    }
+    </script>
+         
+         
     </h:head>
-    <h:body>
+    <h:body id="body">
        
        <div id="cabecera">
-           <img src="images/logo2.png" ></img>
+           <h:panelGrid columns="3" cellpadding="5" style="background-color: silver; width: 20.1%;">
+               <img src="images/logo2.png" id="logo"></img>
+           </h:panelGrid>
        </div>
                 
        <div id="menu">
-          <input type="ckeckbox" id="menuToggle"></input>
+           
+          <input type="checkbox" id="menuToggle"></input>
           <label for="menuToggle" class="menu-icon">&#9776;</label>
+          
            <ul id="navigation">
-              <li class="home"><a href="" title="Home"></a></li>
-              <li><a href="" title="About"></a></li>
-              <li><a href="" title="Search"></a></li>
-              <li><a href="" title="Photos"></a></li>
+              <li class="home"><a href="#" title="Home"></a></li>
+              <li><a href="#" title="About"></a></li>
+              <li><a href="#" title="Search"></a></li>
+              <li><a href="#" title="Photos"></a></li>
            </ul>
        </div>
  
        <div id="contenido">
-           <a>Contenido</a>
-       <div id="principal">
-           <a>Princiapl</a>
-       </div>
+           <div id="principal">
+                <a>Bienvenido,</a>
+                <h:outputLabel value="#{mbSession.usuario}"></h:outputLabel> 
+            </div>
  
        <div id="secundario">
-           <a>Panel secundatio</a>
+           <a>Tip´s de Salud</a>
+           <br></br>
+           <br></br>
+           <br></br>
+           <h:panelGrid columns="1" cellpadding="1">
+               <img src="" align="center" width="400" height="400" id="imagen"></img>
+           </h:panelGrid>
+           <br></br>
+           <br></br>
+           <a >Horarios de Atención</a>
+           <br></br>
+           <a >Lunes a Domingo de 6am a 8pm</a>
        </div>
        </div>
  
        <div id="pie">
-           <a>Pie de Pagina</a>
+           <a>@ Todos los derechos reservados 2016 Telepana Inc - Terminos de Uso</a>
        </div>
       <h:form>
     <h:commandButton value="cerrar session" action="#{mbSession.cerrarSession()}"/>

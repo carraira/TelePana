@@ -9,51 +9,62 @@ and open the template in the editor.
 */
 
 #contenedor {
+  
+    
 }
 
-#cabecera {
+#cabecera{
 }
+
+#logo{
+    width:75%;
+    height:60%;
+}
+    
 
 #menu {
   float: left;
-  width: 15%;
+  width: 20%;
+  background-color: silver;
 }
 
 #menu .menu-icon{
-    padding: 18px 28px;
-    background: dimgray;
-    color: darkgray;
+    padding: 10px 20px;
+    background: #414848;
+    color: #ffffff;
+    cursor: pointer;
 }
+#menuToggle{display: none;}
+
+#menuToggle:checked ~ #menu{position: absolute;  left:0;}
 
 ul#navigation{
-    margin: 0px;
-    padding: 0px;
-    top: 10px;
-    left: 0px;
-    list-style: none;
-    z-index:9999;
-    background-color: #AFAFAF;
-    width: 250px;
+  margin: 0px;
+  padding: 0px;
+  top: 10px;
+  left: 0px;
+  list-style: none;
+  z-index:9999;
+  width: 250px;
+  background-color: silver;
+  left: -250px;
+       
 }
 
-ul#navigation li {
-    width: 100px;
-}
 ul#navigation li a {
     display: block;
-    margin-left: -2px;
+    margin-left: 0px;
     width: 250px;
     height: 150px;    
-    background-color:#ffffff;
     background-repeat:no-repeat;
     background-position:center center;
-    border:1px solid #ffffff;
-    -moz-border-radius:0px 10px 10px 0px;
+    /*border:1px solid #ffffff;
+    /*-moz-border-radius:0px 10px 10px 0px;
     -webkit-border-bottom-right-radius: 10px;
     -webkit-border-top-right-radius: 10px;
     -khtml-border-bottom-right-radius: 10px;
     -khtml-border-top-right-radius: 10px;
-    /*-moz-box-shadow: 0px 4px 3px #000;
+    -moz-box-shadow: 0px 4px 3px #000;
     -webkit-box-shadow: 0px 4px 3px #000;
     */
     opacity: 0.6;
@@ -66,8 +77,6 @@ ul#navigation li a:hover {
     border-radius: 5px;
     
 }
-
-
 
 ul#navigation .home a{
     background-image: url(../../images/medico.png);
@@ -91,22 +100,34 @@ ul#navigation .contact a    {
     background-image: url(../images/mail.png);
 }
 
+#body{
+   background-color: lavender; 
+}
+
+
 #contenido {
   float: left;
-  width: 85%;
-  background-color: lightgray;
+  width: 70%;
+
 }
 
 #contenido #principal {
   float: left;
-  width: 80%;
+  width: 65%;
+  font-family: sans-serif;
+  font-size: 30pt;
+  color: #414848;
 }
 
 #contenido #secundario {
   float: left;
-  width: 20%;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 15pt;
+  width: 30%;
 }
 
 #pie {
+  text-align: center;
   clear: both;
 }
