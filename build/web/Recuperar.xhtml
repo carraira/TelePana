@@ -14,25 +14,18 @@
         #barra{
             border-radius: 17px; border: 0; overflow-style: auto;
         }
-        #del{
-            background-position: center;
-            alignment-adjust: central;
-            text-align: center;
-            vertical-align: central;
-            
-        }
     </style>
-    <h:head  id="del">
+    <h:head>
         <title>Recuperar Contraseña</title>
-        <h:panelGrid id="barra" columns="3" style=" margin-left:  2%; width: 95%; background-color: #999999; ">
+         <h:panelGrid   columns="3" style=" width: 100%; height:40%;  background-color: silver;" >
+             <h:panelGrid id="barra" columns="3" style="  width: 95%; background-color: #999999; ">
              <img src="images/logo2.png" id="imag" ></img>
              </h:panelGrid>
+    </h:panelGrid>
+        
     </h:head>
     
     <h:body id="body">
-        
-        <h:form >
-            
         <h:panelGrid  columns="3" style=" font-size: medium; width: 100%; height: 100%; background-color: lavender; " >
         
             <h:panelGrid columns="1" cellpadding="10" style=" width: 35%; height: 90%; background-color:  silver; ">
@@ -51,15 +44,13 @@
                    requiredMessage=" Correo Necesario "/>
                    <h:outputLabel value="          "></h:outputLabel>
                    <h:panelGrid columns="2"  cellpadding="9" >
-                  
+                   
                     <p:commandButton style=" border-width: 3px; border-color:  cadetblue;
                     font-size: small;  background-color: aliceblue; height: 30px;width: 100px;" value="Enviar" action="#{mbLogin.login()}"></p:commandButton>
-                  <p:commandButton  ajax="false"  immediate="true" style=" border-width: 3px; border-color:  cadetblue;
-                                     border-width: 2px; border-color:  cadetblue; font-size: small; background-color: aliceblue; 
-                                     height: 30px;width: 100px;" value="Volver" action="#{mbSession.cerrarSession()}"/>
+                   <p:commandButton  immediate="true" ajax="true" style=" border-width: 3px; border-color:  cadetblue;
+                                     border-color:  cadetblue; font-size: small; background-color: aliceblue; 
+                                     height: 30px;width: 100px;" value="Volver" action="#{mbSession.cerrarSession()}"/>    
                    </h:panelGrid>         
-                   <br></br>
-                   <br></br>
                    <br></br>
                    <br></br>
                    <br></br>
@@ -72,7 +63,6 @@
         <h:outputLabel style=" color: lavender; " value="___________" ></h:outputLabel>   
         <h:outputLabel value="Copyright 2014-2016 TelePana Consulta Medica,Inc Todos los Derechos Reservados." />
     </h:panelGrid>
-    </h:form>    
     </h:body>
     
 </html>

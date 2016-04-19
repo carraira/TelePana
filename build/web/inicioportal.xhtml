@@ -51,12 +51,10 @@
     <h:body id="body">
         <h:form>
        <div id="cabecera">
-           <h:panelGrid columns="3" cellpadding="5" style="background-color: silver; width: 20.1%;">
-               <img src="images/logo2.png" id="logo"></img>
-                
-           </h:panelGrid>
-           
-       </div>
+                <h:panelGrid columns="1" style="background-color: silver; width: 20.1%;">
+                    <img src="images/logo2.png" id="logo"></img>
+                </h:panelGrid>
+        </div>
                 
        <div id="menu">
            
@@ -64,10 +62,11 @@
           <label for="menuToggle" class="menu-icon">&#9776;</label>
           
            <ul id="navigation">
-              <li class="home"><a href="#" title="Home"></a></li>
-              <li><a href="#" title="About"></a></li>
-              <li><a href="#" title="Search"></a></li>
-              <li><a href="#" title="Photos"></a></li>
+              <li class="perfil"><a href="#" title="Perfil"></a></li>
+              <li class="estadistica"><a href="#" title="Estadistica"></a></li>
+              <li class="historial"><a href="#" title="Historial"></a></li>
+              <li class="agendamiento"><a href="#" title="Agendamiento"></a></li>
+              <li class="medico"><a href="#" title="Medico"></a></li>
            </ul>
        </div>
  
@@ -78,17 +77,17 @@
             </div>
  
        <div id="secundario">
-           <a>Tip´s de Salud</a>
+           <a class="tiprincipal">Tip´s de Salud</a>
            <br></br>
            <br></br>
            <br></br>
            <h:panelGrid columns="1" cellpadding="1">
-               <img src="" align="center" width="300" height="300" id="imagen"></img>
+               <img src="" align="center" width="320" height="320" id="imagen"></img>
            </h:panelGrid>
            <br></br>
-           <a >Horarios de Atención</a>
+           <a class="titulo">Horarios de Atención</a>
            <br></br>
-           <a >Lunes a Domingo de 6am a 8pm</a>
+           <a class="horario">Lunes a Domingo de 6am a 8pm</a>
        </div>
        </div>
  
