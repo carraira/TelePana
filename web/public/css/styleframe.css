@@ -92,6 +92,7 @@ ul#navigation .historial a      {
     background-image: url(../../images/icohistorial.png);
     background-size: 40% 90%;
     background-position:  center;
+    animation: linear;
 }
 ul#navigation .agendamiento a      {
     background-image: url(../../images/cita.png);
