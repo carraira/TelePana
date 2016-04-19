@@ -84,4 +84,8 @@ public class MbLogin {
         return "Recuperar";
         
     }
+     public String Menu(){
+        return "inicioportal";
+        
+    }
 }
