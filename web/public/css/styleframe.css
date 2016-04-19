@@ -55,7 +55,7 @@ ul#navigation li a {
     display: block;
     margin-left: 0px;
     width: 250px;
-    height: 120px;    
+    height: 90px;    
     background-repeat:no-repeat;
     background-position:center center;
     /*border:1px solid #ffffff;
@@ -78,26 +78,30 @@ ul#navigation li a:hover {
     
 }
 
-ul#navigation .home a{
-    background-image: url(../../images/medico.png);
+ul#navigation .perfil a{
+    background-image: url(../../images/perfil.png);
+    background-size: 40% 90%;
+    background-position:  center;
 }
-ul#navigation .about a      {
-    background-image: url(../images/id_card.png);
+ul#navigation .estadistica a      {
+    background-image: url(../../images/estadis.png);
+    background-size: 40% 90%;
+    background-position:  center;
 }
-ul#navigation .search a      {
-    background-image: url(../images/search.png);
+ul#navigation .historial a      {
+    background-image: url(../../images/icohistorial.png);
+    background-size: 40% 90%;
+    background-position:  center;
 }
-ul#navigation .podcasts a      {
-    background-image: url(../images/ipod.png);
+ul#navigation .agendamiento a      {
+    background-image: url(../../images/cita.png);
+    background-size: 40% 90%;
+    background-position:  center;
 }
-ul#navigation .rssfeed a   {
-    background-image: url(../images/rss.png);
-}
-ul#navigation .photos a     {
-    background-image: url(../images/camera.png);
-}
-ul#navigation .contact a    {
-    background-image: url(../images/mail.png);
+ul#navigation .medico a      {
+    background-image: url(../../images/medicos.png);
+    background-size: 40% 90%;
+    background-position:  center;
 }
 
 #body{
@@ -108,12 +112,11 @@ ul#navigation .contact a    {
 #contenido {
   float: left;
   width: 70%;
-
 }
 
 #contenido #principal {
   float: left;
-  width: 65%;
+  width: 75%;
   font-family: sans-serif;
   font-size: 28pt;
   color: #414848;
@@ -121,10 +124,25 @@ ul#navigation .contact a    {
 
 #contenido #secundario {
   float: left;
+  width: 25%;
+}
+
+#contenido #secundario .tiprincipal{
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 25pt;
+}
+
+#contenido #secundario .titulo{
   text-align: center;
   font-family: sans-serif;
   font-size: 15pt;
-  width: 30%;
+}
+
+#contenido #secundario .horario{
+  text-align: right;
+  font-family: sans-serif;
+  font-size: 10pt;
 }
 
 #pie {
