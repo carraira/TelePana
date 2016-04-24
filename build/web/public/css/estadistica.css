@@ -13,11 +13,28 @@ and open the template in the editor.
     
 }
 
-#logo{
-    width:75%;
-    height:60%;
+#cabecera {
+  float: left;
+  width: 100%;
+  
 }
+
+#cabecera0{
+     float: left;
+     width: 30%;
+     
+}
+
+#cabecera1{
+     float: left;
+     width: 40%
+}
+
+#cabecera2{
+     float: left;
+     width: 20%;
     
+}
 
 #body{
    background-color: #999999; 
