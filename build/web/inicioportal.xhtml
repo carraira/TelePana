@@ -50,12 +50,32 @@
     </h:head>
     <h:body id="body">
         <h:form>
-       <div id="cabecera">
-                <h:panelGrid columns="1" style="background-color: silver; width: 20.1%;">
-                    <img src="images/logo2.png" id="logo"></img>
-                </h:panelGrid>
+        <div id="cabecera">
+                <div id="cabecera0">
+                    <table cellspacing="10">
+                        <tr>
+                            <td rowspan="2"><img src="images/logo2.png" width="60%" align="center"></img></td>
+                        </tr>
+                    </table>                                      
+                 </div>
+                <div id="cabecera1">
+                    <a>.</a>
+                </div>
+                <div id="cabecera2">
+                    <table cellspacing="10">
+                        <tr>
+                            <td rowspan="2"><img src="images/engrage.png" width="20px"></img></td>
+                            <td rowspan="2" cellpadding="30"><strong style="font-family: sans-serif;">Ajustes</strong></td>
+                            <td rowspan="2"><img src="images/foto.png" width="60px"></img></td>
+                            <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong style="font-family: sans-serif;">Mi Perfil</strong></td>
+                        </tr>
+                    </table>
+                    
+              </div>
         </div>
-                
        <div id="menu">
            
           <input type="checkbox" id="menuToggle"></input>
