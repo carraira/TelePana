@@ -13,14 +13,26 @@ and open the template in the editor.
     
 }
 
-#cabecera{
+#cabecera {
+  float: left;
+  width: 100%;
+  
 }
 
-#logo{
-    width:75%;
-    height:60%;
+#cabecera0{
+     float: left;
+     width: 30%;
 }
-    
+
+#cabecera1{
+     float: left;
+     width: 40%
+}
+
+#cabecera2{
+     float: left;
+     width: 20%;
+}
 
 #menu {
   float: left;
