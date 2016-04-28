@@ -16,5 +16,6 @@ import javax.ejb.Local;
 public interface autentificarBeanLocal {
 
     public boolean autentico();
+   
     
 }
