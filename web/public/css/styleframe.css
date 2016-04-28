@@ -16,7 +16,8 @@ and open the template in the editor.
 #cabecera {
   float: left;
   width: 100%;
-  
+background-color: silver;
+border-bottom-right-radius: 10%;
 }
 
 #cabecera0{

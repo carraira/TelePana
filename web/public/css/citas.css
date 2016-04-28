@@ -16,34 +16,38 @@ and open the template in the editor.
 #cabecera {
   float: left;
   width: 100%;
-  
+  background-color: buttonshadow;
 }
 
 #cabecera0{
      float: left;
      width: 40%;
-     
+     background-color: buttonshadow;
+     background-image: url('images/medicosmano.png');
 }
 
 #cabecera1{
      float: left;
-     width: 30%
+     width: 30%;
+     background-color: buttonshadow;    
 }
 
 #cabecera2{
      float: left;
      width: 30%;
-    
+    background-color: buttonshadow;
 }
 
 #body{
-   background-color: #999999; 
+   background-color: #999999;
+   
 }
 
 
 #contenido {
   float: left;
   width: 100%;
+  
 }
 
 #contenido .ttuloprin{
