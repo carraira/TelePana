@@ -9,6 +9,7 @@
     </h:head>
     <h:body id="body">
         <h:form>
+            
         <div id="cabecera">
                 <div id="cabecera0">
                     <table cellspacing="10">
@@ -35,15 +36,19 @@
                     
               </div>
         </div>
+           
         <div id="contenido">
-           <a class="ttuloprin"><center>Estadisticas de Salud y Bienestar</center></a>
+           
+            <a class="ttuloprin"><center>Estadisticas de Salud y Bienestar</center></a>
            <a><center>__________________________________________________________________________________________________________</center></a>
            <br></br>
            <a class="descriprin"><center>La salud es lo mas importante, realiza un chequeo personal sobre los habitos alimenticios, ejercicios y enfermedades</center></a>
            <br></br>
            <a><center>__________________________________________________________________________________________________________</center></a>
            <br></br>
+           
            <div id="principal">
+            
                <img class="subtitulos" src="images/med2.png" width="35px"></img><a>Datos de Diagnostico</a>
                <br></br>
                <div class="campos">
@@ -79,6 +84,7 @@
                     <br></br>
                     <br></br>
                 </div>
+               
                <img class="subtitulos" src="images/med1.png" width="35px"></img><a>Antecedentes Familiares</a>
                <br></br>
                <div class="campos">
@@ -110,7 +116,7 @@
                     <br></br>
                 </div>
             </div>
- 
+            
        <div id="secundario">
            <a class="titulo"><center>Diagrama Predictivo de Salud</center></a>
            <br></br>
@@ -132,8 +138,15 @@
            <br></br>
            <br></br>
            <div>
-               <form method="get" action=""></form>
-               <button class="botones">Generar Reporte</button>
+               
+               
+               <p:commandButton ajax="false"  
+                                     style=" border-width: 3px; border-color:  #3a7999;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: royalblue;
+                                     height: 50px;width: 150px;" 
+                                     value="Generar Reporte" />
+              
            </div>
            <br></br>
            <br></br>
@@ -160,17 +173,16 @@
            <table cellpadding="50">
                         <tr>
                             <td> 
-                                <form method="get" action=""></form>
-                                <p:commandButton ajax="False"   
+                                
+                                <p:commandButton ajax="false"  
                                      style=" border-width: 3px; border-color:  cadetblue;
                                      border-width: 2px; border-color:  cadetblue; 
                                      font-size: small; background-color: royalblue;
                                      height: 50px;width: 150px;" 
                                      value="Volver" 
-                                     action="#{mbLogin.Menu1()}"/>
+                                     action="#{mbLogin.Menu()}"/>
                             </td>
                             <td>
-                               <form method="get" action=""></form>
                                <p:commandButton ajax="false"  
                                      style=" border-width: 3px; border-color:  #3a7999;
                                      border-width: 2px; border-color:  cadetblue; 
@@ -193,7 +205,9 @@
            <a class="ttuloprin"><center>Nota: Toda la información que se encuentra aqui servira para la consulta del usuario con un especialista si es requerido</center></a>
            <a><center>__________________________________________________________________________________________________________</center></a>
            <a>@ Todos los derechos reservados 2016 Telepana Inc - Terminos de Uso</a>
-       </div>
+       </div> 
+            
+            
     </h:form>
     </h:body>
 </html>
