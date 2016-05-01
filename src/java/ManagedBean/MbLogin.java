@@ -90,7 +90,7 @@ public class MbLogin {
     }
      
      public String Menu1(){
-        return "inicioportal.xhtml";
+        return "inicioportal";
         
     }
 }
