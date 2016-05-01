@@ -1,12 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
          <title>Citas</title>
          <link rel="stylesheet" href="public/css/citas.css" type="text/css"></link>
     </h:head>
-    <h:body id="body">
+    <h:body  id="body" >
         <h:form>
         <div id="cabecera">
                 <div id="cabecera0">
@@ -61,7 +62,8 @@
                         <label>2. Fecha cita medica</label>
                     <br></br>
                     <br></br>
-                        <input type="date" class="campos-alinear"></input>
+                        <p:outputLabel for="inline" value="Escoja Fecha:" />
+                        <p:calendar id="inline" value="#{calendario.date1}" mode="inline" />
                     <br></br>
                     <br></br>
                     <br></br>
@@ -88,11 +90,22 @@
                         <tr>
                             <td> 
                                 <form method="get" action=""></form>
-                                 <button class="botones">Volver</button>
+                                 <p:commandButton ajax="false"  
+                                     style=" border-width: 3px; border-color:  cadetblue;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: royalblue;
+                                     height: 50px;width: 150px;" 
+                                     value="Volver" 
+                                     action="#{mbLogin.Menu()}"/>
                             </td>
                             <td>
                                <form method="get" action=""></form>
-                               <button class="botones">Agendar</button> 
+                               <p:commandButton ajax="false"  
+                                     style=" border-width: 3px; border-color:  #3a7999;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: royalblue;
+                                     height: 50px;width: 150px;" 
+                                     value="Agendar" />
                             </td>
                         </tr>
                     </table>

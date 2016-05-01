@@ -90,12 +90,15 @@ and open the template in the editor.
 #contenido #secundario {
   float: left;
   width: 70%;
+  
 }
 
 #contenido #secundario .tiprincipal{
   text-align: center;
   font-family: sans-serif;
   font-size: 25pt;
+  margin-left: 20px;
+  border-color:  #D84530;
 }
 
 #contenido #secundario .titulo{

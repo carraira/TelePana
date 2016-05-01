@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
          <title>Estadistica</title>
          <link rel="stylesheet" href="public/css/estadistica.css" type="text/css"></link>
@@ -156,14 +157,29 @@
            <br></br>
            <br></br>
            <br></br>
-           <div>
-               <form method="get" action=""></form>
-               <button class="botones">Volver</button>
-           </div>
-           <div>
-               <form method="get" action=""></form>
-               <button class="botones">Actualizar</button>
-           </div>
+           <table cellpadding="50">
+                        <tr>
+                            <td> 
+                                <form method="get" action=""></form>
+                                <p:commandButton ajax="False"   
+                                     style=" border-width: 3px; border-color:  cadetblue;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: royalblue;
+                                     height: 50px;width: 150px;" 
+                                     value="Volver" 
+                                     action="#{mbLogin.Menu1()}"/>
+                            </td>
+                            <td>
+                               <form method="get" action=""></form>
+                               <p:commandButton ajax="false"  
+                                     style=" border-width: 3px; border-color:  #3a7999;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: royalblue;
+                                     height: 50px;width: 150px;" 
+                                     value="Agendar" />
+                            </td>
+                        </tr>
+                    </table>
            
        </div>
        </div>

@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <title>Mi Perfil TelePana</title>
+    <style type="text/css">
+        
+        #head{
+            width: 75%;
+            height: 20%;
+            background-color: #9999ff;
+        }
+
+        #panelprinc{
+            background-color:   #9999ff; 
+            width: 75%; 
+            height: 100%;
+            float: left;
+            
+        }
+        #panelsecu{
+            background-color:  #ccccff;
+            float: top;
+            width: 25%;
+            height: 100%;
+            text-align: center;
+           
+        }
+        
+        #log1{
+           width: 60%; height: 50%;
+        }
+        
+        
+        #panlboton1{
+            background-color:   #9999ff;
+            float: left;
+        }
+        #body{
+            background:   #ccccff;
+        }
+        
+
+
+    </style>
+
+   
+    <h:head  id="del">
+        <title>Mi Perfil</title>
+        <h:panelGrid id="head" columns="3"   cellpadding="10">
+            <img  style=" width: 25%; height: 50%" src="images/logo2.png"  ></img>
+            <img style=" width: 15%; height: 30%" src="images/perfil.png" ></img>
+
+       </h:panelGrid>
+        
+    </h:head>
+    <h:body id="body">
+        
+             <h:panelGrid id="panelprinc" >
+                   
+                 <h:panelGrid id="panlboton1" columns="3"   cellpadding="20">
+                      <h:form >  
+                          <br></br>
+                          <br></br>
+                          <table  width="80" cellspacing="1" cellpadding="5">
+                              <thead>
+                                  <tr>
+                                      <th>
+                  <p:outputLabel    value="Primer Apellido: "  style=" float: left;" ></p:outputLabel>                         
+                  <p:inputText  pt:placeholder="" value="#{mbLogin.usuario}" 
+                   style=" border-width: 2px; border-color: cornflowerblue; padding-bottom: 8px; 
+                   padding-left: 10px; padding-top: 5px; 
+                   background-repeat:  no-repeat;" ></p:inputText></th>
+                   <th> <p:outputLabel    value="Segundo Apellido: "  style=" float: left;" ></p:outputLabel>                         
+                  <p:inputText  pt:placeholder="" value="#{mbLogin.usuario}" 
+                   style=" border-width: 2px; border-color: cornflowerblue; padding-bottom: 8px; 
+                   padding-left: 10px; padding-top: 5px; 
+                   background-repeat:  no-repeat;" ></p:inputText></th>
+                   <th> <p:outputLabel    value="Primer Nombre: "  style=" float: left;" ></p:outputLabel>                         
+                  <p:inputText  pt:placeholder="" value="#{mbLogin.usuario}" 
+                   style=" border-width: 2px; border-color: cornflowerblue; padding-bottom: 8px; 
+                   padding-left: 10px; padding-top: 5px; 
+                   background-repeat:  no-repeat;" ></p:inputText></th>
+                   
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                  </tr>
+                                  <tr>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                  </tr>
+                                  <tr>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                  </tr>
+                                  <tr>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                  </tr>
+                                  <tr>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                  </tr>
+                                  <tr>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                  </tr>
+                                  <tr>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+
+                         
+                   <p:inputText  pt:placeholder="" value="#{mbLogin.usuario}" 
+                   style=" border-width: 2px; border-color: cornflowerblue; padding-bottom: 11px; 
+                   padding-left: 50px; padding-top: 5px; 
+                   background-repeat:  no-repeat;" ></p:inputText>     
+                     
+                     <br></br>
+                     <br></br>
+                     <br></br>
+                     
+           
+                     <br></br>
+                     <br></br>
+                     <br></br>
+                     <br></br>
+                    
+                     <br></br>
+                     <br></br>
+                     <br></br>
+                     <br></br>
+                     <br></br>
+                     <br></br>
+                     <br></br>
+                     <br></br>
+                     <br></br>
+                    <p:commandButton ajax="false"  
+                                     style=" border-width: 3px; border-color:  cadetblue;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: aliceblue; 
+                                     height: 30px;width: 100px;" 
+                                     value="Volver" 
+                                     action="#{mbLogin.Menu()}"/>
+                     
+                     </h:form>
+                      <center><a>@ Todos los derechos reservados 2016 Telepana Inc - Terminos de Uso</a></center>
+                 </h:panelGrid>
+                 
+             </h:panelGrid>
+                        <table cellspacing="10">
+                                    <tr>
+                                        <td rowspan="2"><img src="images/engrage.png" width="20px"></img></td>
+                                        <td rowspan="2" cellpadding="30"><strong style="font-family: sans-serif;">Ajustes</strong></td>
+                                        <td rowspan="2"><img src="images/foto.png" width="60px"></img></td>
+                                        <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
+                                    </tr>
+                                    <tr>
+                                            <td><strong style="font-family: sans-serif;">Mi Perfil</strong></td>
+                                    </tr>
+                        </table>
+                            <h:panelGrid id="panelsecu"  columns="1">
+                                
+                               
+                                
+                                
+                          </h:panelGrid>
+        
+       
+   
+    </h:body>
+</html>
+
+
