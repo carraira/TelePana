@@ -1,18 +1,21 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
          <title>Estadistica</title>
          <link rel="stylesheet" href="public/css/estadistica.css" type="text/css"></link>
     </h:head>
     <h:body id="body">
         <h:form>
+            
         <div id="cabecera">
                 <div id="cabecera0">
                     <table cellspacing="10">
                         <tr>
                             <td rowspan="2"><img src="images/logo2.png" width="60%" align="center"></img></td>
+                            <td rowspan="2"><img src="images/estadis.png" width="40%" align="center"></img></td>
                         </tr>
                     </table>                                      
                  </div>
@@ -34,15 +37,19 @@
                     
               </div>
         </div>
+           
         <div id="contenido">
-           <a class="ttuloprin"><center>Estadisticas de Salud y Bienestar</center></a>
+           
+            <a class="ttuloprin"><center>Estadisticas de Salud y Bienestar</center></a>
            <a><center>__________________________________________________________________________________________________________</center></a>
            <br></br>
            <a class="descriprin"><center>La salud es lo mas importante, realiza un chequeo personal sobre los habitos alimenticios, ejercicios y enfermedades</center></a>
            <br></br>
            <a><center>__________________________________________________________________________________________________________</center></a>
            <br></br>
+           
            <div id="principal">
+            
                <img class="subtitulos" src="images/med2.png" width="35px"></img><a>Datos de Diagnostico</a>
                <br></br>
                <div class="campos">
@@ -78,6 +85,7 @@
                     <br></br>
                     <br></br>
                 </div>
+               
                <img class="subtitulos" src="images/med1.png" width="35px"></img><a>Antecedentes Familiares</a>
                <br></br>
                <div class="campos">
@@ -109,7 +117,7 @@
                     <br></br>
                 </div>
             </div>
- 
+            
        <div id="secundario">
            <a class="titulo"><center>Diagrama Predictivo de Salud</center></a>
            <br></br>
@@ -131,8 +139,15 @@
            <br></br>
            <br></br>
            <div>
-               <form method="get" action=""></form>
-               <button class="botones">Generar Reporte</button>
+               
+               
+               <p:commandButton ajax="false"  
+                                     style=" border-width: 3px; border-color:  #3a7999;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: royalblue;
+                                     height: 50px;width: 150px;" 
+                                     value="Generar Reporte" />
+              
            </div>
            <br></br>
            <br></br>
@@ -156,14 +171,28 @@
            <br></br>
            <br></br>
            <br></br>
-           <div>
-               <form method="get" action=""></form>
-               <button class="botones">Volver</button>
-           </div>
-           <div>
-               <form method="get" action=""></form>
-               <button class="botones">Actualizar</button>
-           </div>
+           <table cellpadding="50">
+                        <tr>
+                            <td> 
+                                
+                                <p:commandButton ajax="false"  
+                                     style=" border-width: 3px; border-color:  cadetblue;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: royalblue;
+                                     height: 50px;width: 150px;" 
+                                     value="Volver" 
+                                     action="#{mbLogin.Menu()}"/>
+                            </td>
+                            <td>
+                               <p:commandButton ajax="false"  
+                                     style=" border-width: 3px; border-color:  #3a7999;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: royalblue;
+                                     height: 50px;width: 150px;" 
+                                     value="Agendar" />
+                            </td>
+                        </tr>
+                    </table>
            
        </div>
        </div>
@@ -177,7 +206,9 @@
            <a class="ttuloprin"><center>Nota: Toda la información que se encuentra aqui servira para la consulta del usuario con un especialista si es requerido</center></a>
            <a><center>__________________________________________________________________________________________________________</center></a>
            <a>@ Todos los derechos reservados 2016 Telepana Inc - Terminos de Uso</a>
-       </div>
+       </div> 
+            
+            
     </h:form>
     </h:body>
 </html>

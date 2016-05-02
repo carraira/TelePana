@@ -4,7 +4,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 19-abr-2016, 1:01:29
+    Created on : 27-abr-2016, 22:52:25
     Author     : carlo
 */
 
@@ -16,34 +16,38 @@ and open the template in the editor.
 #cabecera {
   float: left;
   width: 100%;
-  
+  background-color: buttonshadow;
 }
 
 #cabecera0{
      float: left;
      width: 40%;
-     
+     background-color: buttonshadow;
+     background-image: url('images/medicosmano.png');
 }
 
 #cabecera1{
      float: left;
-     width: 30%
+     width: 30%;
+     background-color: buttonshadow;    
 }
 
 #cabecera2{
      float: left;
      width: 30%;
-    
+    background-color: buttonshadow;
 }
 
 #body{
-   background-color: #999999; 
+   background-color: #999999;
+   
 }
 
 
 #contenido {
   float: left;
   width: 100%;
+  
 }
 
 #contenido .ttuloprin{
@@ -83,31 +87,12 @@ and open the template in the editor.
 }
 
 #contenido #principal .campos-alinear{
-    margin-left: 100px;
-    
+    margin-left: 14px;
+    height: 25px;
+        
 }
 
-#contenido #secundario {
-  float: left;
-  width: 70%;
-  
-}
-
-#contenido #secundario .tiprincipal{
-  text-align: center;
-  font-family: sans-serif;
-  font-size: 25pt;
-  margin-left: 20px;
-  border-color:  #D84530;
-}
-
-#contenido #secundario .titulo{
-  
-  font-family: sans-serif;
-  font-size: 15pt;
-  color: #414848;
-}
-#contenido #secundario .botones{
+#contenido #principal .botones{
   
          border: none;
          background: #3a7999;
@@ -118,15 +103,35 @@ and open the template in the editor.
          position: relative;
          box-sizing: border-box;
          transition: all 500ms ease;
-         float: right;
-         margin-right: 150px;
+         float: left;
+         width: 200px;
 }
+
+#contenido #secundario {
+  float: left;
+  width: 70%;
+}
+
+#contenido #secundario .tiprincipal{
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 25pt;
+}
+
+#contenido #secundario .titulo{
+  
+  font-family: sans-serif;
+  font-size: 15pt;
+  color: #414848;
+}
+
 #contenido #secundario .lista{
   
   font-family: sans-serif;
   font-size: 10pt;
   color: #414848;
-  margin-left: 150px;
+  margin-left: 65px;
+  height: 25px;
 }
 
 #contenido #secundario .horario{
