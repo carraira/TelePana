@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 public class MbSession {
  
     private String usuario;
+    private String CerrarSession;
     private final HttpServletRequest httpServletRequest;
     private final FacesContext faceContext;
     private FacesMessage facesMessage;
@@ -49,5 +50,14 @@ public class MbSession {
  
     public void setUsuario(String usuario) {
         this.usuario = usuario;
-    }    
+    }
+
+    public String getcerrarSession() {
+        return usuario;
+    }
+ 
+    public void setcerrarSession(String CerrarSession) {
+        this.CerrarSession = CerrarSession;
+    }  
+    
 }
