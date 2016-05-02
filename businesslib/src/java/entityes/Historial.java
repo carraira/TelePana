@@ -6,26 +6,63 @@
 
 package entityes;
 
-
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
-
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author cabjr_000
  */
-
-public class Historial {
-   
+@Entity
+@Table(name = "HISTORIAL", catalog = "", schema = "ADMTELE")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Historial.findAll", query = "SELECT h FROM Historial h"),
+    @NamedQuery(name = "Historial.findByCodHistorial", query = "SELECT h FROM Historial h WHERE h.codHistorial = :codHistorial"),
+    @NamedQuery(name = "Historial.findByFechaHistorial", query = "SELECT h FROM Historial h WHERE h.fechaHistorial = :fechaHistorial"),
+    @NamedQuery(name = "Historial.findByPrescripcionHis", query = "SELECT h FROM Historial h WHERE h.prescripcionHis = :prescripcionHis"),
+    @NamedQuery(name = "Historial.findByComentUsHistorial", query = "SELECT h FROM Historial h WHERE h.comentUsHistorial = :comentUsHistorial"),
+    @NamedQuery(name = "Historial.findByNumDiagnostico", query = "SELECT h FROM Historial h WHERE h.numDiagnostico = :numDiagnostico"),
+    @NamedQuery(name = "Historial.findByNumAdjunto", query = "SELECT h FROM Historial h WHERE h.numAdjunto = :numAdjunto"),
+    @NamedQuery(name = "Historial.findByMedConsulta", query = "SELECT h FROM Historial h WHERE h.medConsulta = :medConsulta")})
+public class Historial implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "COD_HISTORIAL")
     private Long codHistorial;
-    
-    @Temporal(javax.persistence.TemporalType.DATE)
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "FECHA_HISTORIAL")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fechaHistorial;
-    
-    private String comentariosHis;
-    
-    
+    @Size(max = 200)
+    @Column(name = "PRESCRIPCION_HIS")
+    private String prescripcionHis;
+    @Size(max = 300)
+    @Column(name = "COMENT_US_HISTORIAL")
+    private String comentUsHistorial;
+    @Size(max = 10)
+    @Column(name = "NUM_DIAGNOSTICO")
+    private String numDiagnostico;
+    @Size(max = 10)
+    @Column(name = "NUM_ADJUNTO")
+    private String numAdjunto;
+    @Column(name = "MED_CONSULTA")
+    private Long medConsulta;
 
     public Historial() {
     }
@@ -55,14 +92,69 @@ public class Historial {
         this.fechaHistorial = fechaHistorial;
     }
 
-    public String getComentariosHis() {
-        return comentariosHis;
+    public String getPrescripcionHis() {
+        return prescripcionHis;
     }
 
-    public void setComentariosHis(String comentariosHis) {
-        this.comentariosHis = comentariosHis;
+    public void setPrescripcionHis(String prescripcionHis) {
+        this.prescripcionHis = prescripcionHis;
     }
 
-    
+    public String getComentUsHistorial() {
+        return comentUsHistorial;
+    }
+
+    public void setComentUsHistorial(String comentUsHistorial) {
+        this.comentUsHistorial = comentUsHistorial;
+    }
+
+    public String getNumDiagnostico() {
+        return numDiagnostico;
+    }
+
+    public void setNumDiagnostico(String numDiagnostico) {
+        this.numDiagnostico = numDiagnostico;
+    }
+
+    public String getNumAdjunto() {
+        return numAdjunto;
+    }
+
+    public void setNumAdjunto(String numAdjunto) {
+        this.numAdjunto = numAdjunto;
+    }
+
+    public Long getMedConsulta() {
+        return medConsulta;
+    }
+
+    public void setMedConsulta(Long medConsulta) {
+        this.medConsulta = medConsulta;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (codHistorial != null ? codHistorial.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Historial)) {
+            return false;
+        }
+        Historial other = (Historial) object;
+        if ((this.codHistorial == null && other.codHistorial != null) || (this.codHistorial != null && !this.codHistorial.equals(other.codHistorial))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "entityes.Historial[ codHistorial=" + codHistorial + " ]";
+    }
     
 }

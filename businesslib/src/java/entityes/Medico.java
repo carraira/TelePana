@@ -6,25 +6,58 @@
 
 package entityes;
 
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author cabjr_000
  */
-
-public class Medico {
-    
+@Entity
+@Table(name = "MEDICO", catalog = "", schema = "ADMTELE")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Medico.findAll", query = "SELECT m FROM Medico m"),
+    @NamedQuery(name = "Medico.findByCodMedico", query = "SELECT m FROM Medico m WHERE m.codMedico = :codMedico"),
+    @NamedQuery(name = "Medico.findByTipoEspMedico", query = "SELECT m FROM Medico m WHERE m.tipoEspMedico = :tipoEspMedico"),
+    @NamedQuery(name = "Medico.findByUnivMedico", query = "SELECT m FROM Medico m WHERE m.univMedico = :univMedico"),
+    @NamedQuery(name = "Medico.findByPuntajeMed", query = "SELECT m FROM Medico m WHERE m.puntajeMed = :puntajeMed"),
+    @NamedQuery(name = "Medico.findByExtMedico", query = "SELECT m FROM Medico m WHERE m.extMedico = :extMedico"),
+    @NamedQuery(name = "Medico.findByDescripcionMedico", query = "SELECT m FROM Medico m WHERE m.descripcionMedico = :descripcionMedico"),
+    @NamedQuery(name = "Medico.findByCodUsuario", query = "SELECT m FROM Medico m WHERE m.codUsuario = :codUsuario")})
+public class Medico implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "COD_MEDICO")
     private Long codMedico;
-    
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 50)
+    @Column(name = "TIPO_ESP_MEDICO")
     private String tipoEspMedico;
-   
+    @Size(max = 50)
+    @Column(name = "UNIV_MEDICO")
     private String univMedico;
-    
-    private Short extMedico;
-    
+    @Column(name = "PUNTAJE_MED")
     private Short puntajeMed;
-    
-   
+    @Column(name = "EXT_MEDICO")
+    private Short extMedico;
+    @Size(max = 200)
+    @Column(name = "DESCRIPCION_MEDICO")
+    private String descripcionMedico;
+    @Column(name = "COD_USUARIO")
+    private Long codUsuario;
 
     public Medico() {
     }
@@ -62,6 +95,14 @@ public class Medico {
         this.univMedico = univMedico;
     }
 
+    public Short getPuntajeMed() {
+        return puntajeMed;
+    }
+
+    public void setPuntajeMed(Short puntajeMed) {
+        this.puntajeMed = puntajeMed;
+    }
+
     public Short getExtMedico() {
         return extMedico;
     }
@@ -70,15 +111,45 @@ public class Medico {
         this.extMedico = extMedico;
     }
 
-    public Short getPuntajeMed() {
-        return puntajeMed;
+    public String getDescripcionMedico() {
+        return descripcionMedico;
     }
 
-    public void setPuntajeMed(Short puntajeMed) {
-        this.puntajeMed = puntajeMed;
+    public void setDescripcionMedico(String descripcionMedico) {
+        this.descripcionMedico = descripcionMedico;
     }
-    
 
-    
+    public Long getCodUsuario() {
+        return codUsuario;
+    }
+
+    public void setCodUsuario(Long codUsuario) {
+        this.codUsuario = codUsuario;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (codMedico != null ? codMedico.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Medico)) {
+            return false;
+        }
+        Medico other = (Medico) object;
+        if ((this.codMedico == null && other.codMedico != null) || (this.codMedico != null && !this.codMedico.equals(other.codMedico))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "entityes.Medico[ codMedico=" + codMedico + " ]";
+    }
     
 }

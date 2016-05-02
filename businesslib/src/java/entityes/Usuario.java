@@ -6,51 +6,124 @@
 
 package entityes;
 
-
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
-
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author cabjr_000
  */
-
-public class Usuario {
- 
+@Entity
+@Table(name = "USUARIO", catalog = "", schema = "ADMTELE")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u"),
+    @NamedQuery(name = "Usuario.findByIdUsuario", query = "SELECT u FROM Usuario u WHERE u.idUsuario = :idUsuario"),
+    @NamedQuery(name = "Usuario.findByTipoId", query = "SELECT u FROM Usuario u WHERE u.tipoId = :tipoId"),
+    @NamedQuery(name = "Usuario.findByLogin", query = "SELECT u FROM Usuario u WHERE u.login = :login"),
+    @NamedQuery(name = "Usuario.findByEstadoCUsuario", query = "SELECT u FROM Usuario u WHERE u.estadoCUsuario = :estadoCUsuario"),
+    @NamedQuery(name = "Usuario.findByTipoUsuario", query = "SELECT u FROM Usuario u WHERE u.tipoUsuario = :tipoUsuario"),
+    @NamedQuery(name = "Usuario.findByContrase\u00f1a", query = "SELECT u FROM Usuario u WHERE u.contrase\u00f1a = :contrase\u00f1a"),
+    @NamedQuery(name = "Usuario.findByFechaNacimiento", query = "SELECT u FROM Usuario u WHERE u.fechaNacimiento = :fechaNacimiento"),
+    @NamedQuery(name = "Usuario.findByEdad", query = "SELECT u FROM Usuario u WHERE u.edad = :edad"),
+    @NamedQuery(name = "Usuario.findBySexoUsuario", query = "SELECT u FROM Usuario u WHERE u.sexoUsuario = :sexoUsuario"),
+    @NamedQuery(name = "Usuario.findByCorreoUsuario", query = "SELECT u FROM Usuario u WHERE u.correoUsuario = :correoUsuario"),
+    @NamedQuery(name = "Usuario.findByDireccionUsuario", query = "SELECT u FROM Usuario u WHERE u.direccionUsuario = :direccionUsuario"),
+    @NamedQuery(name = "Usuario.findByIdSkype", query = "SELECT u FROM Usuario u WHERE u.idSkype = :idSkype"),
+    @NamedQuery(name = "Usuario.findByTelefonoUsuario", query = "SELECT u FROM Usuario u WHERE u.telefonoUsuario = :telefonoUsuario"),
+    @NamedQuery(name = "Usuario.findByApellidoPUsuario", query = "SELECT u FROM Usuario u WHERE u.apellidoPUsuario = :apellidoPUsuario"),
+    @NamedQuery(name = "Usuario.findByApellidoMUsuario", query = "SELECT u FROM Usuario u WHERE u.apellidoMUsuario = :apellidoMUsuario"),
+    @NamedQuery(name = "Usuario.findByPNombreUsuario", query = "SELECT u FROM Usuario u WHERE u.pNombreUsuario = :pNombreUsuario"),
+    @NamedQuery(name = "Usuario.findBySNombreUsuario", query = "SELECT u FROM Usuario u WHERE u.sNombreUsuario = :sNombreUsuario"),
+    @NamedQuery(name = "Usuario.findByDescripcionUsuario", query = "SELECT u FROM Usuario u WHERE u.descripcionUsuario = :descripcionUsuario"),
+    @NamedQuery(name = "Usuario.findByCodPostal", query = "SELECT u FROM Usuario u WHERE u.codPostal = :codPostal")})
+public class Usuario implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "ID_USUARIO")
     private Long idUsuario;
-    
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 3)
+    @Column(name = "TIPO_ID")
     private String tipoId;
-    
+    @Size(max = 20)
+    @Column(name = "LOGIN")
     private String login;
-    
+    @Size(max = 10)
+    @Column(name = "ESTADO_C_USUARIO")
     private String estadoCUsuario;
-    
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 10)
+    @Column(name = "TIPO_USUARIO")
     private String tipoUsuario;
-    
-    private String contrasena;
-    
-    @Temporal(javax.persistence.TemporalType.DATE)
+    @Lob
+    @Column(name = "FOTO_USUARIO")
+    private Serializable fotoUsuario;
+    @Size(max = 10)
+    @Column(name = "CONTRASE\u00d1A")
+    private String contraseña;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "FECHA_NACIMIENTO")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fechaNacimiento;
-    
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "EDAD")
     private short edad;
-    
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "SEXO_USUARIO")
     private char sexoUsuario;
-   
+    @Size(max = 30)
+    @Column(name = "CORREO_USUARIO")
     private String correoUsuario;
+    @Size(max = 60)
+    @Column(name = "DIRECCION_USUARIO")
     private String direccionUsuario;
+    @Size(max = 20)
+    @Column(name = "ID_SKYPE")
+    private String idSkype;
+    @Column(name = "TELEFONO_USUARIO")
     private Long telefonoUsuario;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 60)
+    @Column(name = "APELLIDO_P_USUARIO")
     private String apellidoPUsuario;
-   
+    @Size(max = 60)
+    @Column(name = "APELLIDO_M_USUARIO")
     private String apellidoMUsuario;
-    
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 60)
+    @Column(name = "P_NOMBRE_USUARIO")
     private String pNombreUsuario;
-    
+    @Size(max = 60)
+    @Column(name = "S_NOMBRE_USUARIO")
     private String sNombreUsuario;
-    
+    @Size(max = 200)
+    @Column(name = "DESCRIPCION_USUARIO")
     private String descripcionUsuario;
-   
- 
+    @Column(name = "COD_POSTAL")
+    private Integer codPostal;
 
     public Usuario() {
     }
@@ -110,12 +183,20 @@ public class Usuario {
         this.tipoUsuario = tipoUsuario;
     }
 
-    public String getContrasena() {
-        return contrasena;
+    public Serializable getFotoUsuario() {
+        return fotoUsuario;
     }
 
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
+    public void setFotoUsuario(Serializable fotoUsuario) {
+        this.fotoUsuario = fotoUsuario;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 
     public Date getFechaNacimiento() {
@@ -156,6 +237,14 @@ public class Usuario {
 
     public void setDireccionUsuario(String direccionUsuario) {
         this.direccionUsuario = direccionUsuario;
+    }
+
+    public String getIdSkype() {
+        return idSkype;
+    }
+
+    public void setIdSkype(String idSkype) {
+        this.idSkype = idSkype;
     }
 
     public Long getTelefonoUsuario() {
@@ -206,9 +295,37 @@ public class Usuario {
         this.descripcionUsuario = descripcionUsuario;
     }
 
-    
+    public Integer getCodPostal() {
+        return codPostal;
+    }
 
-  
- 
+    public void setCodPostal(Integer codPostal) {
+        this.codPostal = codPostal;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (idUsuario != null ? idUsuario.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Usuario)) {
+            return false;
+        }
+        Usuario other = (Usuario) object;
+        if ((this.idUsuario == null && other.idUsuario != null) || (this.idUsuario != null && !this.idUsuario.equals(other.idUsuario))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "entityes.Usuario[ idUsuario=" + idUsuario + " ]";
+    }
     
 }
