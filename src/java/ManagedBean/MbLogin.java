@@ -93,4 +93,8 @@ public class MbLogin {
         return "inicioportal";
         
     }
+     public String logon(){
+        return "index";
+        
+    } 
 }
