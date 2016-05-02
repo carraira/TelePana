@@ -62,15 +62,38 @@
                     <a>.</a>
                 </div>
                 <div id="cabecera2">
-                    <table cellspacing="10">
+                    <table cellspacing="20">
                         <tr>
                             <td rowspan="2"><img src="images/engrage.png" width="20px"></img></td>
-                            <td rowspan="2" cellpadding="30"><strong style="font-family: sans-serif;">Ajustes</strong></td>
+                            <td rowspan="2" cellpadding="30"><strong style="font-family: sans-serif;">
+                              <ul class="menu-perfil">
+                                    <li>
+                                        <a href="#" style="font-family: sans-serif;">Ajustes<span class="flecha"></span></a>
+                                        <ul>
+                                            <li>
+                                                <a href="Ajustes.xhtml">Configuración de Cuenta</a>
+                                            </li>                                                               
+                                        </ul>
+                                    </li>                                                               
+                                </ul>
+                                </strong>    
+                            </td>
                             <td rowspan="2"><img src="images/foto.png" width="50px"></img></td>
                             <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
                         </tr>
                         <tr>
-                            <td><strong style="font-family: sans-serif;">Mi Perfil</strong></td>
+                            <td>
+                                <ul class="menu-perfil">
+                                    <li>
+                                        <a href="Perfil.xhtml" style="font-family: sans-serif;">Mi Perfil<span class="flecha"></span></a>
+                                        <ul>
+                                            <li>
+                                                <a href="index.xhtml" value="#{mbSession.cerrarSession()}">Cerrar Sesión</a>
+                                            </li>                                                               
+                                        </ul>
+                                    </li>                                                               
+                                </ul>
+                            </td>
                         </tr>
                     </table>
                     
