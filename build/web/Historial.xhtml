@@ -5,85 +5,11 @@
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <link rel="stylesheet" href="public/css/historystyle.css" type="text/css"></link>
     <script type="text/javascript" src="js/jquery.js"></script>
     <title>Historial Medico</title>
-    <style type="text/css">
-        
-        #head{
-            width: 75%;
-            height: 20%;
-            background-color: #9999ff;
-        }
-
-        #panelprinc{
-            background-color:   #9999ff; 
-            width: 75%; 
-            height: 100%;
-            float: left;
-            
-        }
-        #panelsecu{
-            background-color:  #ccccff;
-            float: top;
-            width: 25%;
-            height: 100%;
-            text-align: center;
-           
-        }
-        
-        #log1{
-           width: 60%; height: 50%;
-        }
-        
-        
-        #panlboton1{
-            background-color:   #9999ff;
-            float: left;
-        }
-        #body{
-            background:   #ccccff;
-        }
-        #carousel {
-	width:255px;
-	height:290px;	
-	margin:0 auto;
-}
-
-#slides {
-	overflow:hidden;
-	/* fix ie overflow issue */
-	position:relative;
-	width:250px;
-	height:250px;
-	border:1px solid #ccc;
-}
-
-/* remove the list styles, width : item width * total items */	
-#slides ul {
-	position:relative;
-	left:0;
-	top:0;
-	list-style:none;
-	margin:0;
-	padding:0;	
-	width:750px;			
-}
-
-/* width of the item, in this case I put 250x250x gif */
-#slides li {
-	width:250px;
-	height:250px;	
-	float:left;
-        
-}
-
-#slides li img {
-	padding:5px;
-        
-}
-
-/* Styling for prev and next buttons */
-#buttons {
+    <style>
+    #buttons {
 	padding:0 0 20px 0;	
 	margin: 0 auto;
         display: table;
@@ -115,7 +41,8 @@ a#next:hover {
 }
 
 .clear {clear:both}
-    </style>
+    
+</style>
 <script>
 $(document).ready(function() {
 
@@ -203,18 +130,27 @@ function rotate() {
    
     <h:head  id="del">
         <title>Recuperar Contraseña</title>
-        <h:panelGrid id="head" columns="3"   cellpadding="10">
-            <img  style=" width: 30%; height: 60%" src="images/logo2.png"  ></img>
-            <img style=" width: 20%; height: 40%" src="images/icohistorial.png" ></img>
+        <h:panelGrid id="head2" columns="5"   cellpadding="5">
+            <img  style=" width: 25%; height: 50%" src="images/logo2.png"  ></img>
+            <img style=" width: 15%; height: 30%" src="images/icohistorial.png" ></img>
+            
+                                    
+                        <td rowspan="2"><img src="images/engrage.png" width="15px"></img></td>
+                        <td rowspan="2" cellpadding="5"><strong style="font-family: sans-serif;">Ajustes</strong></td>
+                        <td rowspan="2"><img  style=" float:  right;" src="images/foto.png" width="80px"></img></td>
+                        <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
+                        <td><strong style="font-family: sans-serif;">Mi Perfil</strong></td>
+                                   
+                       
 
        </h:panelGrid>
         
     </h:head>
-    <h:body id="body">
+    <h:body id="body2">
         
-             <h:panelGrid id="panelprinc" >
+             <h:panelGrid id="panelprinc2" >
                    
-                  <h:panelGrid id="panlboton1" >
+                  <h:panelGrid id="panlboton2" >
                       <h:form >  
                           <br></br>
                           <br></br>
@@ -271,41 +207,28 @@ function rotate() {
                  </h:panelGrid>
                  
              </h:panelGrid>
-                        <table cellspacing="10">
-                                    <tr>
-                                        <td rowspan="2"><img src="images/engrage.png" width="20px"></img></td>
-                                        <td rowspan="2" cellpadding="30"><strong style="font-family: sans-serif;">Ajustes</strong></td>
-                                        <td rowspan="2"><img src="images/foto.png" width="60px"></img></td>
-                                        <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
-                                    </tr>
-                                    <tr>
-                                            <td><strong style="font-family: sans-serif;">Mi Perfil</strong></td>
-                                    </tr>
-                        </table>
-                            <h:panelGrid id="panelsecu"  columns="1">
+        
+                       
+             <h:panelGrid id="panelsecu1"  columns="1">
                                 
                                <h:outputLabel   style="font-size: 25px; " value="Tu Historial Importancias : "></h:outputLabel>
                                <br></br>
                                 <div class="clear"></div>
 
-                                <div id="slides"> 
-                                        <ul>
-                                                <li><img src="images/slide1.gif" width="240" height="240" alt="Slide 1"/></li>
-                                                <li><img src="images/slide2.gif" width="240" height="240" alt="Slide 2"/></li>
-                                                <li><img src="images/slide3.gif" width="240" height="240" alt="Slide 3"/></li>
-                                        </ul>
-                                        <div class="clear"></div>
-                                        
-                                </div>
-                                <div id="buttons">
-                                        <a href="#" id="prev">Anterior</a>
-                                        <a href="#" id="next">Siguiente</a>
-                                        <div class="clear"></div>
-                                </div>
-                          </h:panelGrid>
-        
-       
-   
+                            <div id="slides"> 
+                        <ul>    
+                                <li><img src="images/slide1.gif" width="240" height="240" alt="Slide 1"/></li>
+                                <li><img src="images/slide2.gif" width="240" height="240" alt="Slide 2"/></li>
+                                <li><img src="images/slide3.gif" width="240" height="240" alt="Slide 3"/></li>
+                        </ul>
+                              <div class="clear"></div>
+                            </div>
+                            <div id="buttons">
+                                <a href="#" id="prev">Anterior</a>
+                                <a href="#" id="next">Siguiente</a>
+                                <div class="clear"></div>
+                            </div>
+             </h:panelGrid>
     </h:body>
 </html>
 

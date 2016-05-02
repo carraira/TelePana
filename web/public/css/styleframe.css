@@ -43,7 +43,7 @@ border-bottom-right-radius: 10%;
 
 #menu .menu-icon{
     padding: 10px 20px;
-    background: #414848;
+    background: silver;
     color: #ffffff;
     cursor: pointer;
 }
@@ -61,7 +61,7 @@ ul#navigation{
   width: 250px;
   background-color: silver;
   left: -250px;
-       
+     
 }
 
 ul#navigation li a {
@@ -85,8 +85,8 @@ ul#navigation li a {
 }
 
 ul#navigation li a:hover {
-    background-color: #7C96B7;
-    color: #AFAFAF;
+    background-color: orange;
+    color:  buttonshadow;
     border-radius: 5px;
     
 }

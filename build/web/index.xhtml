@@ -3,92 +3,79 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-
       xmlns:p="http://primefaces.org/ui">
-    <style type="text/css">
-
-
-        #panel{
-
-            background:   silver;
-            height:   530px;
-            width: 350px;
-            float:  left;
-            text-align: justify;
-
-
-        }
-
-        #conten{
-            margin: 30px;
-        }
-
-        #tops {
-            float:  inside;
-            background:  #999999;
-            border-color: aliceblue;
-            border: activecaption;
-            margin: 0px;
-            border-radius: 17px;
-            height: 20px;
-            width: 1200px;
-            border: 0;
-            overflow-style: auto;
-        }
-
-        #imag{
-            width: 200px;
-            height: 100px;
-        }
-        #body{
-            background:   lavender;
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="public/css/logeo.css" type="text/css"></link>
     <h:head>
         <title>TelePana Consulta Medica</title>
         <h:panelGrid id="tops" >
-            <img src="images/logo2.png" id="imag" ></img>
+            <img src="images/logo2.png" id="image1" ></img>
         </h:panelGrid>
     </h:head>
 
-    <h:panelGrid   id="panel">
-        <h:body id="body">
-            <h:form class="formulario">
-                <div id ="conten" >  
-                    <h:outputLabel value="Log Usuario: "/>
-                    <p:inputText  id="idu" required="true" pt:placeholder="Usuario" value="#{mbLogin.usuario}" 
-                                  style=" text-align:  justify;   background-position: 0 -30px !important; padding-bottom: 11px; 
-                                  padding-left: 50px; padding-top: 11px;
-                                  background-repeat:  no-repeat; display:  block; background-image: url('images/icons.png')"  
-                                  requiredMessage="Usuario requerido o vacio"/>
-
-                    <p:message  for="idu"  style=" color: aqua"/>
-                    <p><p:password  id="contraseña" required="true"  requiredMessage="Contraseña Requerida o Vacia" pt:placeholder="Contraseña" value="#{mbLogin.contrasenia}"  style=" text-align: justify;   background-position: 0 -70px !important; padding-bottom: 11px; 
-                                    padding-left: 50px; padding-top: 11px;
-                                    background-repeat:  no-repeat; display:  block; background-image: url('images/icons.png')" /></p>
-
-                    <p:message  for="contraseña" /> 
-                    <h:commandLink  immediate="true" id="link" action="#{mbLogin.Recuperar()}" value="Olvide la Contraseña" style=" text-decoration: none; text-shadow:  initial; "></h:commandLink>
-                    <section class="seccionBotones">
-                        <h:panelGrid columns="2" cellpadding="10" >
-                            <p:commandButton  update="body" ajax="false" style=" border-width: 3px; border-color:  cadetblue;
-                                              font-size: small;  background-color: aliceblue; height: 30px;width: 100px;" value="INGRESO" action="#{mbLogin.login()}" />
-                            <p:commandButton immediate="true" ajax="false" style=" border-width: 3px; border-color:  cadetblue;
-                                             border-width: 3px; border-color:  cadetblue; font-size: small; background-color: aliceblue;  ; height: 30px;width: 100px;" 
-                                             value="REGISTRAR"  action="#{mbLogin.registrar()}"/>
-                        </h:panelGrid>
-                    </section>
-                </div> 
-            </h:form>
-            <br />
-        </h:body>
+ <h:panelGrid   id="panel1">
+   <h:body id="body1">          
+     <h:form >
+       <h:messages  globalOnly="false" infoStyle="color:red;list-style:none;" errorStyle="color:red;list-style:none;"></h:messages>
+         <div id ="conten1" >  
+                   <h:outputLabel value="Log Usuario: "/>
+                        <p:inputText  id="idu1" required="true" pt:placeholder="Usuario" value="#{mbLogin.usuario}" 
+                                      style=" text-align:  justify;  
+                                      background-position: 0 -30px !important; 
+                                      padding-bottom: 11px; 
+                                      padding-left: 50px; 
+                                      padding-top: 11px;
+                                      background-repeat:  no-repeat; 
+                                      display:  block; 
+                                      background-image: url('images/icons.png')"  
+                                      requiredMessage="Usuario requerido o vacio"/> 
+                                      <p:message  for="idu1"  style=" color: aqua"/>
+                                      
+                        <p><p:password  id="contra1" required="true"  requiredMessage="Contraseña Requerida o Vacia" 
+                                       pt:placeholder="Contraseña" value="#{mbLogin.contrasenia}" 
+                                       style=" text-align: justify;   
+                                       background-position: 0 -70px !important; 
+                                       padding-bottom: 11px; 
+                                       padding-left: 50px; 
+                                       padding-top: 11px;
+                                       background-repeat:  no-repeat; 
+                                       display:  block; 
+                                       background-image: url('images/icons.png')" /></p>
+                                       <p:message  for="contra1" /> 
+                                       
+ <h:commandLink  immediate="true" id="link" action="#{mbLogin.Recuperar()}" 
+                 value="Olvide la Contraseña" 
+                 style=" text-decoration: none; 
+                 text-shadow:  initial; "></h:commandLink>
+                  
+                 <h:panelGrid columns="2" cellpadding="10" >
+                            <p:commandButton   id="bto1" update="body" ajax="false" 
+                                       style=" border-width: 3px; 
+                                       border-color:  cadetblue;
+                                       font-size: small;  
+                                       background-color: aliceblue; 
+                                       height: 30px;width: 100px;" 
+                                       value="INGRESO" action="#{mbLogin.login()}" />
+                            <p:commandButton immediate="true" ajax="false" 
+                                       style=" border-width: 3px; 
+                                       border-color:  cadetblue;
+                                       border-width: 3px; 
+                                       border-color:  cadetblue; 
+                                       font-size: small; 
+                                       background-color: aliceblue;   
+                                       height: 30px;
+                                       width: 100px;" 
+                                       value="REGISTRAR"  action="#{mbLogin.registrar()}"/>
+                 </h:panelGrid>
+           </div> 
+        </h:form>
+       <br />
+     </h:body>
     </h:panelGrid>
-    <div style="  vertical-align: middle;  width: 500px; height: 500px; float: left; " >
-        <img src="images/sabias.png" style=" text-align: center; float: right; width: 300px; height: 300px; margin-top: 70px;"></img>
-    </div>
-    <div style="  float: left; width: 1000px; alignment-adjust:  central; margin-left: 100px; ">
+                <div id="imag1" >
+                    <img id="imasab" src="images/sabias.png" 
+                         ></img>
+                </div>
+    <div id="pie1" >
         <h:outputLabel   value="Copyright 2014-2016 TelePana Consulta Medica,Inc Todos los Derechos Reservados." />
     </div>
 

@@ -5,11 +5,11 @@
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:p="http://primefaces.org/ui">
     <style type="text/css">
-        #body{
+        #body3{
             background-color: lavender;
         }
         #imag{
-            width: 20%; height: 50%;                
+            width: 20%; height: 47%;                
         }
         #barra{
             border-radius: 17px; border: 0; overflow-style: auto;
@@ -21,21 +21,31 @@
             vertical-align: central;
             
         }
+        
+         #imag3{
+            vertical-align: middle;  width: 500px; height: 450px; float: left; 
+        }
+        #imasab2{
+            text-align: center; float: right; 
+                         width: 250px; height: 250px; 
+                         margin-top: 70px;
+        }
     </style>
     <h:head  id="del">
         <title>Recuperar Contraseña</title>
         <h:panelGrid id="barra" columns="3" style=" margin-left:  2%; width: 95%; background-color: #999999; ">
              <img src="images/logo2.png" id="imag" ></img>
+              
              </h:panelGrid>
     </h:head>
     
-    <h:body id="body">
+    <h:body id="body3">
         
         <h:form >
             
-        <h:panelGrid  columns="3" style=" font-size: medium; width: 100%; height: 100%; background-color: lavender; " >
+        <h:panelGrid  columns="3" style=" font-size: medium; width: 100%; height: 90%; background-color: lavender; " >
         
-            <h:panelGrid columns="1" cellpadding="10" style=" width: 35%; height: 90%; background-color:  silver; ">
+            <h:panelGrid columns="1" cellpadding="10" style=" width: 35%; height: 80%; background-color:  silver; ">
               
                 <h2><h:outputLabel style=" font-size: 25px; " value="¿ Olvido la Contraseña ?"></h:outputLabel></h2>
                 <br></br>
@@ -56,7 +66,7 @@
                     font-size: small;  background-color: aliceblue; height: 30px;width: 100px;" value="Enviar" action="#{mbLogin.login()}"></p:commandButton>
                   <p:commandButton  ajax="false"  immediate="true" style=" border-width: 3px; border-color:  cadetblue;
                                      border-width: 2px; border-color:  cadetblue; font-size: small; background-color: aliceblue; 
-                                     height: 30px;width: 100px;" value="Volver" action="#{mbSession.cerrarSession()}"/>
+                                     height: 30px;width: 100px;" value="Volver" action="#{mbLogin.logon()}"/>
                    </h:panelGrid>         
                    <br></br>
                    <br></br>
@@ -66,9 +76,15 @@
                    <br></br>
                    <br></br>
         </h:panelGrid>       
-                      
+                  <div id="imag3" >
+                    <img id="imasab2" src="images/sabias2.png" 
+                         ></img>
+                     
+
+                </div>    
        </h:panelGrid>
-        <h:panelGrid  columns="2" style=" width: 100%; height: 10%;">
+             
+        <h:panelGrid  columns="2" style=" width: 100%; height: 8%;">
         <h:outputLabel style=" color: lavender; " value="___________" ></h:outputLabel>   
         <h:outputLabel value="Copyright 2014-2016 TelePana Consulta Medica,Inc Todos los Derechos Reservados." />
     </h:panelGrid>

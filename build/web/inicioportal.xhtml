@@ -66,7 +66,7 @@
                         <tr>
                             <td rowspan="2"><img src="images/engrage.png" width="20px"></img></td>
                             <td rowspan="2" cellpadding="30"><strong style="font-family: sans-serif;">Ajustes</strong></td>
-                            <td rowspan="2"><img src="images/foto.png" width="60px"></img></td>
+                            <td rowspan="2"><img src="images/foto.png" width="50px"></img></td>
                             <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
                         </tr>
                         <tr>
@@ -82,10 +82,10 @@
           <label for="menuToggle" class="menu-icon">&#9776;</label>
           
            <ul id="navigation">
-              <li class="perfil"><a href="#" title="Perfil"></a></li>
+              <li class="perfil"><a href="Perfil.xhtml" title="Perfil"></a></li>
               <li class="estadistica"><a href="estadistica.xhtml" title="Estadistica"></a></li>
               <li class="historial"><a href="Historial.xhtml" title="Historial"></a></li>
-              <li class="agendamiento"><a href="#" title="Agendamiento"></a></li>
+              <li class="agendamiento"><a href="citas.xhtml" title="Agendamiento"></a></li>
               <li class="medico"><a href="#" title="Medico"></a></li>
            </ul>
        </div>
@@ -94,6 +94,9 @@
            <div id="principal">
                 <a>Bienvenido,</a>
                 <h:outputLabel value="#{mbSession.usuario}"></h:outputLabel> 
+                
+                <p:chart type="line" model="#{datosChart.areaModel}" style="height:300px; width: 50%;" />
+
             </div>
  
        <div id="secundario">
