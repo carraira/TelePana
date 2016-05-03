@@ -1,0 +1,48 @@
+/*
+
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 3/05/2016, 10:21:49 AM
+    Author     : cabjr_000
+*/
+
+#bodyper  {
+background: #AED6F1;
+}
+
+#formp{
+}
+
+#tblTest1{
+   width: 80%;
+   float: left;
+   background-color: #D4DEDF;
+   overflow:scroll;
+}
+#titu2{
+   
+   border-left-style: dashed;
+}
+#cabeza1{
+    background-color: #D4DEDF;
+    width: 80%
+}
+
+
+
+/*#PanelPrinc1{
+     width: 80%;
+     float: left;
+     height: 100%;
+     background-color: #D84530;
+}*/
+/*#PanelPrinc2{
+    
+    width: 20%;
+     float: left;
+     height: 100%;
+     background-color: #D6EAF8;
+}*/

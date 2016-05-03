@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
          <title>Estadistica</title>
          <link rel="stylesheet" href="public/css/estadistica.css" type="text/css"></link>
@@ -121,34 +122,34 @@
        <div id="secundario">
            <a class="titulo"><center>Diagrama Predictivo de Salud</center></a>
            <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <div>
-               
-               
-               <p:commandButton ajax="false"  
-                                     style=" border-width: 3px; border-color:  #3a7999;
+           <table  align="center"  width="20">
+               <thead>
+                   <tr>
+                       <th> <p:chart type="pie" model="#{chartEstadistica.pieModel2}" 
+                                     style=" color:  blue; background: dimgrey; width:400px;height:400px" /></th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr>
+                       <td>  <p:commandButton ajax="false"  
+                                     style=" float:  right; border-width: 3px; border-color:  #3a7999;
                                      border-width: 2px; border-color:  cadetblue; 
                                      font-size: small; background-color: royalblue;
                                      height: 50px;width: 150px;" 
-                                     value="Generar Reporte" />
-              
-           </div>
+                                     value="Generar Reporte" /></td>
+                   </tr>
+               </tbody>
+           </table>
+
+           <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
+
            <br></br>
            <br></br>
            <br></br>
@@ -164,11 +165,6 @@
                           <option value="7">7 días a la semana</option> 
                     </select>
            </div>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
            <br></br>
            <br></br>
            <table cellpadding="50">
@@ -200,9 +196,7 @@
        <div id="pie">
            <br></br>
            <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
+
            <a class="ttuloprin"><center>Nota: Toda la información que se encuentra aqui servira para la consulta del usuario con un especialista si es requerido</center></a>
            <a><center>__________________________________________________________________________________________________________</center></a>
            <a>@ Todos los derechos reservados 2016 Telepana Inc - Terminos de Uso</a>
