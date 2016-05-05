@@ -2,190 +2,298 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <title>Mi Perfil TelePana</title>
-    <style type="text/css">
-        
-        #head{
-            width: 75%;
-            height: 20%;
-            background-color: #9999ff;
-        }
-
-        #panelprinc{
-            background-color:   #9999ff; 
-            width: 75%; 
-            height: 100%;
-            float: left;
-            
-        }
-        #panelsecu{
-            background-color:  #ccccff;
-            float: top;
-            width: 25%;
-            height: 100%;
-            text-align: center;
-           
-        }
-        
-        #log1{
-           width: 60%; height: 50%;
-        }
-        
-        
-        #panlboton1{
-            background-color:   #9999ff;
-            float: left;
-        }
-        #body{
-            background:   #ccccff;
-        }
-        
-
-
-    </style>
-
-   
-    <h:head  id="del">
+      
+    <h:head id="cabeza1">
         <title>Mi Perfil</title>
-        <h:panelGrid id="head" columns="3"   cellpadding="10">
-            <img  style=" width: 25%; height: 50%" src="images/logo2.png"  ></img>
-            <img style=" width: 15%; height: 30%" src="images/perfil.png" ></img>
-
-       </h:panelGrid>
-        
+        <link rel="stylesheet" href="public/css/PerfilStyle.css" type="text/css"></link>
     </h:head>
-    <h:body id="body">
-        
-             <h:panelGrid id="panelprinc" >
-                   
-                 <h:panelGrid id="panlboton1" columns="3"   cellpadding="20">
-                      <h:form >  
-                          <br></br>
-                          <br></br>
-                          <table  width="80" cellspacing="1" cellpadding="5">
-                              <thead>
-                                  <tr>
-                                      <th>
-                  <p:outputLabel    value="Primer Apellido: "  style=" float: left;" ></p:outputLabel>                         
-                  <p:inputText  pt:placeholder="" value="#{mbLogin.usuario}" 
-                   style=" border-width: 2px; border-color: cornflowerblue; padding-bottom: 8px; 
-                   padding-left: 10px; padding-top: 5px; 
-                   background-repeat:  no-repeat;" ></p:inputText></th>
-                   <th> <p:outputLabel    value="Segundo Apellido: "  style=" float: left;" ></p:outputLabel>                         
-                  <p:inputText  pt:placeholder="" value="#{mbLogin.usuario}" 
-                   style=" border-width: 2px; border-color: cornflowerblue; padding-bottom: 8px; 
-                   padding-left: 10px; padding-top: 5px; 
-                   background-repeat:  no-repeat;" ></p:inputText></th>
-                   <th> <p:outputLabel    value="Primer Nombre: "  style=" float: left;" ></p:outputLabel>                         
-                  <p:inputText  pt:placeholder="" value="#{mbLogin.usuario}" 
-                   style=" border-width: 2px; border-color: cornflowerblue; padding-bottom: 8px; 
-                   padding-left: 10px; padding-top: 5px; 
-                   background-repeat:  no-repeat;" ></p:inputText></th>
-                   
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                  <tr>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                  </tr>
-                                  <tr>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                  </tr>
-                                  <tr>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                  </tr>
-                                  <tr>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                  </tr>
-                                  <tr>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                  </tr>
-                                  <tr>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                  </tr>
-                                  <tr>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                  </tr>
-                              </tbody>
-                          </table>
-
-                         
-                   <p:inputText  pt:placeholder="" value="#{mbLogin.usuario}" 
-                   style=" border-width: 2px; border-color: cornflowerblue; padding-bottom: 11px; 
-                   padding-left: 50px; padding-top: 5px; 
-                   background-repeat:  no-repeat;" ></p:inputText>     
-                     
-                     <br></br>
-                     <br></br>
-                     <br></br>
-                     
-           
-                     <br></br>
-                     <br></br>
-                     <br></br>
-                     <br></br>
+    <h:body id="bodyper">
+        <h:form  id="formp">
+            
+            <table  id="tblTest1"  ><!-- logo inicial  -->
+                         <tr>
+                             <td rowspan="2"><img src="images/logo2.png" width="40%" align="center"></img></td>
+                             <td rowspan="2"><img src="images/perfil.png" width="20%"  align="left"></img></td>    
+                        </tr>
+           </table><!-- logo inicial  -->
                     
-                     <br></br>
-                     <br></br>
-                     <br></br>
-                     <br></br>
-                     <br></br>
-                     <br></br>
-                     <br></br>
-                     <br></br>
-                     <br></br>
-                    <p:commandButton ajax="false"  
-                                     style=" border-width: 3px; border-color:  cadetblue;
-                                     border-width: 2px; border-color:  cadetblue; 
-                                     font-size: small; background-color: aliceblue; 
-                                     height: 30px;width: 100px;" 
-                                     value="Volver" 
-                                     action="#{mbLogin.Menu()}"/>
-                     
-                     </h:form>
-                      <center><a>@ Todos los derechos reservados 2016 Telepana Inc - Terminos de Uso</a></center>
-                 </h:panelGrid>
-                 
-             </h:panelGrid>
-                        <table cellspacing="10">
-                                    <tr>
-                                        <td rowspan="2"><img src="images/engrage.png" width="20px"></img></td>
-                                        <td rowspan="2" cellpadding="30"><strong style="font-family: sans-serif;">Ajustes</strong></td>
-                                        <td rowspan="2"><img src="images/foto.png" width="60px"></img></td>
-                                        <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
-                                    </tr>
-                                    <tr>
-                                            <td><strong style="font-family: sans-serif;">Mi Perfil</strong></td>
-                                    </tr>
-                        </table>
-                            <h:panelGrid id="panelsecu"  columns="1">
-                                
-                               
-                                
-                                
-                          </h:panelGrid>
+            <table  id="titu2"  align="center"  cellspacing="10"><!-- menu superior derecho  -->
+                 <tr>
+                                <td rowspan="2"><img src="images/engrage.png" width="20px"></img></td>
+                                <td rowspan="2" ><strong style="font-family: sans-serif;">Ajustes</strong></td>
+                                <td rowspan="2"><img src="images/foto.png" width="50px"></img></td>
+                                <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong style="font-family: sans-serif;">Mi Perfil</strong></td>
+                            </tr>
+           </table> <!-- menu superior derecho  -->
+            
+            <!-- ============Division cuerpo 1 ===========  -->
+            
+    <h:panelGrid id="PanelPrinc1"  
+                 style=" width: 80%;
+                         float: left;
+                         
+                         background-color: #D4DEDF;
+                         text-align: center; " >
+                                 
+                        <h:panelGrid  columns="2" style=" float: left; width: 80%; " > 
+                                      <h:outputLabel value="Primer Apellido" /> 
+                                      <h:outputLabel value=" Segundo Apellido" />
+                                      <p:inputText style=" border-width: 3px; 
+                                      border-color: darkorange; width: 50%; " />
+                                      <p:inputText style=" border-width: 3px; 
+                                      border-color: darkorange; width: 50%; " />
+                        </h:panelGrid> 
+        <br></br>
+     
         
+                        <h:panelGrid  columns="3" style=" float: left; width: 80%; " > 
+                                       <h:outputLabel value=" Primer Nombre" />
+                                       <h:outputLabel value=" Segundo Nombre" /> 
+                                       <h:outputLabel value=" Fecha Nacimiento" />
+                                       <p:inputText style=" border-width: 3px; 
+                                      border-color: darkorange; width: 50%; " />
+                                       <p:inputText style=" border-width: 3px; 
+                                      border-color: darkorange; width: 50%; " />
+                                       <p:calendar id="button" value="#{calendario.date3}"  style=" border-width: 3px; 
+                                      border-color: darkorange;" showOn="button" />
+         <br></br>                              
+                        </h:panelGrid>               
+                                       <h:panelGrid  columns="3" style=" float: left; width: 80%; " >               
+                                       <p:outputLabel   value="Sexo :" />
+                                       <p:selectOneRadio id="console" style=" border-width: 3px; 
+                                      border-color: darkorange;" value="#{radios.console}">
+                                             <f:selectItem itemLabel="F"  />
+                                             <f:selectItem itemLabel="M"  />
+                                       </p:selectOneRadio>               
+                        </h:panelGrid> 
+        <br></br>
+                         <h:panelGrid  columns="2" style=" float: left; width: 80%; " > 
+                                       <p:outputLabel for="Estado1" value="Estado Civil :" />
+                                       <p:selectOneMenu id="Estado1" value="a" style=" border-width: 3px; 
+                                      border-color: darkorange; float: left; width:125px">
+                                                <f:selectItem itemLabel="Soltero" itemValue="" />
+                                                <f:selectItem itemLabel="Casado(a)" itemValue="Xbox One" />
+                                                <f:selectItem itemLabel="Viudo(a)" itemValue="PS4" /> 
+                                       </p:selectOneMenu>
+                        </h:panelGrid>
+        <br></br>           
+                        <h:panelGrid  columns="1"  >   
+                                          <p:outputLabel  style=" float: left;  " value=" Contacto :" />
+                       </h:panelGrid>
+        <br></br> 
+        
+                         <h:panelGrid  columns="2" style=" float: left; width: 80%; " > 
+                                      <h:outputLabel value="Correo Electronico" /> 
+                                      <h:outputLabel value="Telefono" />
+                                      <p:inputText style=" border-width: 3px; 
+                                      border-color: darkorange; width: 70%; " />
+                                      <p:inputText style=" border-width: 3px; 
+                                      border-color: darkorange; width: 50%; " />
+                         </h:panelGrid> 
+        <br></br>                   
+                         <h:panelGrid  columns="2" style=" float: left; width: 80%; " > 
+                                      <h:outputLabel value="Pagina " /> 
+                                      <h:outputLabel value="Usuario Skype" />
+                                      <p:inputText style=" border-width: 3px; 
+                                      border-color: darkorange; width: 70%; " />
+                                      <p:inputText style=" border-width: 3px; 
+                                      border-color: darkorange; width: 50%; " />
+                         </h:panelGrid>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br> 
+        <br></br> 
        
-   
+                         <h:panelGrid  columns="3" style=" float: left; width: 80%; " > 
+                                       <h:outputLabel value=" Direccion Domicilio" />
+                                       <p:outputLabel for="Estado2" value="Pais :" />
+                                       <p:outputLabel for="Estado3" value="Ciudad :" />
+                                       <p:inputText style=" border-width: 3px; 
+                                      border-color: darkorange; width: 80%; " />
+                                       <p:selectOneMenu id="Estado2" value="a" style=" border-width: 3px; 
+                                      border-color: darkorange; width:125px">
+                                                <f:selectItem itemLabel="Argentina" itemValue="" />
+                                                <f:selectItem itemLabel="España" itemValue="Xbox One" />
+                                                <f:selectItem itemLabel="Japon" itemValue="PS4" /> 
+                                       </p:selectOneMenu>
+                                       <p:selectOneMenu id="Estado3" value="a" style=" border-width: 3px; 
+                                      border-color: darkorange; width:125px">
+                                                <f:selectItem itemLabel="Buenos Aires" itemValue="" />
+                                                <f:selectItem itemLabel="Malaga" itemValue="Xbox One" />
+                                                <f:selectItem itemLabel="Tokyo" itemValue="PS4" /> 
+                                       </p:selectOneMenu>
+                         </h:panelGrid>            
+       <br></br>
+       <br></br>
+       <br></br>  
+         <legend> <h:outputLabel value=" Detalles Personales  "></h:outputLabel></legend>
+         <fieldset  style=" border-style: groove; border-color: black;">
+                  
+                         <h:panelGrid  columns="1" style=" padding-left: 100px; float: left; width: 80%; " > 
+                          
+                         
+                          <h:outputLabel value=" Descripcion, detalles, Jobbies, pasatiempos: "></h:outputLabel>
+                           <p:inputTextarea rows="10" 
+                                            cols="80" 
+                                            style=" border-width: 3px; 
+                                      border-color: darkorange;"
+                                            queryDelay="750" minQueryLength="4" />
+                         
+                         </h:panelGrid> 
+                </fieldset>
+       <fieldset style=" border-style: groove; border-color: black;"></fieldset>
+                    <h:panelGrid  columns="2" style="  float: left; width: 80%; " >
+                                        <input  
+                                           type="radio" 
+                                           value="d" ></input>
+                  <h:outputLabel style="  float: left; " value=" Acepta Terminos y condiciones de uso de la informacion.* "></h:outputLabel>
+           
+                      </h:panelGrid>
+       
+       <br></br>
+       
+       
+       
+           <h:panelGrid columns="2" cellspacing="40" style="float:  right;">
+               
+                    <p:commandButton  
+                                      ajax="false" 
+                                      style=" color: #ffffff; 
+                                      border-width: 3px; 
+                                      border-color: black;
+                                      font-size: small; 
+                                      background-color: dodgerblue;  
+                                      height: 30px;width: 100px;" 
+                                      value=" Volver" 
+                                      action="#{mbLogin.Menu()}"/>
+                    <p:commandButton  ajax="false"  
+                                      immediate="true" 
+                                      style=" 
+                                      color: #ffffff;
+                                      border-width: 3px; 
+                                      border-color: black;
+                                      font-size: small; 
+                                      background-color: dodgerblue; 
+                                      height: 30px;width: 100px;" 
+                                      value="Guardar" action="#{mbLogin.logon()}"/>
+                    
+                    
+                    
+                    
+                    
+             </h:panelGrid>
+                   <center><a>@ Todos los derechos reservados 2016 Telepana Inc - Terminos de Uso</a></center>
+            </h:panelGrid> <!-- ============Division cuerpo 1 ===========  -->
+             
+            <!-- ============Division cuerpo 2 ===========  -->
+            
+            <h:panelGrid id="PanelPrinc2" columns="1"  
+                         style=" width: 20%;
+                                 float: left;
+                                 height: 100%;
+                                 background-color: #AED6F1;
+                                  text-align: center; 
+                                   border-left-style: dashed;" >
+               
+ 
+                  
+                               <br></br>
+                                <div class="clear"></div>
+
+                            <div id="slides"> 
+                        <ul>    
+                                <li><img src="images/foto.png" width="200" height="200" /></li>
+                                
+                        </ul>
+                             
+                            </div>
+                                <h:outputLabel   style="font-size: 25px; " value="CORE"></h:outputLabel>
+                                 <h:outputLabel   style="font-size: 25px; " value="Cambiar Imagen Perfil"></h:outputLabel>
+                                 <br></br>
+                                 <br></br>
+                                 <br></br>
+                                <h:commandLink   style="font-size: 25px; color: black; " value=" Tipo Usuario"></h:commandLink>
+                                <p:inputText   style=" padding: 2%;
+                                              width: 30%;
+                                              text-align: center; " 
+                                              value="Paciente" 
+                                              disabled="true"></p:inputText>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br><br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         
+                         
+                         
+                                              
+            </h:panelGrid>  <!-- ============Division cuerpo 2 ===========  -->
+            
+           
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </h:form>
     </h:body>
 </html>
-
-
