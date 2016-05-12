@@ -55,6 +55,7 @@
                     <table cellspacing="10">
                         <tr>
                             <td rowspan="2"><img src="images/logo2.png" width="60%" align="center"></img></td>
+                            <h:messages infoStyle="color: blue;list-style:none;"/>
                         </tr>
                     </table>                                      
                  </div>
@@ -88,7 +89,7 @@
                                         <a href="Perfil.xhtml" style="font-family: sans-serif;">Mi Perfil<span class="flecha"></span></a>
                                         <ul>
                                             <li>
-                                                <a href="index.xhtml" value="#{mbSession.cerrarSession()}">Cerrar Sesión</a>
+                                                <h:commandLink action="#{mbSession.cerrarSession()}" value="Cerrar Sesion" />
                                             </li>                                                               
                                         </ul>
                                     </li>                                                               
