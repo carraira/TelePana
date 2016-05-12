@@ -16,17 +16,12 @@ import entityes.Usuario;
 @Stateless
 public class autentificarBean implements autentificarBeanLocal {
 
-        public boolean autentico(Usuario usuario) {
-        return false;
-    }
-
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
-
     @Override
-    public boolean autentico() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean autentico(String Us, String Cont) {
+      return "admin".equals(Us) && "pass".equals(Cont);
     }
+
     
-    
-}
+    }
+
+ 

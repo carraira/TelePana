@@ -10,23 +10,19 @@ import javax.ejb.Stateless;
 @Stateless
 public class contrasenaRecuperarEjb extends Usuario implements ContrasenaRecuperarLocal {
 
-    @Override
-  public String envioCorreoRecuperar( ) {
+      public String envioCorreoRecuperar( ) {
   return null;
   }
 
-    @Override
-  public boolean autentificarCorreo( ) {
+      public boolean autentificarCorreo( ) {
   return false;
   }
 
-    @Override
-  public String redireccionNuevoPassl( ) {
+      public String redireccionNuevoPassl( ) {
   return null;
   }
 
-    @Override
-  public boolean ingresoCorreoRecuperar( ) {
+      public boolean ingresoCorreoRecuperar( ) {
   return false;
   }
 

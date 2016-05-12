@@ -10,12 +10,9 @@ import javax.ejb.Local;
 
 /**
  *
- * @author cabjr_000
+ * @author cabjr
  */
 @Local
-public interface autentificarBeanLocal {
-
-    public boolean autentico(String Us, String Cont);
-   
-    
+public interface RecuperarContrasenaLocal {
+    public String recuperacionPassword(String Correo);
 }

@@ -15,10 +15,10 @@
  <h:panelGrid   id="panel1">
    <h:body id="body1">          
      <h:form >
-       <h:messages  globalOnly="false" infoStyle="color:red;list-style:none;" errorStyle="color:red;list-style:none;"></h:messages>
+       <h:messages  globalOnly="false" infoStyle="color:blue;list-style:none;" errorStyle="color:red;list-style:none;"></h:messages>
          <div id ="conten1" >  
                    <h:outputLabel value="Log Usuario: "/>
-                        <p:inputText  id="idu1" required="true" pt:placeholder="Usuario" value="#{mbLogin.usuario}" 
+                   <p:inputText  id="idu1" required="true" pt:placeholder="Usuario" value="#{mbLogin.us}" 
                                       style=" text-align:  justify;  
                                       background-position: 0 -30px !important; 
                                       padding-bottom: 11px; 
@@ -28,10 +28,10 @@
                                       display:  block; 
                                       background-image: url('images/icons.png')"  
                                       requiredMessage="Usuario requerido o vacio"/> 
-                                      <p:message  for="idu1"  style=" color: aqua"/>
+                                      <p:message  for="idu1"  style=" color: blue;"/>
                                       
                         <p><p:password  id="contra1" required="true"  requiredMessage="Contraseña Requerida o Vacia" 
-                                       pt:placeholder="Contraseña" value="#{mbLogin.contrasenia}" 
+                                        pt:placeholder="Contraseña" value="#{mbLogin.cont}" 
                                        style=" text-align: justify;   
                                        background-position: 0 -70px !important; 
                                        padding-bottom: 11px; 
