@@ -52,9 +52,10 @@
                 <br></br>
                 <br></br>
                 <br></br>
-                
+                <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+                <h:messages  globalOnly="false"  infoStyle="color:blue;list-style:none;" errorStyle="color:red;list-style:none;"></h:messages>
         <h:outputLabel value="Ingrese Datos: "></h:outputLabel>
-         <p:inputText  id="idu2" required="true" pt:placeholder="Correo" value="#{mbLogin.usuario}" 
+        <p:inputText  id="idu2" required="true" pt:placeholder="Correo" value="#{recuperarMB.correo}" 
                    style=" border-width: 2px; border-color: cornflowerblue; text-align:  justify;   background-position: 0 -30px !important; padding-bottom: 11px; 
                    padding-left: 50px; padding-top: 5px; 
                    background-repeat:  no-repeat; display:  block; background-image: url('images/icons.png')"  
@@ -62,8 +63,10 @@
                    <h:outputLabel value="          "></h:outputLabel>
                    <h:panelGrid columns="2"  cellpadding="9" >
                   
-                    <p:commandButton style=" border-width: 3px; border-color:  cadetblue;
-                    font-size: small;  background-color: aliceblue; height: 30px;width: 100px;" value="Enviar" action="#{mbLogin.login()}"></p:commandButton>
+                  <p:commandButton ajax="false"  style=" border-width: 3px; border-color:  cadetblue;
+                                   font-size: small;  background-color: aliceblue; height: 30px;width: 100px;" 
+                                   value="Enviar"
+                                   action="#{recuperarMB.RecuperaContrasena()}"></p:commandButton>
                   <p:commandButton  ajax="false"  immediate="true" style=" border-width: 3px; border-color:  cadetblue;
                                      border-width: 2px; border-color:  cadetblue; font-size: small; background-color: aliceblue; 
                                      height: 30px;width: 100px;" value="Volver" action="#{mbLogin.logon()}"/>

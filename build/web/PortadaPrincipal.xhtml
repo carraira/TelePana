@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head >
+        <title>TelePana Tu Consulta Medica</title>
+        <link rel="stylesheet" href="public/css/portadaPrinc.css" type="text/css"></link>
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script>
+        <script type="text/javascript" src="js/organictabs.jquery.js"></script>
+        <script>
+            $(function() {
+
+                $("#example-one").organicTabs();
+
+                $("#example-two").organicTabs({
+                    "speed": 200
+                });
+
+            });
+        </script>
+        <style>
+            a { text-decoration: #0575f4; }
+            a:focus { outline: 0; }
+
+            #page-wrap { width: 50%;  }
+
+
+            /* Generic Utility */
+            .hide { position:  absolute; top: -9999px; left: -9999px; }
+
+
+
+            #example-two .list-wrap { background: #eee; padding: 10px;  }
+
+            #example-two ul { list-style: none; }
+            #example-two ul li a { display: block; border-bottom: 1px solid #666; padding: 4px; color: #409FBA; }
+            #example-two ul li a:hover { background: coral; color: black; }
+            #example-two ul li:last-child a { border: none; }
+
+            #example-two .nav { overflow: hidden; }
+            #example-two .nav li { width: 97px; float: left; margin: 0 10px 0 0; }
+            #example-two .nav li.last { margin-right: 0; }
+            #example-two .nav li a { display: block; padding: 5px; background: #666; color: white; font-size: 10px; text-align: center; border: 0; }
+
+            #example-two li a.current,#example-two li a.current:hover { background-color: #eee !important; color: black; }
+            #example-two .nav li a:hover, #example-two .nav li a:focus { background: #999;}
+        </style>
+    </h:head>
+    <h:body id ="bodyp">
+        <h:form>
+            <div id="cabe" style="background: url('images/princ1.png') no-repeat center center ;
+                 filter: alpha(opacity=40);
+                 background-size: cover;
+                 ">
+                <br></br>
+                <div id="cabe1">
+                    <a>.</a>
+                </div>
+                <div id="cabe0" >
+                    <table border="0">
+                        <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="images/logo2.png" width="40%" align="left"></img></td>
+                            </tr>
+                            <tr>
+                                <td><a class="tituprinc">Hospital Panamericano Entidad Promotora de Salud</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+                <div id="cabe2">
+                    <table cellspacing="10">
+                        <tr>
+                            <td rowspan="1" cellpadding="20"><strong style="font-family: sans-serif;">Comienza Tu Consulta en Linea  </strong></td>
+                            <td><p:commandLink  ajax="false" value="Ingresar" action="#{mbLogin.logon()}"/>    </td>
+                        </tr>
+                        <tr>
+
+                        </tr>
+                    </table>
+
+                </div>
+                <br></br>
+                <br></br>
+                <br></br>     
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+
+
+                <a class="Titu1"><center>Tu Medico de confianza, ahora mucho mas cerca.</center></a>
+                <a class="Subt1"><center>Accede a consultas medicas personalizadas desde cualquier lugar</center></a>
+                <br></br>
+                <br></br> 
+                <br></br>
+                <br></br>
+                <br></br>
+
+
+            </div>
+
+
+
+            <div id="page-wrap">
+
+
+                <div id="example-two">
+
+                    <ul class="nav">
+                        <li class="nav-one"><a href="#featured2" class="current">Mision</a></li>
+                        <li class="nav-two"><a href="#core2">Vision</a></li>
+                        <li class="nav-three"><a href="#jquerytuts2">Valores</a></li>
+                        <li class="nav-four last"><a href="#classics2">Como Encontrarnos</a></li>
+                    </ul>
+
+                    <div class="list-wrap">
+
+                        <ul id="featured2">
+                            <li><h3>Brindar a toda la comunidad nacional e internacional la mejor atención 
+                                    médica basada en evidencia científica, investigación y contenido ético, 
+                                    acompañando al paciente y su familia; asimismo ofrecer a nuestro personal 
+                                    y profesionales un ámbito de desarrollo atractivo que favorezca su 
+                                    compromiso y sentido de pertenencia con la Institución. Garantizando 
+                                    la revisión y actualización de conocimientos, procesos, tecnologías y 
+                                    estructuras, gestionando nuestros recursos con racionalidad económica en 
+                                    forma transparente y honesta.</h3></li>
+
+
+                            <li><h3>               </h3></li>
+                            <li><h3>__________________________</h3></li>
+                        </ul>
+
+                        <ul id="core2" class="hide">
+                            <li><h3>               </h3></li>
+                            <li><h3>Ser la organización modelo en el cuidado y restablecimiento de la salud, alineada 
+                                    con nuestras tradiciones, manteniendo la excelencia en la calidad de atención y respeto 
+                                    por la dignidad de las personas.</h3></li>
+
+                            <li><h3>               </h3></li>
+                            <li><h3>__________________________</h3></li>
+                        </ul>
+
+                        <ul id="jquerytuts2" class="hide">
+                            <li><h3>               </h3></li>
+                            <li><h3> Trabajo en equipo </h3></li>
+                            <li><a>Trabajamos con una visión, respetando y valorando nuestras diferencias, fortaleciendo las relaciones interpersonales y priorizando el éxito del equipo por encima del éxito individual.</a></li>
+                            <li><h3>               </h3></li>
+                            <li><h3> Responsabilidad </h3></li>
+                            <li><a>Construimos relaciones de confianza en la ejecución de nuestras tareas orientadas al logro de los resultados esperados.
+                                    Asumimos un rol activo en nuestra labor diaria y comprendemos la trascendencia de nuestras acciones individuales y colectivas.</a></li>
+                            <li><h3>               </h3></li>
+                            <li><h3>Ética</h3></li>
+                            <li><a>Sostenemos una conducta transparente, honesta y preocupada por la dignidad de todas las personas con las que interactuamos.</a></li>
+                            <li><h3>               </h3></li>
+                            <li><h3>Compromiso</h3></li>
+                            <li><a>Asumimos nuestras tareas comprometidos con la institución, enfocando nuestro esfuerzo a brindar atención de calidad a nuestros pacientes y su familia.</a></li>
+                            <li><h3>               </h3></li>
+                            <li><h3>Eficiencia</h3></li>
+                            <li><a>Logramos nuestros objetivos utilizando procesos y métodos de trabajo que optimizan nuestro desempeño con la mejor utilización de recursos.</a></li>
+                            <li><h3>               </h3></li>
+                            <li><h3>__________________________</h3></li>
+                        </ul>
+
+                        <ul id="classics2" class="hide">
+                            <li><h3>               </h3></li>
+                            <li><h3>Comunicate</h3></li>
+                            <li><a>Telefonos:  3454567 - 24556677</a></li>
+                            <li><a>Oficinas: Bogota Medellin Cali</a></li>
+                            <li><a>Correo: Telepana@Panamericano.com</a></li>
+                            <li><h3>               </h3></li>
+                            <li><h3>__________________________</h3></li>
+                        </ul>
+
+                    </div> <!-- END List Wrap -->
+
+                </div> <!-- END Organic Tabs (Example One) -->
+
+                <img class="subtitulos" src="images/med1.png" width="35px"></img><a>Antecedentes Familiares</a>
+                <br></br>
+
+
+                <div id="secundario">
+                    <a class="titulo"><center>Diagrama Predictivo de Salud</center></a>
+                    <br></br>
+
+
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+
+                    <br></br>
+                    <br></br>
+                    <br></br>
+
+                </div>
+                <br></br>
+                <br></br>
+
+
+            </div>
+
+
+            <div id="pie">
+                <br></br>
+                <br></br>
+
+                <a class="ttuloprin"><center>Nota: Toda la información que se encuentra aqui servira para la consulta del usuario con un especialista si es requerido</center></a>
+                <a><center>__________________________________________________________________________________________________________</center></a>
+                <a>@ Todos los derechos reservados 2016 Telepana Inc - Terminos de Uso</a>
+            </div> 
+
+
+        </h:form>
+    </h:body>
+</html>
+
+
