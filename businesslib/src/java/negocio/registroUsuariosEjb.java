@@ -3,6 +3,8 @@ package negocio;
 
 import entityes.Usuario;
 import javax.ejb.Stateless;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 /**
  *
  * @author cabjr_000
@@ -10,11 +12,22 @@ import javax.ejb.Stateless;
 @Stateless
 public class registroUsuariosEjb extends Usuario implements RegistroUsuarioLocal {
 
-    @Override
-  public boolean validarUsuarioNuevo( ) {
-  return false;
+   
+  public String validarUsuarioNuevo(String user) {
+      
+      if (user == null){
+          info();
+          return null;
+      }
+      
+  return "Usuario Bien";
   }
 
+  
+  
+  
+  
+  
     @Override
   public boolean correoNuevoValida( ) {
   return false;
@@ -34,5 +47,7 @@ public class registroUsuariosEjb extends Usuario implements RegistroUsuarioLocal
   public boolean crearUsuarioConfirmado( ) {
   return false;
   }
-
+public void info() {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Usuario Necesario."));
+    }
 }

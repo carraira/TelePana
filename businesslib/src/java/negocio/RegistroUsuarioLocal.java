@@ -12,6 +12,12 @@ package negocio;
  */
 public interface RegistroUsuarioLocal {
 
+    
+    
+    public String validarUsuarioNuevo(String user);
+    
+    
+    
     String confirmarContrasena();
 
     boolean correoNuevoValida();
@@ -20,6 +26,6 @@ public interface RegistroUsuarioLocal {
 
     boolean validaAfiliacion();
 
-    boolean validarUsuarioNuevo();
+    
     
 }
