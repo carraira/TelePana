@@ -1,12 +1,285 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Facelet Title</title>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      
+    <h:head id="cabeza1">
+        <title>Medicos Perfil</title>
+        <link rel="stylesheet" href="public/css/PerfilStyle.css" type="text/css"></link>
     </h:head>
-    <h:body>
-        Hello from Facelets
+    <h:body id="bodyper">
+        <h:form  id="formp">
+            
+            <table  id="tblTest1"  ><!-- logo inicial  -->
+                         <tr>
+                             <td rowspan="2"><img src="images/logo2.png" width="40%" align="center"></img></td>
+                             <td rowspan="2"><img src="images/medicos.png" width="20%"  align="left"></img></td>    
+                        </tr>
+           </table><!-- logo inicial  -->
+                    
+            <table  id="titu2"  align="center"  cellspacing="10"><!-- menu superior derecho  -->
+                 <tr>
+                                <td rowspan="2"><img src="images/engrage.png" width="20px"></img></td>
+                                <td rowspan="2" ><strong style="font-family: sans-serif;">Ajustes</strong></td>
+                                <td rowspan="2"><img src="images/foto.png" width="50px"></img></td>
+                                <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong style="font-family: sans-serif;">Mi Perfil</strong></td>
+                            </tr>
+           </table> <!-- menu superior derecho  -->
+            
+            <!-- ============Division cuerpo 1 ===========  -->
+            
+    <h:panelGrid id="PanelPrinc1"  
+                 style=" width: 80%;
+                         float: left;
+                         
+                         background-color: antiquewhite;
+                         text-align: center; " >
+        
+        <!-- calificacion rating  -->
+    <p:growl id="messages" showDetail="true" />                   
+    <h:outputText  style= "float: left;" value="Puntaje Medico:" />
+        <p:rating value="#{calificarVista.rating3}">
+            <p:ajax event="rate" listener="#{calificarVista.onrate}" update="messages" />
+            <p:ajax event="cancel" listener="#{calificarVista.oncancel}" update="messages" />
+        </p:rating>
+     <!-- calificacion rating  -->
+        
+                        <h:panelGrid  columns="2" style=" float: left; width: 80%; " > 
+                                      <p:commandButton value="Buscar..." /> 
+                                      <p:inputText style=" border-width: 3px; 
+                                      border-color: darkorange; width: 90%; " />
+                                     
+                        </h:panelGrid> 
+        <br></br>
+     
+        
+         <br></br>                              
+                       
+        <br></br>
+                         
+        <br></br>           
+                       
+        <br></br> 
+        
+                      
+        <br></br>                   
+                        
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br> 
+        <br></br> 
+       <br></br>
+                <fieldset>
+                    <legend style="width: 80%">Resultado de Busqueda Medicos</legend>
+                    
+                    <table border="0">
+                        <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> <input  
+                                           type="radio" 
+                                           value="d" ></input></td>
+                            </tr>
+                            <tr>
+                                <td><input  
+                                           type="radio" 
+                                           value="d" ></input></td>
+                            </tr>
+                            <tr>
+                                <td><input  
+                                           type="radio" 
+                                           value="d" ></input></td>
+                            </tr>
+                            <tr>
+                                <td> <input  
+                                           type="radio" 
+                                           value="d" ></input></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                   
+                    
+                    
+                   
+                </fieldset>
+                <br></br>
+                                    
+       <br></br>
+       <br></br>
+       <br></br>  
+         
+       
+         <fieldset  style=" border-style: groove; border-color: black;">
+                  
+                         <h:panelGrid  columns="1" style=" padding-left: 100px; float: left; width: 80%; " > 
+                          
+                         
+                          <h:outputLabel value=" Detalles Medico Especialidad y Hoja de Vida "></h:outputLabel>
+                           <p:inputTextarea rows="10" 
+                                            cols="80" 
+                                            style=" border-width: 3px; 
+                                      border-color: darkorange;"
+                                            queryDelay="750" minQueryLength="4" />
+                         
+                         </h:panelGrid> 
+                </fieldset>
+       <fieldset style=" border-style: groove; border-color: black;"></fieldset>
+                  
+       
+       <br></br>
+       
+       
+       
+           <h:panelGrid columns="2" cellspacing="40" style="float:  right;">
+               
+                    <p:commandButton  
+                                      ajax="false" 
+                                      style=" color: #ffffff; 
+                                      border-width: 3px; 
+                                      border-color: black;
+                                      font-size: small; 
+                                      background-color: dodgerblue;  
+                                      height: 30px;width: 100px;" 
+                                      value=" Volver" 
+                                      action="#{mbLogin.Menu()}"/>
+                    <p:commandButton  ajax="false"  
+                                      immediate="true" 
+                                      style=" 
+                                      color: #ffffff;
+                                      border-width: 3px; 
+                                      border-color: black;
+                                      font-size: small; 
+                                      background-color: dodgerblue; 
+                                      height: 30px;width: 100px;" 
+                                      value="Guardar" action="#{mbLogin.logon()}"/>
+                    
+                    
+                    
+                    
+                    
+             </h:panelGrid>
+                   <center><a>@ Todos los derechos reservados 2016 Telepana Inc - Terminos de Uso</a></center>
+            </h:panelGrid> <!-- ============Division cuerpo 1 ===========  -->
+             
+            <!-- ============Division cuerpo 2 ===========  -->
+            
+            <h:panelGrid id="PanelPrinc2" columns="1"  
+                         style=" width: 20%;
+                                 float: left;
+                                 height: 100%;
+                                 background-color: #AED6F1;
+                                  text-align: center; 
+                                   border-left-style: dashed;" >
+               
+ 
+                  
+                               <br></br>
+                                <div class="clear"></div>
+
+                            <div id="slides"> 
+                        <ul>    
+                                <li><img src="images/foto.png" width="200" height="200" /></li>
+                                
+                        </ul>
+                             
+                            </div>
+                                <h:outputLabel   style="font-size: 25px; " value="CORE"></h:outputLabel>
+                                 <h:outputLabel   style="font-size: 25px; " value="Especialidad"></h:outputLabel>
+                                 <br></br>
+                                 <br></br>
+                                 <br></br>
+                                <h:commandLink   style="font-size: 25px; color: black; " value=" Tipo Usuario"></h:commandLink>
+                                <p:inputText   style=" padding: 2%;
+                                              width: 30%;
+                                              text-align: center; " 
+                                              value="Medico" 
+                                              disabled="true"></p:inputText>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br><br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         <br></br>
+                         
+                         
+                         
+                                              
+            </h:panelGrid>  <!-- ============Division cuerpo 2 ===========  -->
+            
+           
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </h:form>
     </h:body>
 </html>
+
 
