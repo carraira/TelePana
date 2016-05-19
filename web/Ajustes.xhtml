@@ -33,7 +33,7 @@
                   <p:outputLabel   style=" float: right;" 
                                    value="Usuario: " ></p:outputLabel>     
                  <p:inputText     pt:placeholder="Usuario" 
-                                  value="#{mbLogin.usuario}" 
+                                  value="#{mbLogin.us}" 
                                   style=" border-width: 2px; 
                                   border-color: cornflowerblue; 
                                   text-align:  justify;   
@@ -53,7 +53,7 @@
                         <p:outputLabel   style=" float: right;" value="Correo: " ></p:outputLabel>     
                         <p:inputText   required="true" 
                                        pt:placeholder="Correo" 
-                                       value="#{mbLogin.usuario}" 
+                                       value="#{mbLogin.us}" 
                                        style=" border-width: 2px; 
                                        border-color: cornflowerblue; 
                                        text-align:  justify;   
@@ -74,7 +74,7 @@
                         <p:password  required="true"  
                                      requiredMessage="Contraseña Requerida o Vacia" 
                                      pt:placeholder="Contraseña" 
-                                     value="#{mbLogin.contrasenia}"  
+                                     value="#{mbLogin.cont}"  
                                      style="  border-width: 3px; 
                                      border-color: cornflowerblue; 
                                      text-align: justify;   
@@ -93,7 +93,7 @@
                     <p:password  required="true"  
                                 requiredMessage="Contraseña Requerida o Vacia" 
                                 pt:placeholder="Contraseña" 
-                                value="#{mbLogin.contrasenia}"  
+                                value="#{mbLogin.cont}"  
                                 style=" border-width: 2px; 
                                 border-color: cornflowerblue; 
                                 text-align: justify;   
@@ -111,7 +111,7 @@
                    <p:password  required="true"  
                                 requiredMessage="Contraseña Requerida o Vacia" 
                                 pt:placeholder="Contraseña" 
-                                value="#{mbLogin.contrasenia}"  
+                                value="#{mbLogin.cont}"  
                                 style=" border-width: 2px; 
                                 border-color: cornflowerblue; 
                                 text-align: justify;   
@@ -157,7 +157,7 @@
                                       font-size: small; 
                                       background-color: aliceblue; 
                                       height: 30px;width: 100px;" 
-                                      value="Volver" action="#{mbLogin.logon()}"/>
+                                      value="Volver" action="#{menuPrincipalMB.ajusteCuenta()}"/>
              </h:panelGrid>
                     
                     </h:panelGrid>         

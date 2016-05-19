@@ -39,13 +39,12 @@
         <div id="contenido">
                 <br></br>
                 <br></br>
-                <button ajax="false"  
+                <p:commandButton  disabled="true"
                         style=" border-width: 3px; border-color: #ffffff;
                                      border-width: 2px; border-color:  background; 
                                      font-size: small; background-color: background;
                                      height: 40px;width: 300px;" 
-                                     value="Historial" 
-                                     action="#{mbLogin.Menu()}">Historial Digital</button>
+                                     value="Historial" />
                 <br></br>
                 <br></br>
                 <fieldset>
@@ -78,49 +77,50 @@
                         <tr>
                             <td> 
                                 
-                                <button ajax="false"  
+                                <p:commandButton 
                                      style=" border-width: 3px; border-color: darkorange;
                                      border-width: 2px; border-color:  cadetblue; 
                                      font-size: small; background-color: darkorange;
                                      height: 30px;width: 100px;" 
-                                     value="Nuevo" 
-                                     action="#{mbLogin.Menu()}">Nuevo</button>
+                                     value="Nuevo" />
                             </td>
                             <td>
-                               <button ajax="false"  
+                             <p:commandButton 
                                      style=" border-width: 3px; border-color:  darkorange;
                                      border-width: 2px; border-color:  cadetblue; 
                                      font-size: small; background-color: darkorange;
                                      height: 30px;width: 100px;" 
-                                     value="Ver" >Ver</button>
+                                     value="Ver" />
                             </td>
                             <td>
-                               <button ajax="false"  
+                               <p:commandButton  
                                      style=" border-width: 3px; border-color:  darkorange;
                                      border-width: 2px; border-color:  cadetblue; 
                                      font-size: small; background-color: darkorange;
                                      height: 30px;width: 100px;" 
-                                     value="Eliminar" >Eliminar</button>
+                                     value="Eliminar" />
                             </td>
                                                         <td>
-                               <button ajax="false"  
+                               <p:commandButton 
                                      style=" border-width: 3px; border-color:  darkorange;
                                      border-width: 2px; border-color:  cadetblue; 
                                      font-size: small; background-color: darkorange;
                                      height: 30px;width: 150px;" 
-                                     value="Guardar Cambios" >Guardar Cambios</button>
+                                     value="Guardar Cambios" />
                             </td>
                         </tr>
                     <tr>
-                            <td>
-                               <button ajax="false"  
-                                     style=" border-width: 3px; border-color:  darkorange;
+                        <td>
+                            
+                              <p:commandButton 
+                                     style=" border-width: 3px; border-color:  cadetblue;
                                      border-width: 2px; border-color:  cadetblue; 
-                                     font-size: small; background-color: darkorange;
-                                     height: 30px;width: 150px;" 
-                                     value="Volver" >Volver</button>
-                            </td>
-                        
+                                     font-size: small; background-color: aliceblue; 
+                                     height: 30px;width: 100px;" 
+                                     value="Volver" 
+                                     action="#{historialMB.historialPagina()}"/>
+                            
+                        </td>
                     </tr>
                     </table>
        </div>
