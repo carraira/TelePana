@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui">
+    <link rel="stylesheet" href="public/css/AjusteCuenta.css" type="text/css"></link>
+    <h:head>
+         <title>Ajustes Mi Cuenta</title>
+         <h:panelGrid id="topsf" >
+             <img src="images/logo2.png" id="imaga" ></img>
+         </h:panelGrid>
+     </h:head>
+   <h:panelGrid   columns="2" id="panela">
+      <h:body id="bodya">
+        <h:form >
+            <h:panelGrid columns="1">       
+                    <h2><h:outputLabel style=" font-size: 25px; float: left;" 
+                                       value=" Ajustes Mi Cuenta "></h:outputLabel></h2>
+                    <h:panelGrid columns="2">
+                          <h:outputLabel style=" font:  menu; text-align: left; font-size: 10px; float: left;" 
+                                       value=" Puede modificar su correo personal y contraseña, el cual le
+                                       notificara a su correo personal. Luego acceda desde su correo
+                                       para verificar el cambio."></h:outputLabel>
+                          <h:outputLabel style=" color: #D6EAF8; text-align: left; font-size: 10px; float: left;" 
+                                       value=" Ingrese un Usuario de TelePana, una combinacion
+                                       de usuario y nombre, correo electronico y contraseña
+                                       para adquirir los servicios de TelePana tu consulta Medica."></h:outputLabel>
+                   </h:panelGrid> 
+           </h:panelGrid>
+       <h:panelGrid columns="3" cellpadding="8" style="float: right;" >
+                           
+                  <p:outputLabel   style=" float: right;" 
+                                   value="Usuario: " ></p:outputLabel>     
+                 <p:inputText     pt:placeholder="Usuario" 
+                                  value="#{mbLogin.us}" 
+                                  style=" border-width: 2px; 
+                                  border-color: cornflowerblue; 
+                                  text-align:  justify;   
+                                  background-position: 0 -30px !important; 
+                                  padding-bottom: 11px; 
+                                  padding-left: 50px; padding-top: 5px; 
+                                  background-repeat:  no-repeat; 
+                                  display:  block; 
+                                  background-image: url('images/icons3.png')"  
+                                   />
+                   <h:outputLabel value="                "></h:outputLabel>
+                   
+       </h:panelGrid> 
+                    
+       <h:panelGrid columns="3" cellpadding="8" 
+                    style="float: right;" >
+                        <p:outputLabel   style=" float: right;" value="Correo: " ></p:outputLabel>     
+                        <p:inputText   required="true" 
+                                       pt:placeholder="Correo" 
+                                       value="#{mbLogin.us}" 
+                                       style=" border-width: 2px; 
+                                       border-color: cornflowerblue; 
+                                       text-align:  justify;   
+                                       background-position: 0 -30px !important; 
+                                       padding-bottom: 11px; 
+                                       padding-left: 50px; 
+                                       padding-top: 5px; 
+                                       background-repeat:  no-repeat; 
+                                       display:  block; 
+                                       background-image: url('images/icons.png')"  
+                                       requiredMessage=" Correo Necesario "/>
+                         <h:outputLabel value="          "></h:outputLabel>
+       </h:panelGrid>
+                    
+      <h:panelGrid columns="3" cellpadding="8" style="float: right;" >
+                        <p:outputLabel   style=" float: right;" 
+                                    value="Contraseña Actual: " ></p:outputLabel>
+                        <p:password  required="true"  
+                                     requiredMessage="Contraseña Requerida o Vacia" 
+                                     pt:placeholder="Contraseña" 
+                                     value="#{mbLogin.cont}"  
+                                     style="  border-width: 3px; 
+                                     border-color: cornflowerblue; 
+                                     text-align: justify;   
+                                     background-position: 0 -70px !important; 
+                                     padding-bottom: 11px; 
+                                     padding-left: 50px; padding-top: 5px;
+                                     background-repeat:  no-repeat; 
+                                     display:  block; 
+                                     background-image: url('images/icons.png')" />
+                        <h:outputLabel value="          "></h:outputLabel>
+      </h:panelGrid>
+                
+         <h:panelGrid columns="3" cellpadding="8" style="float: right;" >
+                   <p:outputLabel   style=" float: right;" 
+                                    value="Nueva Contraseña: " ></p:outputLabel>
+                    <p:password  required="true"  
+                                requiredMessage="Contraseña Requerida o Vacia" 
+                                pt:placeholder="Contraseña" 
+                                value="#{mbLogin.cont}"  
+                                style=" border-width: 2px; 
+                                border-color: cornflowerblue; 
+                                text-align: justify;   
+                                background-position: 0 -70px !important; 
+                                padding-bottom: 11px; 
+                                padding-left: 50px; padding-top: 5px;
+                                background-repeat:  no-repeat; 
+                                display:  block; background-image: url('images/icons.png')" />
+                    <h:outputLabel value="          "></h:outputLabel>
+         </h:panelGrid>   
+                   
+      <h:panelGrid columns="3" cellpadding="8" style="float: right;" >
+                   <p:outputLabel   style=" float: right;" 
+                                    value="Confirmar Contraseña: " ></p:outputLabel>
+                   <p:password  required="true"  
+                                requiredMessage="Contraseña Requerida o Vacia" 
+                                pt:placeholder="Contraseña" 
+                                value="#{mbLogin.cont}"  
+                                style=" border-width: 2px; 
+                                border-color: cornflowerblue; 
+                                text-align: justify;   
+                                background-position: 0 -70px !important; 
+                                padding-bottom: 11px; 
+                                padding-left: 50px; padding-top: 5px;
+                                background-repeat:  no-repeat; 
+                                display:  block; 
+                                background-image: url('images/icons.png')" />
+                   <h:outputLabel value="          "></h:outputLabel>
+           </h:panelGrid> 
+                 
+                   
+                    
+       <h:panelGrid columns="1" cellpadding="10" style="float: left ; " >
+                        <h:panelGrid  columns="2">
+                            <h:outputLabel   style=" color: #D6EAF8; text-align: left; font-size: small ; float: right;" 
+                                    value=" Al crear una cuenta, acepta los terminos de servicio
+                                            y recibir información sobre condiciones y politicas. " ></h:outputLabel>
+                            
+                            <h:outputLabel   style=" text-align: left; font-size: smaller; float: right;" 
+                                             value="Solicitar modificacion de usuario, requiere de validacion por 
+                                             el area o Administrador para conservar su seguridad y tranquilidad." ></h:outputLabel>
+                            
+                            
+                          </h:panelGrid>
+                        
+              <h:panelGrid columns="2" cellspacing="10" style="float: left;">
+                    <p:commandButton  update="body" 
+                                      ajax="false" 
+                                      style=" border-width: 3px; 
+                                      border-color:  cadetblue;
+                                      font-size: small; 
+                                      background-color: aliceblue; 
+                                      height: 30px;width: 100px;" 
+                                      value="Enviar" action="#{mbLogin.login()}" />
+                    <p:commandButton  ajax="false"  
+                                      immediate="true" 
+                                      style=" border-width: 3px; 
+                                      border-color:  cadetblue;
+                                      border-width: 2px; 
+                                      border-color:  cadetblue; 
+                                      font-size: small; 
+                                      background-color: aliceblue; 
+                                      height: 30px;width: 100px;" 
+                                      value="Volver" action="#{menuPrincipalMB.ajusteCuenta()}"/>
+             </h:panelGrid>
+                    
+                    </h:panelGrid>         
+            </h:form>
+        </h:body>
+      </h:panelGrid>
+    
+
+    <table  align="center"  width="100"  >
+        <thead>
+            <tr>
+                <th><img src="images/examenmed.png" 
+                style="  
+                float: right; width: 200px; 
+                height: 200px; margin-top: 70px;"></img></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><center><p:outputLabel value="Las ventajas de tener tu medico a domicilio: Renueva tus Datos Siempre !" ></p:outputLabel></center></td>
+            </tr>
+           
+        </tbody>
+    </table>
+    
+    
+    
+    
+    
+    
+      
+    
+
+    <div style="  float: left; width: 1000px; alignment-adjust:  central; margin-left: 100px; ">
+        <h:outputLabel   value="Copyright 2014-2016 TelePana Consulta Medica,Inc Todos los Derechos Reservados." />
+    </div>
+     
+</html>
+

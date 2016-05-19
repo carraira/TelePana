@@ -6,7 +6,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
       
     <h:head id="cabeza1">
-        <title>Mi Perfil</title>
+        <title>Medicos Perfil</title>
         <link rel="stylesheet" href="public/css/PerfilStyle.css" type="text/css"></link>
     </h:head>
     <h:body id="bodyper">
@@ -15,7 +15,7 @@
             <table  id="tblTest1"  ><!-- logo inicial  -->
                          <tr>
                              <td rowspan="2"><img src="images/logo2.png" width="40%" align="center"></img></td>
-                             <td rowspan="2"><img src="images/perfil.png" width="20%"  align="left"></img></td>    
+                             <td rowspan="2"><img src="images/medicos.png" width="20%"  align="left"></img></td>    
                         </tr>
            </table><!-- logo inicial  -->
                     
@@ -37,108 +37,98 @@
                  style=" width: 80%;
                          float: left;
                          
-                         background-color: #D4DEDF;
+                         background-color: antiquewhite;
                          text-align: center; " >
-                                 
+        
+        <!-- calificacion rating  -->
+    <p:growl id="messages" showDetail="true" />                   
+    <h:outputText  style= "float: left;" value="Puntaje Medico:" />
+        <p:rating value="#{calificarVista.rating3}">
+            <p:ajax event="rate" listener="#{calificarVista.onrate}" update="messages" />
+            <p:ajax event="cancel" listener="#{calificarVista.oncancel}" update="messages" />
+        </p:rating>
+     <!-- calificacion rating  -->
+        
                         <h:panelGrid  columns="2" style=" float: left; width: 80%; " > 
-                                      <h:outputLabel value="Primer Apellido" /> 
-                                      <h:outputLabel value=" Segundo Apellido" />
+                                      <p:commandButton value="Buscar..." /> 
                                       <p:inputText style=" border-width: 3px; 
-                                      border-color: darkorange; width: 50%; " />
-                                      <p:inputText style=" border-width: 3px; 
-                                      border-color: darkorange; width: 50%; " />
+                                      border-color: darkorange; width: 90%; " />
+                                     
                         </h:panelGrid> 
         <br></br>
      
         
-                        <h:panelGrid  columns="3" style=" float: left; width: 80%; " > 
-                                       <h:outputLabel value=" Primer Nombre" />
-                                       <h:outputLabel value=" Segundo Nombre" /> 
-                                       <h:outputLabel value=" Fecha Nacimiento" />
-                                       <p:inputText style=" border-width: 3px; 
-                                      border-color: darkorange; width: 50%; " />
-                                       <p:inputText style=" border-width: 3px; 
-                                      border-color: darkorange; width: 50%; " />
-                                       <p:calendar id="button" value="#{calendario.date3}"  style=" border-width: 3px; 
-                                      border-color: darkorange;" showOn="button" />
          <br></br>                              
-                        </h:panelGrid>               
-                                       <h:panelGrid  columns="3" style=" float: left; width: 80%; " >               
-                                       <p:outputLabel   value="Sexo :" />
-                                       <p:selectOneRadio id="console" style=" border-width: 3px; 
-                                      border-color: darkorange;" value="#{radios.console}">
-                                             <f:selectItem itemLabel="F"  />
-                                             <f:selectItem itemLabel="M"  />
-                                       </p:selectOneRadio>               
-                        </h:panelGrid> 
+                       
         <br></br>
-                         <h:panelGrid  columns="2" style=" float: left; width: 80%; " > 
-                                       <p:outputLabel for="Estado1" value="Estado Civil :" />
-                                       <p:selectOneMenu id="Estado1" value="a" style=" border-width: 3px; 
-                                      border-color: darkorange; float: left; width:125px">
-                                                <f:selectItem itemLabel="Soltero" itemValue="" />
-                                                <f:selectItem itemLabel="Casado(a)" itemValue="Xbox One" />
-                                                <f:selectItem itemLabel="Viudo(a)" itemValue="PS4" /> 
-                                       </p:selectOneMenu>
-                        </h:panelGrid>
+                         
         <br></br>           
-                        <h:panelGrid  columns="1"  >   
-                                          <p:outputLabel  style=" float: left;  " value=" Contacto :" />
-                       </h:panelGrid>
+                       
         <br></br> 
         
-                         <h:panelGrid  columns="2" style=" float: left; width: 80%; " > 
-                                      <h:outputLabel value="Correo Electronico" /> 
-                                      <h:outputLabel value="Telefono" />
-                                      <p:inputText style=" border-width: 3px; 
-                                      border-color: darkorange; width: 70%; " />
-                                      <p:inputText style=" border-width: 3px; 
-                                      border-color: darkorange; width: 50%; " />
-                         </h:panelGrid> 
+                      
         <br></br>                   
-                         <h:panelGrid  columns="2" style=" float: left; width: 80%; " > 
-                                      <h:outputLabel value="Pagina " /> 
-                                      <h:outputLabel value="Usuario Skype" />
-                                      <p:inputText style=" border-width: 3px; 
-                                      border-color: darkorange; width: 70%; " />
-                                      <p:inputText style=" border-width: 3px; 
-                                      border-color: darkorange; width: 50%; " />
-                         </h:panelGrid>
+                        
         <br></br>
         <br></br>
         <br></br>
         <br></br> 
         <br></br> 
-       
-                         <h:panelGrid  columns="3" style=" float: left; width: 80%; " > 
-                                       <h:outputLabel value=" Direccion Domicilio" />
-                                       <p:outputLabel for="Estado2" value="Pais :" />
-                                       <p:outputLabel for="Estado3" value="Ciudad :" />
-                                       <p:inputText style=" border-width: 3px; 
-                                      border-color: darkorange; width: 80%; " />
-                                       <p:selectOneMenu id="Estado2" value="a" style=" border-width: 3px; 
-                                      border-color: darkorange; width:125px">
-                                                <f:selectItem itemLabel="Argentina" itemValue="" />
-                                                <f:selectItem itemLabel="España" itemValue="Xbox One" />
-                                                <f:selectItem itemLabel="Japon" itemValue="PS4" /> 
-                                       </p:selectOneMenu>
-                                       <p:selectOneMenu id="Estado3" value="a" style=" border-width: 3px; 
-                                      border-color: darkorange; width:125px">
-                                                <f:selectItem itemLabel="Buenos Aires" itemValue="" />
-                                                <f:selectItem itemLabel="Malaga" itemValue="Xbox One" />
-                                                <f:selectItem itemLabel="Tokyo" itemValue="PS4" /> 
-                                       </p:selectOneMenu>
-                         </h:panelGrid>            
+       <br></br>
+                <fieldset>
+                    <legend style="width: 80%">Resultado de Busqueda Medicos</legend>
+                    
+                    <table border="0">
+                        <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> <input  
+                                           type="radio" 
+                                           value="d" ></input></td>
+                            </tr>
+                            <tr>
+                                <td><input  
+                                           type="radio" 
+                                           value="d" ></input></td>
+                            </tr>
+                            <tr>
+                                <td><input  
+                                           type="radio" 
+                                           value="d" ></input></td>
+                            </tr>
+                            <tr>
+                                <td> <input  
+                                           type="radio" 
+                                           value="d" ></input></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                   
+                    
+                    
+                   
+                </fieldset>
+                <br></br>
+                                    
        <br></br>
        <br></br>
        <br></br>  
-         <legend> <h:outputLabel value=" Detalles Personales  "></h:outputLabel></legend>
+         
+       
          <fieldset  style=" border-style: groove; border-color: black;">
                   
                          <h:panelGrid  columns="1" style=" padding-left: 100px; float: left; width: 80%; " > 
                           
                          
-                          <h:outputLabel value=" Descripcion, detalles, Jobbies, pasatiempos: "></h:outputLabel>
+                          <h:outputLabel value=" Detalles Medico Especialidad y Hoja de Vida "></h:outputLabel>
                            <p:inputTextarea rows="10" 
                                             cols="80" 
                                             style=" border-width: 3px; 
@@ -148,13 +138,7 @@
                          </h:panelGrid> 
                 </fieldset>
        <fieldset style=" border-style: groove; border-color: black;"></fieldset>
-                    <h:panelGrid  columns="2" style="  float: left; width: 80%; " >
-                                        <input  
-                                           type="radio" 
-                                           value="d" ></input>
-                  <h:outputLabel style="  float: left; " value=" Acepta Terminos y condiciones de uso de la informacion.* "></h:outputLabel>
-           
-                      </h:panelGrid>
+                  
        
        <br></br>
        
@@ -214,7 +198,7 @@
                              
                             </div>
                                 <h:outputLabel   style="font-size: 25px; " value="CORE"></h:outputLabel>
-                                 <h:outputLabel   style="font-size: 25px; " value="Cambiar Imagen Perfil"></h:outputLabel>
+                                 <h:outputLabel   style="font-size: 25px; " value="Especialidad"></h:outputLabel>
                                  <br></br>
                                  <br></br>
                                  <br></br>
@@ -222,7 +206,7 @@
                                 <p:inputText   style=" padding: 2%;
                                               width: 30%;
                                               text-align: center; " 
-                                              value="Paciente" 
+                                              value="Medico" 
                                               disabled="true"></p:inputText>
                          <br></br>
                          <br></br>
@@ -297,4 +281,5 @@
         </h:form>
     </h:body>
 </html>
+
 

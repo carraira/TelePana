@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Historial Digital</title>
+        <link rel="stylesheet" href="public/css/historialdigital.css" type="text/css"></link>
+        
+    </h:head>
+    <h:body>
+       <div id="cabecera">
+                <div id="cabecera1">
+                    <table cellspacing="10">
+                        <tr>
+                            <td rowspan="2"><img src="images/logo2.png" width="60%" align="center"></img></td>
+                            <td rowspan="2"><img src="images/cita.png" width="40%" align="center"></img></td>
+                        </tr>
+                    </table>                                      
+                </div>
+                <div id="cabecera2">
+                </div>
+        </div>
+        <div id="cabecera0">
+            <table cellspacing="10">
+                        <tr>
+                            <td rowspan="2"><img src="images/engrage.png" width="20px"></img></td>
+                            <td rowspan="2" cellpadding="30"><strong style="font-family: sans-serif;">Ajustes</strong></td>
+                            <td rowspan="2"><img src="images/foto.png" width="60px"></img></td>
+                            <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong style="font-family: sans-serif;">Mi Perfil</strong></td>
+                        </tr>
+            </table>
+            
+            
+        </div>
+        <div id="contenido">
+                <br></br>
+                <br></br>
+                <p:commandButton  disabled="true"
+                        style=" border-width: 3px; border-color: #ffffff;
+                                     border-width: 2px; border-color:  background; 
+                                     font-size: small; background-color: background;
+                                     height: 40px;width: 300px;" 
+                                     value="Historial" />
+                <br></br>
+                <br></br>
+                <fieldset>
+                <h:form>
+                    <p:dataTable var="car" value="#" style="width: 100%">
+                    <p:column headerText="Documento" style="font-size: 13pt">
+                        <h:outputText value="#" />
+                    </p:column>
+ 
+                    <p:column headerText="Fechas" style="font-size: 13pt">
+                        <h:outputText value="#" />
+                    </p:column>
+ 
+                    <p:column headerText="Tipos" style="font-size: 13pt">
+                        <h:outputText value="#" />
+                    </p:column>
+ 
+                    <p:column headerText="Seleccionar" style="font-size: 13pt">
+                        <h:outputText value="#" />
+                    </p:column>
+                    
+                </p:dataTable>
+                </h:form>
+                </fieldset>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <table cellpadding="50">
+                        <tr>
+                            <td> 
+                                
+                                <p:commandButton 
+                                     style=" border-width: 3px; border-color: darkorange;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: darkorange;
+                                     height: 30px;width: 100px;" 
+                                     value="Nuevo" />
+                            </td>
+                            <td>
+                             <p:commandButton 
+                                     style=" border-width: 3px; border-color:  darkorange;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: darkorange;
+                                     height: 30px;width: 100px;" 
+                                     value="Ver" />
+                            </td>
+                            <td>
+                               <p:commandButton  
+                                     style=" border-width: 3px; border-color:  darkorange;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: darkorange;
+                                     height: 30px;width: 100px;" 
+                                     value="Eliminar" />
+                            </td>
+                                                        <td>
+                               <p:commandButton 
+                                     style=" border-width: 3px; border-color:  darkorange;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: darkorange;
+                                     height: 30px;width: 150px;" 
+                                     value="Guardar Cambios" />
+                            </td>
+                        </tr>
+                    <tr>
+                        <td>
+                            
+                              <p:commandButton 
+                                     style=" border-width: 3px; border-color:  cadetblue;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: aliceblue; 
+                                     height: 30px;width: 100px;" 
+                                     value="Volver" 
+                                     action="#{historialMB.historialPagina()}"/>
+                            
+                        </td>
+                    </tr>
+                    </table>
+       </div>
+ 
+       
+
+       <div id="pie">
+           <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
+           <a class="ttuloprin"><center>Nota: Toda la información que se encuentra aqui servira para la consulta del usuario con un especialista si es requerido</center></a>
+           <a><center>__________________________________________________________________________________________________________</center></a>
+           <a>@ Todos los derechos reservados 2016 Telepana Inc - Terminos de Uso</a>
+       </div>
+    </h:body>
+</html>
+
