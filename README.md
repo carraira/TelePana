@@ -1,4 +1,4 @@
-# TelePana-v1.3
+# TelePana-v1.5
 Proyecto Final TelePana En avances v1.0
 Fecha de actualizacion 12 de abril del 2016
 
@@ -12,3 +12,10 @@ v.1.2 Se agregan pagina iniciportal que es el menu principal de la aplicacion we
 v.1.3   Se crean POJOS y VO de la parte negocio se anexa proyecto bussinesslib parte del proyecto
 se crea paquete entityes que contienen los mapeos de los datos asi como los VO
 se crea paquete negocio
+
+v.15
+Cambios para nueva version
+Paginas terminadas 
+Ajustes en VO y SeasonBean
+Inserción de imagenes de portal principal
+Creacion de boton retorno a negocio
