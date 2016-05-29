@@ -3,50 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head >
         <title>TelePana Tu Consulta Medica</title>
         <link rel="stylesheet" href="public/css/portadaPrinc.css" type="text/css"></link>
-        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script>
-        <script type="text/javascript" src="js/organictabs.jquery.js"></script>
-        <script>
-            $(function() {
-
-                $("#example-one").organicTabs();
-
-                $("#example-two").organicTabs({
-                    "speed": 200
-                });
-
-            });
-        </script>
-        <style>
-            a { text-decoration: #0575f4; }
-            a:focus { outline: 0; }
-
-            #page-wrap { width: 50%;  }
-
-
-            /* Generic Utility */
-            .hide { position:  absolute; top: -9999px; left: -9999px; }
-
-
-
-            #example-two .list-wrap { background: #eee; padding: 10px;  }
-
-            #example-two ul { list-style: none; }
-            #example-two ul li a { display: block; border-bottom: 1px solid #666; padding: 4px; color: #409FBA; }
-            #example-two ul li a:hover { background: coral; color: black; }
-            #example-two ul li:last-child a { border: none; }
-
-            #example-two .nav { overflow: hidden; }
-            #example-two .nav li { width: 97px; float: left; margin: 0 10px 0 0; }
-            #example-two .nav li.last { margin-right: 0; }
-            #example-two .nav li a { display: block; padding: 5px; background: #666; color: white; font-size: 10px; text-align: center; border: 0; }
-
-            #example-two li a.current,#example-two li a.current:hover { background-color: #eee !important; color: black; }
-            #example-two .nav li a:hover, #example-two .nav li a:focus { background: #999;}
-        </style>
     </h:head>
     <h:body id ="bodyp">
         <h:form>
@@ -55,8 +16,13 @@
                  background-size: cover;
                  ">
                 <br></br>
-                <div id="cabe1">
-                    <a>.</a>
+                <div id="cabe1" style=" float: left; ">
+                    <a style=" color: #F3F3F3;">Siguenos en </a>
+                    <a href="URL-FACEBOOK" target="_blank"><img alt="siguenos en facebook" height="32" src="http://1.bp.blogspot.com/-PrByV4NBlSs/UiXnD1FEFnI/AAAAAAAABws/dUhvcAdYRiY/s1600/Facebook+alt+1.png" title="siguenos en facebook" width="35" /></a>
+                    <a href="URL-Twitter" target="_blank"><img alt="siguenos en Twitter" height="32" src="http://3.bp.blogspot.com/-wlwaJJG-eOY/UiXnHS2jLsI/AAAAAAAAByQ/I2tLyZDLNL4/s1600/Twitter+NEW.png" title="siguenos en Twitter" width="35" /></a>
+                    <a href="URL-youtube" target="_blank"><img alt="Canal de youtube" height="32" src="http://4.bp.blogspot.com/-XWyVHd85Urk/UiXnJChMVWI/AAAAAAAABzI/RHztkyc7gAU/s1600/YouTube+alt+1.png" title="Canal de youtube" width="35" /></a>
+                    <a href="URL-Likedin" target="_blank"><img alt="Sígueme en Likedin" height="32" src="http://4.bp.blogspot.com/-6fSS1W1pV5U/UiXnKWhitdI/AAAAAAAABzo/iQ_4U_eJ67o/s1600/linkedin_logo_ok.png" title="Sígueme en Likedin" width="35" /></a>
+
                 </div>
                 <div id="cabe0" >
                     <table border="0">
@@ -115,117 +81,254 @@
 
             </div>
 
+            <table  cellspacing="1"  style=" background: gainsboro;">   
+                <td><h:panelGrid  columns="1" style="float: left;" >
+                        <img src="images/estadisticas.png" style=" width: 200px; " ></img>
+                        <p:outputLabel    value="Estadisticas de salud." />
+
+                    </h:panelGrid></td>
+                <td style=" width: 100px;"> </td>
+                <td><h:panelGrid  columns="1"  style="float: left;" >
+                        <img src="images/Atencion.png" style=" width: 200px; " ></img>
+                        <p:outputLabel    value="Atencion Personalizada " />
+                        <p:outputLabel    value="por tus medicos especialistas." />
+                    </h:panelGrid></td>
+                <td style=" width: 120px;"> </td>
+                <td><h:panelGrid  columns="1"  style="float: left;" >
+                        <img src="images/AgendaP.png" style=" width: 200px; " ></img>
+                        <p:outputLabel    value="Agendamiento de Citas." /> 
+                    </h:panelGrid></td>
+                <td style=" width: 100px;"> </td>
+                <td><h:panelGrid  columns="1"  style="float: left;" >
+                        <img src="images/Medico.png" style=" width: 200px; " ></img>
+                        <p:outputLabel    value="Tu historial clinico " />
+                        <p:outputLabel    value="analizado por profesionales." />
+                    </h:panelGrid></td>
+                <td style=" width: 20px;"> </td>
+            </table>
+
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
+            <!-- ========================  MISION VISION VALORES Y FUNCIONALIDADES INFORMACION INICIO -->            
+
+            <h:panelGrid columns="2" cellpadding="30" style=" background: gainsboro;"  >
 
 
-            <div id="page-wrap">
 
+                <p:tabView id="monpanel">
 
-                <div id="example-two">
+                    <p:tab id="tab1" title="MISION">
+                        <p:scrollPanel style="width: 596px;height: 400px;border: black;" mode="native" >
+                            <h:outputText
+                                value="Brindar a toda la comunidad nacional e internacional la mejor atención 
+                                médica basada en evidencia científica, investigación y contenido ético, 
+                                acompañando al paciente y su familia; asimismo ofrecer a nuestro personal 
+                                y profesionales un ámbito de desarrollo atractivo que favorezca su 
+                                compromiso y sentido de pertenencia con la Institución. Garantizando 
+                                la revisión y actualización de conocimientos, procesos, tecnologías y 
+                                estructuras, gestionando nuestros recursos con racionalidad económica en 
+                                forma transparente y honesta." />
+                        </p:scrollPanel>
+                    </p:tab>
 
-                    <ul class="nav">
-                        <li class="nav-one"><a href="#featured2" class="current">Mision</a></li>
-                        <li class="nav-two"><a href="#core2">Vision</a></li>
-                        <li class="nav-three"><a href="#jquerytuts2">Valores</a></li>
-                        <li class="nav-four last"><a href="#classics2">Como Encontrarnos</a></li>
-                    </ul>
+                    <p:tab id="tab2" title="VISION">
+                        <p:scrollPanel style="width: 596px;height: 400px;border: none;" mode="native" >
+                            <h:outputText value="Ser la organización modelo en el cuidado y restablecimiento de la salud, alineada 
+                                          con nuestras tradiciones, manteniendo la excelencia en la calidad de atención y respeto 
+                                          por la dignidad de las personas ." />
+                        </p:scrollPanel>
+                    </p:tab>
 
-                    <div class="list-wrap">
+                    <p:tab id="tab3" title="VALORES">
+                        <p:scrollPanel style="width: 596px;height: 400px;border: none;" mode="native" >
 
-                        <ul id="featured2">
-                            <li><h3>Brindar a toda la comunidad nacional e internacional la mejor atención 
-                                    médica basada en evidencia científica, investigación y contenido ético, 
-                                    acompañando al paciente y su familia; asimismo ofrecer a nuestro personal 
-                                    y profesionales un ámbito de desarrollo atractivo que favorezca su 
-                                    compromiso y sentido de pertenencia con la Institución. Garantizando 
-                                    la revisión y actualización de conocimientos, procesos, tecnologías y 
-                                    estructuras, gestionando nuestros recursos con racionalidad económica en 
-                                    forma transparente y honesta.</h3></li>
-
-
-                            <li><h3>               </h3></li>
-                            <li><h3>__________________________</h3></li>
-                        </ul>
-
-                        <ul id="core2" class="hide">
-                            <li><h3>               </h3></li>
-                            <li><h3>Ser la organización modelo en el cuidado y restablecimiento de la salud, alineada 
-                                    con nuestras tradiciones, manteniendo la excelencia en la calidad de atención y respeto 
-                                    por la dignidad de las personas.</h3></li>
-
-                            <li><h3>               </h3></li>
-                            <li><h3>__________________________</h3></li>
-                        </ul>
-
-                        <ul id="jquerytuts2" class="hide">
-                            <li><h3>               </h3></li>
-                            <li><h3> Trabajo en equipo </h3></li>
+                            <h3>               </h3>
+                            <h3> Trabajo en equipo </h3>
                             <li><a>Trabajamos con una visión, respetando y valorando nuestras diferencias, fortaleciendo las relaciones interpersonales y priorizando el éxito del equipo por encima del éxito individual.</a></li>
-                            <li><h3>               </h3></li>
-                            <li><h3> Responsabilidad </h3></li>
+                            <h3>               </h3>
+                            <h3> Responsabilidad </h3>
                             <li><a>Construimos relaciones de confianza en la ejecución de nuestras tareas orientadas al logro de los resultados esperados.
                                     Asumimos un rol activo en nuestra labor diaria y comprendemos la trascendencia de nuestras acciones individuales y colectivas.</a></li>
-                            <li><h3>               </h3></li>
-                            <li><h3>Ética</h3></li>
+                            <h3>               </h3>
+                            <h3>Ética</h3>
                             <li><a>Sostenemos una conducta transparente, honesta y preocupada por la dignidad de todas las personas con las que interactuamos.</a></li>
-                            <li><h3>               </h3></li>
-                            <li><h3>Compromiso</h3></li>
+                            <h3>               </h3>
+                            <h3>Compromiso</h3>
                             <li><a>Asumimos nuestras tareas comprometidos con la institución, enfocando nuestro esfuerzo a brindar atención de calidad a nuestros pacientes y su familia.</a></li>
-                            <li><h3>               </h3></li>
-                            <li><h3>Eficiencia</h3></li>
+                            <h3>               </h3>
+                            <h3>Eficiencia</h3>
                             <li><a>Logramos nuestros objetivos utilizando procesos y métodos de trabajo que optimizan nuestro desempeño con la mejor utilización de recursos.</a></li>
-                            <li><h3>               </h3></li>
-                            <li><h3>__________________________</h3></li>
-                        </ul>
+                            <h3>               </h3>
+                            <h3>__________________________</h3>
 
-                        <ul id="classics2" class="hide">
-                            <li><h3>               </h3></li>
-                            <li><h3>Comunicate</h3></li>
-                            <li><a>Telefonos:  3454567 - 24556677</a></li>
-                            <li><a>Oficinas: Bogota Medellin Cali</a></li>
-                            <li><a>Correo: Telepana@Panamericano.com</a></li>
-                            <li><h3>               </h3></li>
-                            <li><h3>__________________________</h3></li>
-                        </ul>
+                        </p:scrollPanel>
+                    </p:tab>
 
-                    </div> <!-- END List Wrap -->
+                </p:tabView>
 
-                </div> <!-- END Organic Tabs (Example One) -->
 
-                <img class="subtitulos" src="images/med1.png" width="35px"></img><a>Antecedentes Familiares</a>
+                <table>
+                    <h2>¿ COMO FUNCIONA ?</h2>
+                    <tr><td><img src="images/ppt1.png"> </img></td>
+                        <td><h3>Registrate</h3></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/ppt2.png"> </img></td>
+                        <td><h3>Actualiza tu perfil</h3></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/ppt3.png"> </img></td>
+                        <td> <h3>Aporta y completa tu historial clinico</h3></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/ppt7.png"> </img></td>
+                        <td><h3>Completa tus estadisticas de salud</h3></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/ppt5.png"> </img></td>
+                        <td><h3>Escoge tu Medico de Preferencia</h3></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/ppt7.png"> </img></td>
+                        <td><h3>Agenda tu consulta o Cita Presencial</h3></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/ppt6.png"> </img></td>
+                        <td><h3>Resuelve Tu consulta o Problema</h3></td>
+                    </tr>
+
+                </table>
+
+                <td style="width: 1%; background: gainsboro;"> </td>
+
+                <p:outputLabel value="Hospital Panamericano Entidad Promotora de Salud"></p:outputLabel>
+            </h:panelGrid> 
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <h:panelGrid style="  background:  gainsboro; width: 100%">
                 <br></br>
-
-
-                <div id="secundario">
-                    <a class="titulo"><center>Diagrama Predictivo de Salud</center></a>
-                    <br></br>
-
-
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-
-                    <br></br>
-                    <br></br>
-                    <br></br>
-
-                </div>
+                <center><h1> ATENCION MEDICA DE TU EPS EN LINEA</h1></center>
                 <br></br>
                 <br></br>
+            </h:panelGrid>
+            <br></br>
+            <br></br>
+
+            <table style="text-align: center;">
+                <tr>
+                    <td><center><h2>¿Quienes Somos? </h2></center></td>
+                    <td><center><h2>Medicos Especialistas </h2></center></td>
+                    <td><center><h2>Nuestros Aliados</h2></center></td>
+                </tr>
+                <tr>
+                    <td style=" width: 15%"><p:outputLabel value="Entidad responsable de la salud privada, 
+                                                           que brinda servicios con altos estandares
+                                                           de calidad que fortalecen los lasos con 
+                                                           nuestros clientes y pacientes." />      
+                    </td> 
+                    <td> <img  style="width: 300px" src="images/Quienes.png"></img></td>
+                    <td style=" width: 15%"><p:outputLabel value="Contamos con un equipo médico
+                                                           altamente calificado. Recibe atención
+                                                           personalizada de los mejores doctores
+                                                           de América Latina." />      
+                    </td> 
+                </tr>
+                <tr>
+                    <td> <img style="width: 300px" src="images/Especialistas.png"></img></td>
+                    <td style=" width: 15%"><p:outputLabel value="Conéctate con nuestros representantes y te mostraremos cómo 
+                                                           funciona nuestro servicio de telesalud de una manera fácil, rápida y segura.
+                                                           Solicítar Demo " />      
+                    </td>
+                    <td> <img style="width: 300px" src="images/afiliados.png"></img></td>
+                </tr>
+            </table>
+
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <h:panelGrid style="  width: 100%; background: gainsboro;">
+                <h1> FUNCIONALIDADES </h1>
+                <br></br>
+                <br></br>
+            </h:panelGrid>
+            <h:panelGrid columns="3" cellpadding="30" style=" background: gainsboro;"  >
 
 
-            </div>
 
+                <p:tabView orientation="left">
+                    <p:tab title="Agendamiento de Citas">
+                        <h:panelGrid  columns="2" cellpadding="10">
+
+                            <h:outputText
+                                value="La mejor solucion de agentamiento de citas con especialistas" />
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Perfil Social">
+                        <h:panelGrid columns="2" cellpadding="10">
+
+                            <h:outputText value="Perfil social interactivo con medicos y pacientes" />
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Video Consultas">
+                        <h:panelGrid columns="2" cellpadding="10">
+
+                            <h:outputText value="Facil acceso a complemento con el poderoso aliado de Microsoft: Skype con conexion inmediata." />
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Analisis de Estadisticas">
+                        <h:panelGrid columns="2" cellpadding="10">
+
+                            <h:outputText value="Sistema Predicitivo de analisis de parametros de salud, tus condiciones
+                                          fisicas y clinicas, brindan un informe detallado de su condicion real, con el aval
+                                          de los medicos especialistas." />
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Historial Clinico">
+                        <h:panelGrid columns="2" cellpadding="10">
+
+                            <h:outputText value="Manejo de documentos, espacio de almacenamiento para gestion de tu 
+                                          historial clinico y medico." />
+                        </h:panelGrid>
+                    </p:tab>
+                </p:tabView>
+
+
+                <p:panel id="basic" header="Contactanos"  style="margin-bottom:20px; background: transparent;">
+                    <h:panelGrid columns="2" cellpadding="10">
+
+
+                        <h3>               </h3>
+                        <li><h3>Comunicate</h3></li>
+                        <li><a>Telefonos:  3454567 - 24556677</a></li>
+                        <li><a>Oficinas: Bogota Medellin Cali</a></li>
+                        <li><a>Correo: Telepana@Panamericano.com</a></li>
+                        <h3>               </h3>
+                        <h3>__________________________</h3>
+
+                    </h:panelGrid>
+
+                    <td style="width: 1%; background: gainsboro;"> </td>
+
+
+                </p:panel>
+            </h:panelGrid> 
+
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
 
             <div id="pie">
                 <br></br>
-                <br></br>
 
-                <a class="ttuloprin"><center>Nota: Toda la información que se encuentra aqui servira para la consulta del usuario con un especialista si es requerido</center></a>
+
+
                 <a><center>__________________________________________________________________________________________________________</center></a>
                 <a>@ Todos los derechos reservados 2016 Telepana Inc - Terminos de Uso</a>
             </div> 
