@@ -7,29 +7,31 @@
 package entityes;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author cabjr_000
  */
 @Entity
-@Table(name = "CIUDAD", catalog = "", schema = "ADMTELE")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Ciudad.findAll", query = "SELECT c FROM Ciudad c"),
     @NamedQuery(name = "Ciudad.findByCodPostal", query = "SELECT c FROM Ciudad c WHERE c.codPostal = :codPostal"),
-    @NamedQuery(name = "Ciudad.findByNomCiudad", query = "SELECT c FROM Ciudad c WHERE c.nomCiudad = :nomCiudad"),
-    @NamedQuery(name = "Ciudad.findByCodPais", query = "SELECT c FROM Ciudad c WHERE c.codPais = :codPais")})
+    @NamedQuery(name = "Ciudad.findByNomCiudad", query = "SELECT c FROM Ciudad c WHERE c.nomCiudad = :nomCiudad")})
 public class Ciudad implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -39,12 +41,16 @@ public class Ciudad implements Serializable {
     private Integer codPostal;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 10)
+    @Size(min = 1, max = 40)
     @Column(name = "NOM_CIUDAD")
     private String nomCiudad;
-    @Size(max = 15)
-    @Column(name = "COD_PAIS")
-    private String codPais;
+    @OneToMany(mappedBy = "codCiudad")
+    private List<Cita> citaList;
+    @OneToMany(mappedBy = "codPostal")
+    private List<Usuario> usuarioList;
+    @JoinColumn(name = "COD_PAIS", referencedColumnName = "NOM_PAIS")
+    @ManyToOne
+    private Pais codPais;
 
     public Ciudad() {
     }
@@ -74,11 +80,29 @@ public class Ciudad implements Serializable {
         this.nomCiudad = nomCiudad;
     }
 
-    public String getCodPais() {
+    @XmlTransient
+    public List<Cita> getCitaList() {
+        return citaList;
+    }
+
+    public void setCitaList(List<Cita> citaList) {
+        this.citaList = citaList;
+    }
+
+    @XmlTransient
+    public List<Usuario> getUsuarioList() {
+        return usuarioList;
+    }
+
+    public void setUsuarioList(List<Usuario> usuarioList) {
+        this.usuarioList = usuarioList;
+    }
+
+    public Pais getCodPais() {
         return codPais;
     }
 
-    public void setCodPais(String codPais) {
+    public void setCodPais(Pais codPais) {
         this.codPais = codPais;
     }
 

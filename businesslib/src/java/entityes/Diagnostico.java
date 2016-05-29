@@ -8,23 +8,26 @@ package entityes;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author cabjr_000
  */
 @Entity
-@Table(name = "DIAGNOSTICO", catalog = "", schema = "ADMTELE")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Diagnostico.findAll", query = "SELECT d FROM Diagnostico d"),
@@ -41,8 +44,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Diagnostico.findByAnemia", query = "SELECT d FROM Diagnostico d WHERE d.anemia = :anemia"),
     @NamedQuery(name = "Diagnostico.findByGlicemia", query = "SELECT d FROM Diagnostico d WHERE d.glicemia = :glicemia"),
     @NamedQuery(name = "Diagnostico.findByMuscular", query = "SELECT d FROM Diagnostico d WHERE d.muscular = :muscular"),
-    @NamedQuery(name = "Diagnostico.findByGastritis", query = "SELECT d FROM Diagnostico d WHERE d.gastritis = :gastritis"),
-    @NamedQuery(name = "Diagnostico.findByIdUsuario", query = "SELECT d FROM Diagnostico d WHERE d.idUsuario = :idUsuario")})
+    @NamedQuery(name = "Diagnostico.findByGastritis", query = "SELECT d FROM Diagnostico d WHERE d.gastritis = :gastritis")})
 public class Diagnostico implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -54,7 +56,6 @@ public class Diagnostico implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "ESTATURA_DIAG")
     private BigDecimal estaturaDiag;
-    @Column(name = "PESO")
     private Integer peso;
     @Column(name = "NIVEL_GLUCOSA")
     private Short nivelGlucosa;
@@ -63,24 +64,25 @@ public class Diagnostico implements Serializable {
     @Size(max = 200)
     @Column(name = "DIAG_SISTEMA")
     private String diagSistema;
-    @Column(name = "CANCER")
     private Character cancer;
-    @Column(name = "ASMA")
     private Character asma;
-    @Column(name = "CARDIACA")
     private Character cardiaca;
-    @Column(name = "DIABETES")
     private Character diabetes;
-    @Column(name = "ANEMIA")
     private Character anemia;
-    @Column(name = "GLICEMIA")
     private Character glicemia;
-    @Column(name = "MUSCULAR")
     private Character muscular;
-    @Column(name = "GASTRITIS")
     private Character gastritis;
-    @Column(name = "ID_USUARIO")
-    private Long idUsuario;
+    @JoinColumn(name = "ID_USUARIO", referencedColumnName = "ID_USUARIO")
+    @ManyToOne
+    private Usuario idUsuario;
+    @JoinColumn(name = "TRATAMIENTO_DIAG", referencedColumnName = "COD_TRATAMIENTO")
+    @ManyToOne
+    private Tratamiento tratamientoDiag;
+    @JoinColumn(name = "ENFERMEDAD_DIAG", referencedColumnName = "COD_ENFERMEDADES")
+    @ManyToOne
+    private Enfermedades enfermedadDiag;
+    @OneToMany(mappedBy = "numDiagnostico")
+    private List<Historial> historialList;
 
     public Diagnostico() {
     }
@@ -201,12 +203,37 @@ public class Diagnostico implements Serializable {
         this.gastritis = gastritis;
     }
 
-    public Long getIdUsuario() {
+    public Usuario getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
+    public void setIdUsuario(Usuario idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    public Tratamiento getTratamientoDiag() {
+        return tratamientoDiag;
+    }
+
+    public void setTratamientoDiag(Tratamiento tratamientoDiag) {
+        this.tratamientoDiag = tratamientoDiag;
+    }
+
+    public Enfermedades getEnfermedadDiag() {
+        return enfermedadDiag;
+    }
+
+    public void setEnfermedadDiag(Enfermedades enfermedadDiag) {
+        this.enfermedadDiag = enfermedadDiag;
+    }
+
+    @XmlTransient
+    public List<Historial> getHistorialList() {
+        return historialList;
+    }
+
+    public void setHistorialList(List<Historial> historialList) {
+        this.historialList = historialList;
     }
 
     @Override

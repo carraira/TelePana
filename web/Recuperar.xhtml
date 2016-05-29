@@ -12,7 +12,16 @@
             width: 20%; height: 47%;                
         }
         #barra{
-            border-radius: 17px; border: 0; overflow-style: auto;
+             float:  inside;
+                background:  #999999;
+                border-color: aliceblue;
+                border: activecaption;
+                 margin: 0px;
+                 border-radius: 17px;
+                     height: 5px;
+    width: 100%;
+    border: 0;
+    overflow-style: auto;
         }
         #del{
             background-position: center;
@@ -33,9 +42,11 @@
     </style>
     <h:head  id="del">
         <title>Recuperar Contraseña</title>
-        <h:panelGrid id="barra" columns="3" style=" margin-left:  2%; width: 95%; background-color: #999999; ">
-             <img src="images/logo2.png" id="imag" ></img>
-              
+        <h:panelGrid id="barra" >
+        <form method="get" action="PortadaPrincipal.xhtml">
+            <td><input name="boton1" type="image"
+                  src="images/logo2.png" width="20%" align="left"></input></td>
+        </form>
              </h:panelGrid>
     </h:head>
     
@@ -47,7 +58,7 @@
         
             <h:panelGrid columns="1" cellpadding="10" style=" width: 35%; height: 80%; background-color:  silver; ">
               
-                <h2><h:outputLabel style=" font-size: 25px; " value="¿ Olvido la Contraseña ?"></h:outputLabel></h2>
+                <h3><h:outputLabel style=" font-size: 25px; " value="¿ Olvido la Contraseña ?"></h:outputLabel></h3>
                 <br></br>
                 <br></br>
                 <br></br>

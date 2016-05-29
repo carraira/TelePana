@@ -30,7 +30,7 @@
                  margin: 0px;
                  border-radius: 17px;
                      height: 5px;
-    width: 1200px;
+    width: 100%;
     border: 0;
     overflow-style: auto;
             }
@@ -48,9 +48,12 @@
         </style>
     <h:head>
          <title>Registro Usuarios TelePana</title>
-         <h:panelGrid id="tops" >
-             <img src="images/logo2.png" id="imag" ></img>
-         </h:panelGrid>
+        <h:panelGrid id="tops" >
+        <form method="get" action="PortadaPrincipal.xhtml">
+            <td><input name="boton1" type="image"
+                  src="images/logo2.png" width="20%" align="left"></input></td>
+        </form>
+             </h:panelGrid>
      </h:head>
     
     <h:panelGrid   columns="2" id="panel">
@@ -70,7 +73,7 @@
                     <h:panelGrid columns="4" cellpadding="8" style="float: right;" >  
                      <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
                     <p:outputLabel    value="Usuario: "  style=" float: right;" ></p:outputLabel>     
-                   <p:inputText pt:placeholder="Usuario" value="#{mbLogin.us}" 
+                    <p:inputText pt:placeholder="Usuario" value="#{registroMB.usuario.tipoId}" 
                    style=" border-width: 2px; border-color: cornflowerblue; text-align:  justify;   background-position: 0 -30px !important; padding-bottom: 11px; 
                    padding-left: 50px; padding-top: 5px; 
                    background-repeat:  no-repeat; display:  block; background-image: url('images/icons3.png')"  

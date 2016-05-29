@@ -12,9 +12,10 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -26,15 +27,13 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author cabjr_000
  */
 @Entity
-@Table(name = "AFILIACION", catalog = "", schema = "ADMTELE")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Afiliacion.findAll", query = "SELECT a FROM Afiliacion a"),
     @NamedQuery(name = "Afiliacion.findByFechaAfiliacion", query = "SELECT a FROM Afiliacion a WHERE a.fechaAfiliacion = :fechaAfiliacion"),
     @NamedQuery(name = "Afiliacion.findByEstadoAfiliacion", query = "SELECT a FROM Afiliacion a WHERE a.estadoAfiliacion = :estadoAfiliacion"),
     @NamedQuery(name = "Afiliacion.findByNumAfilicion", query = "SELECT a FROM Afiliacion a WHERE a.numAfilicion = :numAfilicion"),
-    @NamedQuery(name = "Afiliacion.findByFechaFAfiliacion", query = "SELECT a FROM Afiliacion a WHERE a.fechaFAfiliacion = :fechaFAfiliacion"),
-    @NamedQuery(name = "Afiliacion.findByIdUsuario", query = "SELECT a FROM Afiliacion a WHERE a.idUsuario = :idUsuario")})
+    @NamedQuery(name = "Afiliacion.findByFechaFAfiliacion", query = "SELECT a FROM Afiliacion a WHERE a.fechaFAfiliacion = :fechaFAfiliacion")})
 public class Afiliacion implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -53,8 +52,9 @@ public class Afiliacion implements Serializable {
     @Column(name = "FECHA_F_AFILIACION")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaFAfiliacion;
-    @Column(name = "ID_USUARIO")
-    private Long idUsuario;
+    @JoinColumn(name = "ID_USUARIO", referencedColumnName = "ID_USUARIO")
+    @ManyToOne
+    private Usuario idUsuario;
 
     public Afiliacion() {
     }
@@ -100,11 +100,11 @@ public class Afiliacion implements Serializable {
         this.fechaFAfiliacion = fechaFAfiliacion;
     }
 
-    public Long getIdUsuario() {
+    public Usuario getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
+    public void setIdUsuario(Usuario idUsuario) {
         this.idUsuario = idUsuario;
     }
 

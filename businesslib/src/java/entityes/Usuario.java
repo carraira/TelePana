@@ -8,26 +8,29 @@ package entityes;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author cabjr_000
  */
 @Entity
-@Table(name = "USUARIO")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u"),
@@ -48,8 +51,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Usuario.findByApellidoMUsuario", query = "SELECT u FROM Usuario u WHERE u.apellidoMUsuario = :apellidoMUsuario"),
     @NamedQuery(name = "Usuario.findByPNombreUsuario", query = "SELECT u FROM Usuario u WHERE u.pNombreUsuario = :pNombreUsuario"),
     @NamedQuery(name = "Usuario.findBySNombreUsuario", query = "SELECT u FROM Usuario u WHERE u.sNombreUsuario = :sNombreUsuario"),
-    @NamedQuery(name = "Usuario.findByDescripcionUsuario", query = "SELECT u FROM Usuario u WHERE u.descripcionUsuario = :descripcionUsuario"),
-    @NamedQuery(name = "Usuario.findByCodPostal", query = "SELECT u FROM Usuario u WHERE u.codPostal = :codPostal")})
+    @NamedQuery(name = "Usuario.findByDescripcionUsuario", query = "SELECT u FROM Usuario u WHERE u.descripcionUsuario = :descripcionUsuario")})
 public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -63,7 +65,6 @@ public class Usuario implements Serializable {
     @Column(name = "TIPO_ID")
     private String tipoId;
     @Size(max = 20)
-    @Column(name = "LOGIN")
     private String login;
     @Size(max = 10)
     @Column(name = "ESTADO_C_USUARIO")
@@ -77,7 +78,6 @@ public class Usuario implements Serializable {
     @Column(name = "FOTO_USUARIO")
     private Serializable fotoUsuario;
     @Size(max = 10)
-    @Column(name = "CONTRASE\u00d1A")
     private String contraseña;
     @Basic(optional = false)
     @NotNull
@@ -86,7 +86,6 @@ public class Usuario implements Serializable {
     private Date fechaNacimiento;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "EDAD")
     private short edad;
     @Basic(optional = false)
     @NotNull
@@ -122,8 +121,17 @@ public class Usuario implements Serializable {
     @Size(max = 200)
     @Column(name = "DESCRIPCION_USUARIO")
     private String descripcionUsuario;
-    @Column(name = "COD_POSTAL")
-    private Integer codPostal;
+    @OneToMany(mappedBy = "idUsuario")
+    private List<Cita> citaList;
+    @OneToMany(mappedBy = "idUsuario")
+    private List<Diagnostico> diagnosticoList;
+    @JoinColumn(name = "COD_POSTAL", referencedColumnName = "COD_POSTAL")
+    @ManyToOne
+    private Ciudad codPostal;
+    @OneToMany(mappedBy = "idUsuario")
+    private List<Afiliacion> afiliacionList;
+    @OneToMany(mappedBy = "codUsuario")
+    private List<Medico> medicoList;
 
     public Usuario() {
     }
@@ -295,12 +303,48 @@ public class Usuario implements Serializable {
         this.descripcionUsuario = descripcionUsuario;
     }
 
-    public Integer getCodPostal() {
+    @XmlTransient
+    public List<Cita> getCitaList() {
+        return citaList;
+    }
+
+    public void setCitaList(List<Cita> citaList) {
+        this.citaList = citaList;
+    }
+
+    @XmlTransient
+    public List<Diagnostico> getDiagnosticoList() {
+        return diagnosticoList;
+    }
+
+    public void setDiagnosticoList(List<Diagnostico> diagnosticoList) {
+        this.diagnosticoList = diagnosticoList;
+    }
+
+    public Ciudad getCodPostal() {
         return codPostal;
     }
 
-    public void setCodPostal(Integer codPostal) {
+    public void setCodPostal(Ciudad codPostal) {
         this.codPostal = codPostal;
+    }
+
+    @XmlTransient
+    public List<Afiliacion> getAfiliacionList() {
+        return afiliacionList;
+    }
+
+    public void setAfiliacionList(List<Afiliacion> afiliacionList) {
+        this.afiliacionList = afiliacionList;
+    }
+
+    @XmlTransient
+    public List<Medico> getMedicoList() {
+        return medicoList;
+    }
+
+    public void setMedicoList(List<Medico> medicoList) {
+        this.medicoList = medicoList;
     }
 
     @Override

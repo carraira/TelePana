@@ -7,23 +7,26 @@
 package entityes;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author cabjr_000
  */
 @Entity
-@Table(name = "MEDICO", catalog = "", schema = "ADMTELE")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Medico.findAll", query = "SELECT m FROM Medico m"),
@@ -32,8 +35,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Medico.findByUnivMedico", query = "SELECT m FROM Medico m WHERE m.univMedico = :univMedico"),
     @NamedQuery(name = "Medico.findByPuntajeMed", query = "SELECT m FROM Medico m WHERE m.puntajeMed = :puntajeMed"),
     @NamedQuery(name = "Medico.findByExtMedico", query = "SELECT m FROM Medico m WHERE m.extMedico = :extMedico"),
-    @NamedQuery(name = "Medico.findByDescripcionMedico", query = "SELECT m FROM Medico m WHERE m.descripcionMedico = :descripcionMedico"),
-    @NamedQuery(name = "Medico.findByCodUsuario", query = "SELECT m FROM Medico m WHERE m.codUsuario = :codUsuario")})
+    @NamedQuery(name = "Medico.findByDescripcionMedico", query = "SELECT m FROM Medico m WHERE m.descripcionMedico = :descripcionMedico")})
 public class Medico implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -56,8 +58,13 @@ public class Medico implements Serializable {
     @Size(max = 200)
     @Column(name = "DESCRIPCION_MEDICO")
     private String descripcionMedico;
-    @Column(name = "COD_USUARIO")
-    private Long codUsuario;
+    @OneToMany(mappedBy = "codMedico")
+    private List<Cita> citaList;
+    @OneToMany(mappedBy = "medConsulta")
+    private List<Historial> historialList;
+    @JoinColumn(name = "COD_USUARIO", referencedColumnName = "ID_USUARIO")
+    @ManyToOne
+    private Usuario codUsuario;
 
     public Medico() {
     }
@@ -119,11 +126,29 @@ public class Medico implements Serializable {
         this.descripcionMedico = descripcionMedico;
     }
 
-    public Long getCodUsuario() {
+    @XmlTransient
+    public List<Cita> getCitaList() {
+        return citaList;
+    }
+
+    public void setCitaList(List<Cita> citaList) {
+        this.citaList = citaList;
+    }
+
+    @XmlTransient
+    public List<Historial> getHistorialList() {
+        return historialList;
+    }
+
+    public void setHistorialList(List<Historial> historialList) {
+        this.historialList = historialList;
+    }
+
+    public Usuario getCodUsuario() {
         return codUsuario;
     }
 
-    public void setCodUsuario(Long codUsuario) {
+    public void setCodUsuario(Usuario codUsuario) {
         this.codUsuario = codUsuario;
     }
 

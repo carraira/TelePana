@@ -7,23 +7,24 @@
 package entityes;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author cabjr_000
  */
 @Entity
-@Table(name = "PAIS", catalog = "", schema = "ADMTELE")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Pais.findAll", query = "SELECT p FROM Pais p"),
@@ -36,6 +37,8 @@ public class Pais implements Serializable {
     @Size(min = 1, max = 15)
     @Column(name = "NOM_PAIS")
     private String nomPais;
+    @OneToMany(mappedBy = "codPais")
+    private List<Ciudad> ciudadList;
 
     public Pais() {
     }
@@ -50,6 +53,15 @@ public class Pais implements Serializable {
 
     public void setNomPais(String nomPais) {
         this.nomPais = nomPais;
+    }
+
+    @XmlTransient
+    public List<Ciudad> getCiudadList() {
+        return ciudadList;
+    }
+
+    public void setCiudadList(List<Ciudad> ciudadList) {
+        this.ciudadList = ciudadList;
     }
 
     @Override

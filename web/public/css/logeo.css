@@ -13,7 +13,7 @@ and open the template in the editor.
         #panel1{
 
             background:   silver;
-            height:   520px;
+            height:   100%;
             width: 350px;
             float:  left;
             text-align: justify;
@@ -26,15 +26,15 @@ and open the template in the editor.
            
         }
 
-        #tops {
+        #tops1 {
             float:  inside;
             background:  #999999;
             border-color: aliceblue;
             border: activecaption;
             margin: 0px;
             border-radius: 17px;
-            height: 20px;
-            width: 1200px;
+            height: 40%;
+            width: 100%;
             border: 0;
             overflow-style: auto;
         }
@@ -47,9 +47,9 @@ and open the template in the editor.
             background:   lavender;
         }
         
-        #imag1{
+/*        #imag1{
             vertical-align: middle;  width: 500px; height: 480px; float: left; 
-        }
+        }*/
         
         #pie1{
             float: left; width: 1000px; alignment-adjust:  central; margin-left: 100px;
@@ -58,7 +58,7 @@ and open the template in the editor.
         #imasab{
             text-align: center; float: right; 
                          width: 300px; height: 300px; 
-                         margin-top: 70px;
+                         margin-top: 10%;
         }
 
         

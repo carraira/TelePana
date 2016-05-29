@@ -12,9 +12,10 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -26,7 +27,6 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author cabjr_000
  */
 @Entity
-@Table(name = "CITA", catalog = "", schema = "ADMTELE")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Cita.findAll", query = "SELECT c FROM Cita c"),
@@ -36,10 +36,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Cita.findByEstadoCita", query = "SELECT c FROM Cita c WHERE c.estadoCita = :estadoCita"),
     @NamedQuery(name = "Cita.findByFechaProgCita", query = "SELECT c FROM Cita c WHERE c.fechaProgCita = :fechaProgCita"),
     @NamedQuery(name = "Cita.findByDescripCita", query = "SELECT c FROM Cita c WHERE c.descripCita = :descripCita"),
-    @NamedQuery(name = "Cita.findByCentroAtencion", query = "SELECT c FROM Cita c WHERE c.centroAtencion = :centroAtencion"),
-    @NamedQuery(name = "Cita.findByCodMedico", query = "SELECT c FROM Cita c WHERE c.codMedico = :codMedico"),
-    @NamedQuery(name = "Cita.findByIdUsuario", query = "SELECT c FROM Cita c WHERE c.idUsuario = :idUsuario"),
-    @NamedQuery(name = "Cita.findByCodCiudad", query = "SELECT c FROM Cita c WHERE c.codCiudad = :codCiudad")})
+    @NamedQuery(name = "Cita.findByCentroAtencion", query = "SELECT c FROM Cita c WHERE c.centroAtencion = :centroAtencion")})
 public class Cita implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -65,12 +62,15 @@ public class Cita implements Serializable {
     @Size(max = 20)
     @Column(name = "CENTRO_ATENCION")
     private String centroAtencion;
-    @Column(name = "COD_MEDICO")
-    private Long codMedico;
-    @Column(name = "ID_USUARIO")
-    private Long idUsuario;
-    @Column(name = "COD_CIUDAD")
-    private Integer codCiudad;
+    @JoinColumn(name = "ID_USUARIO", referencedColumnName = "ID_USUARIO")
+    @ManyToOne
+    private Usuario idUsuario;
+    @JoinColumn(name = "COD_MEDICO", referencedColumnName = "COD_MEDICO")
+    @ManyToOne
+    private Medico codMedico;
+    @JoinColumn(name = "COD_CIUDAD", referencedColumnName = "COD_POSTAL")
+    @ManyToOne
+    private Ciudad codCiudad;
 
     public Cita() {
     }
@@ -135,27 +135,27 @@ public class Cita implements Serializable {
         this.centroAtencion = centroAtencion;
     }
 
-    public Long getCodMedico() {
-        return codMedico;
-    }
-
-    public void setCodMedico(Long codMedico) {
-        this.codMedico = codMedico;
-    }
-
-    public Long getIdUsuario() {
+    public Usuario getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
+    public void setIdUsuario(Usuario idUsuario) {
         this.idUsuario = idUsuario;
     }
 
-    public Integer getCodCiudad() {
+    public Medico getCodMedico() {
+        return codMedico;
+    }
+
+    public void setCodMedico(Medico codMedico) {
+        this.codMedico = codMedico;
+    }
+
+    public Ciudad getCodCiudad() {
         return codCiudad;
     }
 
-    public void setCodCiudad(Integer codCiudad) {
+    public void setCodCiudad(Ciudad codCiudad) {
         this.codCiudad = codCiudad;
     }
 

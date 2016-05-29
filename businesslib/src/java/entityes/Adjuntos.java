@@ -8,6 +8,7 @@ package entityes;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,19 +16,19 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author cabjr_000
  */
 @Entity
-@Table(name = "ADJUNTOS", catalog = "", schema = "ADMTELE")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Adjuntos.findAll", query = "SELECT a FROM Adjuntos a"),
@@ -53,6 +54,8 @@ public class Adjuntos implements Serializable {
     @Size(max = 200)
     @Column(name = "DESCRIP_ADJUNTO")
     private String descripAdjunto;
+    @OneToMany(mappedBy = "numAdjunto")
+    private List<Historial> historialList;
 
     public Adjuntos() {
     }
@@ -96,6 +99,15 @@ public class Adjuntos implements Serializable {
 
     public void setDescripAdjunto(String descripAdjunto) {
         this.descripAdjunto = descripAdjunto;
+    }
+
+    @XmlTransient
+    public List<Historial> getHistorialList() {
+        return historialList;
+    }
+
+    public void setHistorialList(List<Historial> historialList) {
+        this.historialList = historialList;
     }
 
     @Override

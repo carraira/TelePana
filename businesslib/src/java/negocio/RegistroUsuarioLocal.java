@@ -6,6 +6,8 @@
 
 package negocio;
 
+import entityes.Usuario;
+
 /**
  *
  * @author cabjr_000
@@ -22,7 +24,7 @@ public interface RegistroUsuarioLocal {
 
     boolean correoNuevoValida();
 
-    boolean crearUsuarioConfirmado();
+    public String crearUsuarioConfirmado(Usuario u);
 
     boolean validaAfiliacion();
 

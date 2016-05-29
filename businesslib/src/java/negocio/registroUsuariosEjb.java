@@ -1,7 +1,9 @@
 package negocio;
 
 
+import SeasonBean.UsuarioFacadeLocal;
 import entityes.Usuario;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -25,6 +27,7 @@ public class registroUsuariosEjb extends Usuario implements RegistroUsuarioLocal
 
   
   
+ 
   
   
   
@@ -43,9 +46,13 @@ public class registroUsuariosEjb extends Usuario implements RegistroUsuarioLocal
   return null;
   }
 
-    @Override
-  public boolean crearUsuarioConfirmado( ) {
-  return false;
+   @EJB
+  public UsuarioFacadeLocal InsertoUsuario;
+  
+  
+      public String crearUsuarioConfirmado(Usuario u ) {
+      InsertoUsuario.create(u);
+  return "Creado";
   }
 public void info() {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Usuario Necesario."));
