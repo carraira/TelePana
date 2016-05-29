@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Medico</title>
+        <link rel="stylesheet" href="public/css/medico.css" type="text/css"></link>
+    </h:head>
+    <h:body>
+        <h:form  id="formp">
+            
+            <div id="cabecera">
+                <div id="cabecera1">
+                    <table cellspacing="10">
+                        <tr>
+                            <td rowspan="2"><img src="images/logo2.png" width="60%" align="center"></img></td>
+                            <td rowspan="2"><img src="images/cita.png" width="40%" align="center"></img></td>
+                        </tr>
+                    </table>                                      
+                </div>
+                <div id="cabecera2">
+                </div>
+        </div>
+        <div id="cabecera0">
+            <table cellspacing="10">
+                        <tr>
+                            <td rowspan="2"><img src="images/engrage.png" width="20px"></img></td>
+                            <td rowspan="2" cellpadding="30"><strong style="font-family: sans-serif;">Ajustes</strong></td>
+                            <td rowspan="2"><img src="images/foto.png" width="60px"></img></td>
+                            <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong style="font-family: sans-serif;">Mi Perfil</strong></td>
+                        </tr>
+            </table>
+            
+            
+        </div>
+        <div id="contenido">
+            <div id="principal">
+                <fieldset>
+                    <legend style="width:60%"> Resultados</legend>
+                    <p>Nuesta misión, es presenta un servicio de salud personalizado, con una ayuda muy clara y especifica y asi ser tratados por el sistema</p>
+                  <p:ribbon>
+                      <p:tab title="Descripción General">
+                          <p:ribbonGroup>
+                              
+                          </p:ribbonGroup>
+                      </p:tab>
+                      <p:tab title="Trayectoria Medica">
+                          <p:ribbonGroup>
+                          </p:ribbonGroup>
+                      </p:tab>
+                      <p:tab title="Especialidad">
+                          <p:ribbonGroup>
+                          </p:ribbonGroup>
+                      </p:tab>
+                      <p:tab title="Tipos de casos">
+                          <p:ribbonGroup>
+                          </p:ribbonGroup>
+                      </p:tab>
+                     
+                  </p:ribbon>
+ 
+                   
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </fieldset>
+                <br></br>
+                <br></br>
+                <table cellpadding="50">
+                        <tr>
+                            <td> 
+                                <p:commandButton ajax="true"
+                                  
+                                     style=" border-width: 3px; border-color: darkorange;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: darkorange;
+                                     height: 30px;width: 150px;" 
+                                      value="Volver" 
+                                      action="#{mbLogin.Menu()}"/>
+                            </td>
+                            <td>
+                               <button ajax="false"  
+                                     style=" border-width: 3px; border-color:  darkorange;
+                                     border-width: 2px; border-color:  cadetblue; 
+                                     font-size: small; background-color: darkorange;
+                                     height: 30px;width: 150px;" 
+                                     value="Consultar" >Consultar</button>
+                            </td>
+                        </tr>
+                    </table>
+               
+            </div>                    
+       </div>
+ 
+       <div id="secundario">
+           
+           <h:panelGrid id="PanelPrinc2" columns="1"  
+                         style="background-color: #AED6F1;
+                                text-align: center; 
+                                border-left-style: dashed;" >
+               
+                               <br></br>
+                                   <div class="clear"></div>
+
+                                   <div id="slides"> 
+                                         <ul>    
+                                            <li><img src="images/foto.png" width="200" height="200" /></li>
+                                         </ul>
+                                   </div>
+                                
+                                 <h:outputLabel   style="font-size: 25px; " value="CORE"></h:outputLabel>
+                                 <h:outputLabel   style="font-size: 25px; " value="Cambiar Imagen Perfil"></h:outputLabel>
+                                 <br></br>
+                                 <br></br>
+                                 <br></br>
+                                 <h:commandLink   style="font-size: 25px; color: black; " value=" Tipo Usuario"></h:commandLink>
+                                 <p:inputText   style=" padding: 2%;
+                                              width: 40%;
+                                              text-align: center; " 
+                                              value="Paciente" 
+                                              disabled="true">
+                                 </p:inputText>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br><br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+            </h:panelGrid> 
+           
+           
+       </div>
+
+       <div id="pie">
+           <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
+           <a class="ttuloprin"><center>Nota: Toda la información que se encuentra aqui servira para la consulta del usuario con un especialista si es requerido</center></a>
+           <a><center>__________________________________________________________________________________________________________</center></a>
+           <a>@ Todos los derechos reservados 2016 Telepana Inc - Terminos de Uso</a>
+       </div>
+
+                
+           
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </h:form>
+    </h:body>
+</html>
+

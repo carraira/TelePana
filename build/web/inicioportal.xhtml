@@ -45,8 +45,7 @@
         setInterval(rotarImagenes,10000);
     }
     </script>
-         
-         
+        
     </h:head>
     <h:body id="body">
         <h:form>
@@ -56,6 +55,7 @@
                         <tr>
                             <td rowspan="2"><img src="images/logo2.png" width="60%" align="center"></img></td>
                             <h:messages infoStyle="color: blue;list-style:none;"/>
+                            
                         </tr>
                     </table>                                      
                  </div>
@@ -100,41 +100,66 @@
                     
               </div>
         </div>
-       <div id="menu">
-           
-          <input type="checkbox" id="menuToggle"></input>
-          <label for="menuToggle" class="menu-icon">&#9776;</label>
-          
-           <ul id="navigation">
-              <li class="perfil"><a href="Perfil.xhtml" title="Perfil"></a></li>
-              <li class="estadistica"><a href="estadistica.xhtml" title="Estadistica"></a></li>
-              <li class="historial"><a href="Historial.xhtml" title="Historial"></a></li>
-              <li class="agendamiento"><a href="citas.xhtml" title="Agendamiento"></a></li>
-              <li class="medico"><a href="MedicoHoja.xhtml" title="Medico"></a></li>
-           </ul>
-       </div>
- 
-       <div id="contenido">
+            
+        <div>
+           <label for="menu-toggle">&#9776;</label>
+        </div>
+        
+        <div id="contenido">
+             <input type="checkbox" id="menu-toggle"/>
+                <ul id="menu">
+                    <li class="perfil"><a href="Perfil.xhtml" title="Perfil"></a></li>
+                    <li class="estadistica"><a href="estadistica.xhtml" title="Estadistica"></a></li>
+                    <li class="historial"><a href="Historial.xhtml" title="Historial"></a></li>
+                    <li class="agendamiento"><a href="citas.xhtml" title="Agendamiento"></a></li>
+                    <li class="medico"><a href="medico.xhtml" title="Medico"></a></li>
+                </ul>
+            
            <div id="principal">
-                <a>Bienvenido,</a>
+                <br></br>
+               <a style="margin-left: 50px">Bienvenido,</a>
                 <h:outputLabel value="#{mbSession.usuario}"></h:outputLabel> 
-                
-                <p:chart type="line" model="#{datosChart.areaModel}" style="height:300px; width: 50%;" />
+                <br></br>
+                <br></br>
+                <table style="margin-left: 150px;">
+                    <tr>
+                        <td>
+                             <p:chart type="line" model="#{datosChart.areaModel}" style="height:400px; width: 100%;" />
+                        </td>
+                    </tr>
+                </table>
 
             </div>
- 
        <div id="secundario">
-           <a class="tiprincipal">Tip´s de Salud</a>
-           <br></br>
-           <br></br>
-           <br></br>
-           <h:panelGrid columns="1" cellpadding="1">
-               <img src="" align="center" width="320" height="320" id="imagen"></img>
-           </h:panelGrid>
-           <br></br>
-           <a class="titulo">Horarios de Atención</a>
-           <br></br>
-           <a class="horario">Lunes a Domingo de 6am a 8pm</a>
+           <table border="0" cellspacing="10">
+             <tr>
+                 <td>
+                       <br></br>
+                       <br></br>
+                            <a class="tiprincipal">Tip´s de Salud</a>
+                       <br></br>
+                       <br></br>
+                       <br></br>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                    <h:panelGrid columns="1" cellpadding="1">
+                           <img class="timagen" src="" align="center" width="320" height="320" id="imagen"></img>
+                    </h:panelGrid>
+                 </td>
+             </tr>
+               <tr>
+                   <td>
+                       <a class="titulo">Horarios de Atención</a>
+                    </td>
+               </tr>
+               <tr>
+                   <td>
+                        <a class="horario">Lunes a Domingo de 6am a 8pm</a>
+                    </td>
+               </tr>
+         </table>
        </div>
        </div>
  

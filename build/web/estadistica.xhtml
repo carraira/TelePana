@@ -14,7 +14,6 @@
         <div id="cabecera">
                 <div id="cabecera0">
                     <table cellspacing="10">
-                        
                         <tr>
                             <td rowspan="2"><img src="images/logo2.png" width="60%" align="center"></img></td>
                             <td rowspan="2"><img src="images/estadis.png" width="40%" align="center"></img></td>
@@ -42,7 +41,7 @@
            
         <div id="contenido">
            
-            <a class="ttuloprin"><center>Estadisticas de Salud y Bienestar</center></a>
+           <a class="ttuloprin"><center>Estadisticas de Salud y Bienestar</center></a>
            <a><center>__________________________________________________________________________________________________________</center></a>
            <br></br>
            <a class="descriprin"><center>La salud es lo mas importante, realiza un chequeo personal sobre los habitos alimenticios, ejercicios y enfermedades</center></a>
@@ -127,21 +126,39 @@
                
                    <tr>
                        <th> <p:chart type="pie" model="#{chartEstadistica.pieModel2}" 
-                                     style=" color:  blue; background: dimgrey; width:400px;height:400px" /></th>
-                   </tr>
-              
-               <tbody>
+                                     style=" color:  blue; background: dimgrey;  width:600px;height:600px" /></th>
+                   </tr>               
                    <tr>
-                       <td>  <p:commandButton ajax="false"  
+                       <td>
+                           <br></br>
+                           <br></br>
+                       </td>
+                            
+                   </tr>
+                   <tr>
+                    <td class="lista"> 
+                            <label>Regularidad de Actividad Fisica</label>
+                                 <select name="dias">
+                                    <option value="1">1 día a la semana</option> 
+                                   <option value="2">2 días a la semana</option> 
+                                    <option value="3">3 días a la semana</option>
+                                    <option value="4">4 días a la semana</option> 
+                                    <option value="5">5 días a la semana</option> 
+                                    <option value="6">6 días a la semana</option> 
+                                    <option value="7">7 días a la semana</option> 
+                                </select>
+                            
+                           <p:commandButton ajax="false"  
                                      style=" float:  right; border-width: 3px; border-color:  #3a7999;
                                      border-width: 2px; border-color:  cadetblue; 
                                      font-size: small; background-color: royalblue;
                                      height: 50px;width: 150px;" 
-                                     value="Generar Reporte" /></td>
+                                     value="Generar Reporte" />
+                       </td>
+ 
                    </tr>
-               </tbody>
            </table>
-
+  
            <br></br>
            <br></br>
            <br></br>
@@ -154,18 +171,7 @@
            <br></br>
            <br></br>
            <br></br>
-           <div class="lista">
-                <label>Regularidad de Actividad Fisica</label>
-                    <select name="dias">
-                          <option value="1">1 día a la semana</option> 
-                          <option value="2">2 días a la semana</option> 
-                          <option value="3">3 días a la semana</option>
-                          <option value="4">4 días a la semana</option> 
-                          <option value="5">5 días a la semana</option> 
-                          <option value="6">6 días a la semana</option> 
-                          <option value="7">7 días a la semana</option> 
-                    </select>
-           </div>
+
            <br></br>
            <br></br>
            <table cellpadding="50">
