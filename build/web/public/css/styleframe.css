@@ -78,23 +78,18 @@ border-bottom-right-radius: 10%;
    
 }
 
+label {
+  cursor: pointer;
+  font-size: 30px;
+  
+}
+#menu-toggle {
+  display: none; /* hide the checkbox */
+  
+}
 #menu {
+  display: none;
   float: left;
-  width: 20%;
-  background-color: silver;
-}
-
-#menu .menu-icon{
-    padding: 10px 20px;
-    background: silver;
-    color: #ffffff;
-    cursor: pointer;
-}
-#menuToggle{display: none;}
-
-#menuToggle:checked ~ #menu{position: absolute;  left:0;}
-
-ul#navigation{
   margin: 0px;
   padding: 0px;
   top: 10px;
@@ -104,102 +99,103 @@ ul#navigation{
   width: 250px;
   background-color: silver;
   left: -250px;
-     
+  -webkit-transition: all 0.3s ease;  
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease; 
+}
+#menu-toggle:checked + #menu {
+  display: block;
 }
 
-ul#navigation li a {
+
+ul#menu li a {
     display: block;
     margin-left: 0px;
     width: 250px;
     height: 90px;    
     background-repeat:no-repeat;
     background-position:center center;
-    /*border:1px solid #ffffff;
-    /*-moz-border-radius:0px 10px 10px 0px;
-    -webkit-border-bottom-right-radius: 10px;
-    -webkit-border-top-right-radius: 10px;
-    -khtml-border-bottom-right-radius: 10px;
-    -khtml-border-top-right-radius: 10px;
-    -moz-box-shadow: 0px 4px 3px #000;
-    -webkit-box-shadow: 0px 4px 3px #000;
-    */
     opacity: 0.6;
     filter:progid:DXImageTransform.Microsoft.Alpha(opacity=60);
 }
 
-ul#navigation li a:hover {
+ul#menu li a:hover {
     background-color: orange;
     color:  buttonshadow;
     border-radius: 5px;
     
 }
 
-ul#navigation .perfil a{
+ul#menu .perfil a{
     background-image: url(../../images/perfil.png);
     background-size: 40% 90%;
     background-position:  center;
 }
-ul#navigation .estadistica a      {
+ul#menu .estadistica a      {
     background-image: url(../../images/estadis.png);
     background-size: 40% 90%;
     background-position:  center;
 }
-ul#navigation .historial a      {
+ul#menu .historial a      {
     background-image: url(../../images/icohistorial.png);
     background-size: 40% 90%;
     background-position:  center;
     animation: linear;
 }
-ul#navigation .agendamiento a      {
+ul#menu .agendamiento a      {
     background-image: url(../../images/cita.png);
     background-size: 40% 90%;
     background-position:  center;
 }
-ul#navigation .medico a      {
+ul#menu .medico a      {
     background-image: url(../../images/medicos.png);
     background-size: 40% 90%;
     background-position:  center;
 }
 
-#body{
-   background-color: lavender; 
-}
 
 
 #contenido {
   float: left;
-  width: 70%;
+  width: 80%;
 }
 
 #contenido #principal {
   float: left;
-  width: 75%;
+  width: 60%;
   font-family: sans-serif;
   font-size: 28pt;
   color: #414848;
 }
 
 #contenido #secundario {
+  border-left-style:   groove;
+  margin-left: 20px;
   float: left;
-  width: 25%;
+  width: 10%;
 }
 
 #contenido #secundario .tiprincipal{
-  text-align: center;
   font-family: sans-serif;
   font-size: 25pt;
+  margin-left: 130px;
+}
+#contenido #secundario .timagen{
+  margin-left: 70px;
 }
 
 #contenido #secundario .titulo{
-  text-align: center;
   font-family: sans-serif;
   font-size: 15pt;
+  margin-left: 140px;
+    
 }
 
 #contenido #secundario .horario{
-  text-align: right;
   font-family: sans-serif;
   font-size: 10pt;
+  margin-left: 140px;
 }
 
 #pie {
