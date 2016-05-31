@@ -19,3 +19,12 @@ Paginas terminadas
 Ajustes en VO y SeasonBean
 Inserción de imagenes de portal principal
 Creacion de boton retorno a negocio
+
+Cambios Version 1.5
+
+Creacion de ingreso de Registros en pagina Registro Usuario
+Validacion logica desde la base de Datos
+Logica de negocio en paginas de Login, Registro Usuario y recuperar contraseña
+Se implementan managedBean y controller para el manejo de la informacion
+Ajuste finalies a presentacion de paginas
+Validaciones de pagina y requeridos
