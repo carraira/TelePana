@@ -30,16 +30,17 @@ public class RecuperarContrasena implements RecuperarContrasenaLocal {
         }
 
         if (!(Correo.contains("@") && Correo.contains(".com") )) {
-            info();
+            
             return "Caracteres no validos, ingrese nuevamente";
         }
 
         if (!(correoValidos.contains(Correo))) {
             return "Correo no Registrado";
         }
-        return "Se ha enviado un mensaje al correo con la recuperacion";
+        info();
+        return "Informacion: Completado";
     }
 public void info() {
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "PrimeFaces Rocks."));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Se ha enviado un mensaje al correo con la recuperacion.", "Se ha enviado un mensaje al correo con la recuperacion."));
     }
 }

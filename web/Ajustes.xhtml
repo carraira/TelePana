@@ -3,13 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <link rel="stylesheet" href="public/css/AjusteCuenta.css" type="text/css"></link>
     <h:head>
          <title>Ajustes Mi Cuenta</title>
          <h:panelGrid id="topsf" >
              <img src="images/logo2.png" id="imaga" ></img>
          </h:panelGrid>
+         <f:event type="preRenderView" listener="#{sesionesController.verificarSesion()}" />
      </h:head>
    <h:panelGrid   columns="2" id="panela">
       <h:body id="bodya">
@@ -177,12 +179,19 @@
         </thead>
         <tbody>
             <tr>
-                <td><center><p:outputLabel value="Las ventajas de tener tu medico a domicilio: Renueva tus Datos Siempre !" ></p:outputLabel></center></td>
+                <td><center><p:outputLabel value="Actualiza Siempre tus datos, recibe, para tener un diagnostico mas acertado de los especialistas.
+                                           Ademas de todo participa por premios por mantener al dia tus daots y contactos
+
+                                           Mas informaicion escribenos a
+                                           premiaactual@telepana.com
+
+                                           Saludos.
+                                           " ></p:outputLabel></center></td>
             </tr>
-           
+
         </tbody>
     </table>
-    
+
     
     
     

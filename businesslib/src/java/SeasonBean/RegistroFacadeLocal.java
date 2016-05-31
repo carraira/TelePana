@@ -6,7 +6,7 @@
 
 package SeasonBean;
 
-import entityes.Usuario;
+import entityes.Registro;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -15,21 +15,22 @@ import javax.ejb.Local;
  * @author cabjr_000
  */
 @Local
-public interface UsuarioFacadeLocal {
+public interface RegistroFacadeLocal {
 
-    void create(Usuario usuario);
+    void create(Registro registro);
 
-    void edit(Usuario usuario);
+    void edit(Registro registro);
 
-    void remove(Usuario usuario);
+    void remove(Registro registro);
 
-    Usuario find(Object id);
+    Registro find(Object id);
 
-    List<Usuario> findAll();
+    List<Registro> findAll();
 
-    List<Usuario> findRange(int[] range);
+    List<Registro> findRange(int[] range);
 
     int count();
     
-//    public Usuario iniciarSesion(Usuario us);
+    public Registro iniciarSesion(Registro us);
+    
 }

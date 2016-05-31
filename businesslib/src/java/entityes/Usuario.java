@@ -8,7 +8,6 @@ package entityes;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,13 +17,11 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -39,7 +36,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Usuario.findByLogin", query = "SELECT u FROM Usuario u WHERE u.login = :login"),
     @NamedQuery(name = "Usuario.findByEstadoCUsuario", query = "SELECT u FROM Usuario u WHERE u.estadoCUsuario = :estadoCUsuario"),
     @NamedQuery(name = "Usuario.findByTipoUsuario", query = "SELECT u FROM Usuario u WHERE u.tipoUsuario = :tipoUsuario"),
-    @NamedQuery(name = "Usuario.findByContrase\u00f1a", query = "SELECT u FROM Usuario u WHERE u.contrase\u00f1a = :contrase\u00f1a"),
+    @NamedQuery(name = "Usuario.findByContrasena", query = "SELECT u FROM Usuario u WHERE u.contrasena = :contrasena"),
     @NamedQuery(name = "Usuario.findByFechaNacimiento", query = "SELECT u FROM Usuario u WHERE u.fechaNacimiento = :fechaNacimiento"),
     @NamedQuery(name = "Usuario.findByEdad", query = "SELECT u FROM Usuario u WHERE u.edad = :edad"),
     @NamedQuery(name = "Usuario.findBySexoUsuario", query = "SELECT u FROM Usuario u WHERE u.sexoUsuario = :sexoUsuario"),
@@ -57,81 +54,76 @@ public class Usuario implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "ID_USUARIO")
+    @Column(name = "ID_USUARIO", nullable = false)
     private Long idUsuario;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 3)
-    @Column(name = "TIPO_ID")
+    @Column(name = "TIPO_ID", nullable = false, length = 3)
     private String tipoId;
     @Size(max = 20)
+    @Column(length = 20)
     private String login;
     @Size(max = 10)
-    @Column(name = "ESTADO_C_USUARIO")
+    @Column(name = "ESTADO_C_USUARIO", length = 10)
     private String estadoCUsuario;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 10)
-    @Column(name = "TIPO_USUARIO")
+    @Column(name = "TIPO_USUARIO", nullable = false, length = 10)
     private String tipoUsuario;
     @Lob
     @Column(name = "FOTO_USUARIO")
     private Serializable fotoUsuario;
     @Size(max = 10)
-    private String contraseña;
+    @Column(length = 10)
+    private String contrasena;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "FECHA_NACIMIENTO")
+    @Column(name = "FECHA_NACIMIENTO", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaNacimiento;
     @Basic(optional = false)
     @NotNull
+    @Column(nullable = false)
     private short edad;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "SEXO_USUARIO")
+    @Column(name = "SEXO_USUARIO", nullable = false)
     private char sexoUsuario;
     @Size(max = 30)
-    @Column(name = "CORREO_USUARIO")
+    @Column(name = "CORREO_USUARIO", length = 30)
     private String correoUsuario;
     @Size(max = 60)
-    @Column(name = "DIRECCION_USUARIO")
+    @Column(name = "DIRECCION_USUARIO", length = 60)
     private String direccionUsuario;
     @Size(max = 20)
-    @Column(name = "ID_SKYPE")
+    @Column(name = "ID_SKYPE", length = 20)
     private String idSkype;
     @Column(name = "TELEFONO_USUARIO")
     private Long telefonoUsuario;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 60)
-    @Column(name = "APELLIDO_P_USUARIO")
+    @Column(name = "APELLIDO_P_USUARIO", nullable = false, length = 60)
     private String apellidoPUsuario;
     @Size(max = 60)
-    @Column(name = "APELLIDO_M_USUARIO")
+    @Column(name = "APELLIDO_M_USUARIO", length = 60)
     private String apellidoMUsuario;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 60)
-    @Column(name = "P_NOMBRE_USUARIO")
+    @Column(name = "P_NOMBRE_USUARIO", nullable = false, length = 60)
     private String pNombreUsuario;
     @Size(max = 60)
-    @Column(name = "S_NOMBRE_USUARIO")
+    @Column(name = "S_NOMBRE_USUARIO", length = 60)
     private String sNombreUsuario;
     @Size(max = 200)
-    @Column(name = "DESCRIPCION_USUARIO")
+    @Column(name = "DESCRIPCION_USUARIO", length = 200)
     private String descripcionUsuario;
-    @OneToMany(mappedBy = "idUsuario")
-    private List<Cita> citaList;
-    @OneToMany(mappedBy = "idUsuario")
-    private List<Diagnostico> diagnosticoList;
     @JoinColumn(name = "COD_POSTAL", referencedColumnName = "COD_POSTAL")
     @ManyToOne
     private Ciudad codPostal;
-    @OneToMany(mappedBy = "idUsuario")
-    private List<Afiliacion> afiliacionList;
-    @OneToMany(mappedBy = "codUsuario")
-    private List<Medico> medicoList;
 
     public Usuario() {
     }
@@ -199,12 +191,12 @@ public class Usuario implements Serializable {
         this.fotoUsuario = fotoUsuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public Date getFechaNacimiento() {
@@ -303,48 +295,12 @@ public class Usuario implements Serializable {
         this.descripcionUsuario = descripcionUsuario;
     }
 
-    @XmlTransient
-    public List<Cita> getCitaList() {
-        return citaList;
-    }
-
-    public void setCitaList(List<Cita> citaList) {
-        this.citaList = citaList;
-    }
-
-    @XmlTransient
-    public List<Diagnostico> getDiagnosticoList() {
-        return diagnosticoList;
-    }
-
-    public void setDiagnosticoList(List<Diagnostico> diagnosticoList) {
-        this.diagnosticoList = diagnosticoList;
-    }
-
     public Ciudad getCodPostal() {
         return codPostal;
     }
 
     public void setCodPostal(Ciudad codPostal) {
         this.codPostal = codPostal;
-    }
-
-    @XmlTransient
-    public List<Afiliacion> getAfiliacionList() {
-        return afiliacionList;
-    }
-
-    public void setAfiliacionList(List<Afiliacion> afiliacionList) {
-        this.afiliacionList = afiliacionList;
-    }
-
-    @XmlTransient
-    public List<Medico> getMedicoList() {
-        return medicoList;
-    }
-
-    public void setMedicoList(List<Medico> medicoList) {
-        this.medicoList = medicoList;
     }
 
     @Override

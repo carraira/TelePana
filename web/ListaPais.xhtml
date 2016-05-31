@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>PAGINA DE PRUEBAS</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:inputText value="#{ejemploPaisMB.pais.nomPais}" style= " border-width: 3px; 
+                                      border-color: darkorange; width: 50%; " />
+        <p:outputLabel value="Inserte el pais" />
+        
+        <p:commandButton  
+                                      ajax="false" 
+                                      style=" color: #ffffff; 
+                                      border-width: 3px; 
+                                      border-color: black;
+                                      font-size: small; 
+                                      background-color: dodgerblue;  
+                                      height: 30px;width: 100px;" 
+                                      value=" Volver" 
+                                      action="#{ejemploPaisMB.creacionPais()}"/>
+        
+          <p:growl id="msgs" showDetail="true" />
+         <p:tabView >
+        <p:tab title="Godfather Part I">
+            <h:panelGrid columns="2" cellpadding="10">
+               
+                <h:outputText
+                    value="The story begins as Don Vito Corleone..." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Godfather Part II">
+            <h:panelGrid columns="2" cellpadding="10">
+               
+                <h:outputText value="Francis Ford Coppola's legendary..." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Godfather Part III">
+            <h:panelGrid columns="2" cellpadding="10">
+               
+                <h:outputText value="After a break of more than 15 years..." />
+            </h:panelGrid>
+        </p:tab>
+    </p:tabView>
+        </h:form>
+    </h:body>
+</html>
+
