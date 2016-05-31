@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     
     <h:head>
          <title>Menu Principal</title>
@@ -42,10 +43,10 @@
         rotarImagenes();
  
         // Indicamos que cada 5 segundos cambie la imagen
-        setInterval(rotarImagenes,10000);
+        setInterval(rotarImagenes,6000);
     }
     </script>
-        
+         <f:event type="preRenderView" listener="#{sesionesController.verificarSesion()}" />
     </h:head>
     <h:body id="body">
         <h:form>
@@ -80,7 +81,7 @@
                                 </strong>    
                             </td>
                             <td rowspan="2"><img src="images/foto.png" width="50px"></img></td>
-                            <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
+                            <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{indexController.login.login}"></h:outputLabel></strong></td>
                         </tr>
                         <tr>
                             <td>

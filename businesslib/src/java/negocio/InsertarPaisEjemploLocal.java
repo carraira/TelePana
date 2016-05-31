@@ -4,15 +4,17 @@
  * and open the template in the editor.
  */
 
-package ManagedBean;
+package negocio;
 
-import javax.faces.bean.ManagedBean;
+import entityes.Pais;
+import javax.ejb.Local;
 
 /**
  *
  * @author cabjr_000
  */
-@ManagedBean
-public class UsuarioMB {
+@Local
+public interface InsertarPaisEjemploLocal {
     
+    public String CrearPais(Pais p);
 }
