@@ -138,13 +138,13 @@ function rotate() {
                         <td rowspan="2"><img src="images/engrage.png" width="15px"></img></td>
                         <td rowspan="2" cellpadding="5"><strong style="font-family: sans-serif;">Ajustes</strong></td>
                         <td rowspan="2"><img  style=" float:  right;" src="images/foto.png" width="80px"></img></td>
-                        <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
+                        <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{indexController.login.login}"></h:outputLabel></strong></td>
                         <td><strong style="font-family: sans-serif;">Mi Perfil</strong></td>
                                    
                        
 
        </h:panelGrid>
-        
+        <f:event type="preRenderView" listener="#{sesionesController.verificarSesion()}" />
     </h:head>
     <h:body id="body2">
         

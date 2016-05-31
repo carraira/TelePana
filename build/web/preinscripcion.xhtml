@@ -6,6 +6,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Preincripción Medica</title>
+        <f:event type="preRenderView" listener="#{sesionesController.verificarSesion()}" />
         <link rel="stylesheet" href="public/css/preinscripcion.css" type="text/css"></link>
                 <script>
     /**
@@ -41,7 +42,7 @@
         rotarImagenes();
  
         // Indicamos que cada 5 segundos cambie la imagen
-        setInterval(rotarImagenes,10000);
+        setInterval(rotarImagenes,6000);
     }
     </script>
         
@@ -67,7 +68,7 @@
                             <td rowspan="2"><img src="images/engrage.png" width="20px"></img></td>
                             <td rowspan="2" cellpadding="30"><strong style="font-family: sans-serif;">Ajustes</strong></td>
                             <td rowspan="2"><img src="images/foto.png" width="60px"></img></td>
-                            <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
+                            <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{indexController.login.login}"></h:outputLabel></strong></td>
                         </tr>
                         <tr>
                             <td><strong style="font-family: sans-serif;">Mi Perfil</strong></td>
@@ -119,28 +120,31 @@
                 </fieldset>
                 <br></br>
                 <br></br>
-                <table cellpadding="50">
-                        <tr>
-                            <td> 
-                                <p:commandButton ajax="true"
-                                  
-                                     style=" border-width: 3px; border-color: darkorange;
-                                     border-width: 2px; border-color:  cadetblue; 
-                                     font-size: small; background-color: darkorange;
-                                     height: 30px;width: 150px;" 
-                                      value="Volver" 
-                                      action="#{historialMB.historialPagina()}"/>
-                            </td>
-                            <td>
-                               <button ajax="false"  
-                                     style=" border-width: 3px; border-color:  darkorange;
-                                     border-width: 2px; border-color:  cadetblue; 
-                                     font-size: small; background-color: darkorange;
-                                     height: 30px;width: 150px;" 
-                                     value="Agendar" >Actividad Reciente</button>
-                            </td>
-                        </tr>
-                    </table>
+                
+                <h:panelGrid  columns="2" cellpadding="70" cellspacing="10">
+                    <h:form>
+                                
+                                    <p:commandButton ajax="ajax"
+
+                                                     style=" border-width: 3px; border-color: darkorange;
+                                                     border-width: 2px; border-color:  cadetblue; 
+                                                     font-size: small; background-color: darkorange;
+                                                     height: 30px;width: 150px;" 
+                                                     value="Volver" 
+                                                     action="#{historialMB.historialPagina()}"/>
+                                
+                               
+                                    <p:commandButton 
+
+                                                     style=" border-width: 3px; border-color: darkorange;
+                                                     border-width: 2px; border-color:  cadetblue; 
+                                                     font-size: small; background-color: darkorange;
+                                                     height: 30px;width: 150px;" 
+                                                     value="Actividad Reciente" 
+                                                     action="#{mbLogin.Menu()}"/>
+                         </h:form>       
+                            
+                       </h:panelGrid>
                
             </div>                    
        </div>
