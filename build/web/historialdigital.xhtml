@@ -2,11 +2,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Historial Digital</title>
         <link rel="stylesheet" href="public/css/historialdigital.css" type="text/css"></link>
-        
+        <f:event type="preRenderView" listener="#{sesionesController.verificarSesion()}" />
     </h:head>
     <h:body>
        <div id="cabecera">
@@ -27,7 +28,7 @@
                             <td rowspan="2"><img src="images/engrage.png" width="20px"></img></td>
                             <td rowspan="2" cellpadding="30"><strong style="font-family: sans-serif;">Ajustes</strong></td>
                             <td rowspan="2"><img src="images/foto.png" width="60px"></img></td>
-                            <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
+                            <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{indexController.login.login}"></h:outputLabel></strong></td>
                         </tr>
                         <tr>
                             <td><strong style="font-family: sans-serif;">Mi Perfil</strong></td>
@@ -74,54 +75,45 @@
                 <br></br>
                 <br></br>
                 <table cellpadding="50">
-                        <tr>
-                            <td> 
-                                
+                      <h:panelGrid  columns="2" cellpadding="70" cellspacing="10">
+                    <h:form>
                                 <p:commandButton 
                                      style=" border-width: 3px; border-color: darkorange;
                                      border-width: 2px; border-color:  cadetblue; 
                                      font-size: small; background-color: darkorange;
                                      height: 30px;width: 100px;" 
                                      value="Nuevo" />
-                            </td>
-                            <td>
-                             <p:commandButton 
+
+                                <p:commandButton 
                                      style=" border-width: 3px; border-color:  darkorange;
                                      border-width: 2px; border-color:  cadetblue; 
                                      font-size: small; background-color: darkorange;
                                      height: 30px;width: 100px;" 
                                      value="Ver" />
-                            </td>
-                            <td>
                                <p:commandButton  
                                      style=" border-width: 3px; border-color:  darkorange;
                                      border-width: 2px; border-color:  cadetblue; 
                                      font-size: small; background-color: darkorange;
                                      height: 30px;width: 100px;" 
                                      value="Eliminar" />
-                            </td>
-                                                        <td>
-                               <p:commandButton 
+                                <p:commandButton 
                                      style=" border-width: 3px; border-color:  darkorange;
                                      border-width: 2px; border-color:  cadetblue; 
                                      font-size: small; background-color: darkorange;
                                      height: 30px;width: 150px;" 
                                      value="Guardar Cambios" />
-                            </td>
-                        </tr>
-                    <tr>
-                        <td>
-                            
-                              <p:commandButton 
-                                     style=" border-width: 3px; border-color:  cadetblue;
+
+                                   <p:commandButton  ajax="false"
+                                     style=" border-width: 3px; border-color:  darkorange;
                                      border-width: 2px; border-color:  cadetblue; 
-                                     font-size: small; background-color: aliceblue; 
-                                     height: 30px;width: 100px;" 
+                                     font-size: small; background-color: darkorange;
+                                     height: 30px;width: 150px;" 
                                      value="Volver" 
                                      action="#{historialMB.historialPagina()}"/>
+
+                         </h:form>       
                             
-                        </td>
-                    </tr>
+                       </h:panelGrid>
                     </table>
        </div>
  

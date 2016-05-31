@@ -8,6 +8,7 @@
     <h:head id="cabeza1">
         <title>Mi Perfil</title>
         <link rel="stylesheet" href="public/css/PerfilStyle.css" type="text/css"></link>
+       <f:event type="preRenderView" listener="#{sesionesController.verificarSesion()}" />
     </h:head>
     <h:body id="bodyper">
         <h:form  id="formp">
@@ -24,7 +25,7 @@
                                 <td rowspan="2"><img src="images/engrage.png" width="20px"></img></td>
                                 <td rowspan="2" ><strong style="font-family: sans-serif;">Ajustes</strong></td>
                                 <td rowspan="2"><img src="images/foto.png" width="50px"></img></td>
-                                <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{mbSession.usuario}"></h:outputLabel></strong></td>
+                                <td><strong style="font-family: sans-serif;"><h:outputLabel value="#{indexController.login.login}"></h:outputLabel></strong></td>
                             </tr>
                             <tr>
                                 <td><strong style="font-family: sans-serif;">Mi Perfil</strong></td>

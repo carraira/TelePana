@@ -1,16 +1,27 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <link rel="stylesheet" href="public/css/logeo.css" type="text/css"></link>
     <h:head>
-        <title>Login</title>
+        <title>Usuario no Autenticado</title>
     </h:head>
     <h:body>
-    <h:messages infoStyle="color: blue;list-style:none;"/>
+        <title>TelePana Consulta Medica</title>
+        <h:panelGrid id="tops1" >
+        <form method="get" action="PortadaPrincipal.xhtml">
+            <td><input name="boton1" type="image"
+                  src="images/logo2.png" width="20%" align="left"></input></td>
+        </form>
+             </h:panelGrid>
+    <!-- <h:messages infoStyle="color: blue;list-style:none;"/>
           <h:outputLabel value="Ingreso con el usuario: "/>
-          <h:outputText value="#{mbSession.usuario}"/>
+          <h:outputText value="#{mbSession.usuario}"/> -->
+    <h2> Usuario no Autenticado
+        Permisos insuficientes, o aun no se ha logeado</h2>
     <h:form>
-    <h:commandButton value="cerrar session" action="#{mbSession.cerrarSession()}"/>
+        <p:commandButton  ajax="false" value=" Ingresar o Registrarse" action="#{mbLogin.logon()}"/>
     </h:form>
   </h:body>
 </html>
